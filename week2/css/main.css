@@ -1,3 +1,7 @@
+div:hover {
+    font-weight: bold;
+}
+
 .div1 {
     font-size: 20px;
     background-color: rebeccapurple;
