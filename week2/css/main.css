@@ -2,17 +2,11 @@ div:hover {
     font-weight: bold;
 }
 
-.div1 {
-    font-size: 20px;
-    background-color: rebeccapurple;
-}
-
-.div2 {
-    font-size: 50px;
-    background-color: brown;
-}
-
-.div3 {
+.divs {
     font-size: 30px;
     background-color: aquamarine
+}
+
+.hide {
+  visibility: hidden;
 }
