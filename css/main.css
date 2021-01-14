@@ -1,0 +1,83 @@
+body {
+  background-color: rgb(255, 239, 255);
+  padding: 2%;
+  max-width: 900px;
+  margin: auto;
+}
+
+h1 {
+  font: 3rem 'Bad Script', cursive;
+  padding: 2rem 2rem 0;
+  text-align: center;
+  color: rgb(112, 21, 112);
+  border-bottom: violet 5px dotted;
+}
+
+li {
+  list-style: none;
+  font: 1.2rem/1.5 'Staatliches', cursive;
+
+}
+
+.displaydots * {
+  list-style: circle;
+}
+
+.displaydots ul li,
+.displaydots ol li {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font: 1.2rem/1.5 'Staatliches', cursive;
+}
+
+a:active {
+  color: black;
+}
+
+li a:hover {
+  color: rgb(140, 228, 255);
+}
+
+a:visited {
+  color: violet;
+}
+
+button {
+  background-color: rgb(112, 21, 112);
+  border: 1px black solid;
+  border-radius: 20px;
+  padding: .5rem;
+  color: rgb(255, 239, 255);
+  font: 1rem 'Bad Script', cursive;
+  cursor: pointer;
+  transition: box-shadow .3s ease-in-out;
+  margin: 1rem;
+}
+
+button:hover {
+  box-shadow: 0 0 40px 40px violet;
+}
+
+.btn {
+  text-align: center;
+  border-top: violet 5px dotted;
+  padding-top: 1rem;
+  margin-top: 1.8rem;
+  clear: both;
+}
+
+label, h2, h3, h4 {
+  font: 1.2rem 'Staatliches', cursive;
+}
+
+textarea {
+  width: 100%;
+}
+
+p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
