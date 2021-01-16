@@ -15,4 +15,4 @@
   </p>
 </main>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/cse341/web/common/footer.php'; ?>
+<?php include 'common/footer.php'; ?>
