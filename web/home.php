@@ -1,4 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT'].'/cse341/web/common/header.php'; ?>
+<?php include 'common/header.php'; ?>
 
 <main>
   <h1>Melissa Hull</h1>
