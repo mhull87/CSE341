@@ -1,4 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT'].'/cse341/web/common/header.php'; ?>
+<?php include 'common/header.php'; ?>
 
 <h1>Melissa Hull's Portfolio</h1>
 <ul>
@@ -9,4 +9,4 @@
   <button type='button' onclick="location.href = 'home.php'">Go Back Home</button>
 </p>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/cse341/web/common/footer.php'; ?>
+<?php include 'common/footer.php'; ?>
