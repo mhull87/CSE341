@@ -9,10 +9,6 @@
     back-end as well. I work well on my own but I thrive in a team environment and do my best work by breaking down
     problems to solve them. Being a Home Engineer for over ten years, I have the ability to work under pressure and have
     remarkable scheduling and organizational skills. I’d really love to work for you.</p>
-    
-  <p class="btn">
-    <button type='button' onclick="location.href = 'portfolio.php'">View My Portfolio</button>
-  </p>
 </main>
 
 <?php include 'common/footer.php'; ?>
