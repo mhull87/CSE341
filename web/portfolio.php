@@ -5,4 +5,11 @@
   <li><a href="week2/index.html">Week 2</a></li>
 </ul>
 
-<?php include 'common/footer.php'; ?>
+<footer>
+  <p class="btn">
+    <button type='button' onclick="location.href = 'home.php'" title="Go TO Home Page">Home Page</button>
+  </p>
+</footer>
+</body>
+
+</html>
