@@ -1,14 +1,14 @@
 <?php include '../common/header.php'; ?>
 
-  <form action="form.php" method="POST">
-    <label for="name">Name</label> 
-    <input type="text" name="name" id="name"><br>
+<form action="form.php" method="POST">
+  <label for="name">Name</label>
+  <input type="text" name="name" id="name"><br>
 
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email"><br><br><br>
-    
-    <p><strong><u>Major</u></strong></p>
-    <?php
+  <label for="email">Email</label>
+  <input type="email" name="email" id="email"><br><br><br>
+
+  <p><strong><u>Major</u></strong></p>
+  <?php
 
     $majors = array("Computer Science", "Web Design and Development", "Computer Information Technology", "Computer Engineering");
 
@@ -22,26 +22,28 @@
     <label for="ce">Computer Engineering</label><br><br><br>';
     ?>
 
-    <label for="comments">Comments</label>
-    <textarea id="comments" name="comments"></textarea><br><br>
+  <label for="comments">Comments</label>
+  <textarea id="comments" name="comments"></textarea><br><br>
 
-    <p><strong><u>Which continents have you visited?</u></strong></p>
-    <input type="checkbox" id="nAmerica" name="continents[]" value="na">
-    <label for="nAmerica">North America</label><br>
-    <input type="checkbox" id="sAmerica" name="continents[]" value="sa">
-    <label for="sAmerica">South America</label><br>
-    <input type="checkbox" id="europe" name="continents[]" value="e">
-    <label for="europe">Europe</label><br>
-    <input type="checkbox" id="asia" name="continents[]" value="as">
-    <label for="asia">Asia</label><br>
-    <input type="checkbox" id="australia" name="continents[]" value="au">
-    <label for="australia">Australia</label><br>
-    <input type="checkbox" id="africa" name="continents[]" value="af">
-    <label for="africa">Africa</label><br>
-    <input type="checkbox" id="antarctica" name="continents[]" value="an">
-    <label for="antarctica">Antarctica</label><br><br><br>
+  <p><strong><u>Which continents have you visited?</u></strong></p>
+  <input type="checkbox" id="nAmerica" name="continents[]" value="na">
+  <label for="nAmerica">North America</label><br>
+  <input type="checkbox" id="sAmerica" name="continents[]" value="sa">
+  <label for="sAmerica">South America</label><br>
+  <input type="checkbox" id="europe" name="continents[]" value="e">
+  <label for="europe">Europe</label><br>
+  <input type="checkbox" id="asia" name="continents[]" value="as">
+  <label for="asia">Asia</label><br>
+  <input type="checkbox" id="australia" name="continents[]" value="au">
+  <label for="australia">Australia</label><br>
+  <input type="checkbox" id="africa" name="continents[]" value="af">
+  <label for="africa">Africa</label><br>
+  <input type="checkbox" id="antarctica" name="continents[]" value="an">
+  <label for="antarctica">Antarctica</label><br><br><br>
 
-    <button class="btn"><input type="submit"></button>
-  </form>
+  <input class="submitbtn" type="submit"></button>
+
+</form>
 </body>
+
 </html>

@@ -26,7 +26,9 @@
 
   <button type="button" onclick="clickme()">Click Me</button><br><br>
 
-  <button class="btn" type='button' onclick="location.href = '../home/portfolio.php'">Back To Portfolio</button>
+  <p class="btn">
+    <button type='button' onclick="location.href = '../home/portfolio.php'">Back To Portfolio</button>
+  </p>
 
   <script>
     $(function () {
@@ -36,8 +38,8 @@
       });
     });
 
-    $(function() {
-      $("#btn2").click(function() {
+    $(function () {
+      $("#btn2").click(function () {
         $("#div3").fadeToggle("hide");
       });
     });

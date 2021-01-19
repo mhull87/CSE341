@@ -46,7 +46,7 @@ a:visited {
   color: violet;
 }
 
-button {
+button, .submitbtn {
   background-color: rgb(112, 21, 112);
   border: 2px violet dotted;
   border-radius: 20px;
