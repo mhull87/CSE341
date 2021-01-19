@@ -8,9 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Staatliches&display=swap" rel="stylesheet">
 </head>
 <body>
-  <p><?php echo $_POST["name"]; ?></p>
-  <p><a href="mailto:<?php echo $_POST["email"]; ?>"><?php echo$_POST["email"]; ?></a></p>
-  <p><?php echo $_POST["major"]; ?></p>
-  <p><?php echo $_POST["comments"]; ?></p>
+  <p>Name: <?php echo $_POST["name"]; ?></p>
+  <p>Email: <a href="mailto:<?php echo $_POST["email"]; ?>"><?php echo$_POST["email"]; ?></a></p>
+  <p>Major: <?php echo $_POST["major"]; ?></p>
+  <p>Comments: <?php echo $_POST["comments"]; ?></p>
+  <p>Continents Visited: <?php echo $_POST["continents"]; ?></p>
 </body>
 </html>
