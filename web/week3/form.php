@@ -32,7 +32,7 @@ if ($selected == 'na') {
 echo "</ul>"; ?>
   </p>
 
-<?php include '../home/footer.php'; ?>
+<?php include '../common/footer.php'; ?>
 
 </body>
 </html>
