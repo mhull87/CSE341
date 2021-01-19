@@ -12,7 +12,7 @@
 </head>
 <body>
   <p><?php echo $_POST["name"]; ?></p>
-  <p><?php echo $_POST["email"]; ?></p>
+  <p><a href="mailto:<?php echo $_POST["email"]; ?>"></a></p>
   <p><?php echo $_POST["major"]; ?></p>
   <p><?php echo $_POST["comments"]; ?></p>
 </body>
