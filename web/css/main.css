@@ -89,3 +89,7 @@ p {
   border-radius: 20px;
   box-shadow: 5px 10px 20px rgb(140, 228, 255);
 }
+
+.bullets {
+  list-style: disc;
+}

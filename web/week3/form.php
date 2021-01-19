@@ -16,7 +16,7 @@
   <p>Comments: <?php echo $_POST["comments"]; ?></p>
   <p><u>Continents Visited</u><br><?php foreach($_POST["continents"] as $selected)
   {
-    echo "<ul>";
+    echo "<ul class='bullets'>";
     echo "<li>".$selected."</li></br>";
     echo "</ul>";
   } ?>
