@@ -2,7 +2,7 @@
 
 <main>
   <h1>Melissa Hull</h1>
-  <img src="images/profileresize.jpg" class='profileimg' alt="Melissa's Profile Picture">
+  <img src="../images/profileresize.jpg" class='profileimg' alt="Melissa's Profile Picture">
   <p>Hi, I’m Melissa Hull. I’m currently studying my last semester at Brigham Young University-Idaho. My major is
     Professional Studies with an emphasis in Web Development and Family History Research. Front-end development is my
     passion and with my vast knowledge of server-side programming, I have a notable ability to communicate with the
