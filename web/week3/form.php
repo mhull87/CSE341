@@ -2,7 +2,7 @@
 
 <body>
   <p>Name: <?php echo $_POST["name"]; ?></p>
-  <p>Email: <a href="mailto:<?php echo $_POST["email"]; ?>"><?php echo$_POST["email"]; ?></a></p>
+  <p>Email: <a href="mailto:<?php echo $_POST["email"]; ?>"><?php echo$_POST["<u>email</u>"]; ?></a></p>
   <p>Major: <?php echo $_POST["major"]; ?></p>
   <p>Comments: <?php echo $_POST["comments"]; ?></p>
   <p><u>Continents Visited</u><br>
