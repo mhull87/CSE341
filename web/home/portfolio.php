@@ -3,6 +3,7 @@
 <h1>Melissa Hull's Portfolio</h1>
 <ul>
   <li><a href="../week2/index.html">Week 2</a></li>
+  <li><a href="../week3/index.php">Week 3</a></li>
 </ul>
 
 <footer>
