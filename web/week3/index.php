@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include '../common/header.php'; ?>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Week 3 Team Activity</title>
-  <link href="../css/main.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Staatliches&display=swap" rel="stylesheet">
-</head>
-
-<body>
   <form action="form.php" method="POST">
     <label for="name">Name</label> 
     <input type="text" name="name" id="name"><br>
