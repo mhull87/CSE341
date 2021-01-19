@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <title>Week 3 Team Activity</title>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Staatliches&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <form action="form.php" method="POST">
+    <label for="name">Name</label> 
+    <input type="text" name="name" id="name"><br>
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email"><br><br><br>
+    
+    <p><strong><u>Major</u></strong></p>
+    <input type="radio" id="cs" name="major" value="computerScience">
+    <label for="cs">Computer Science</label><br>
+    <input type="radio" id="wdd" name="major" value="webDesignAndDevelopment">
+    <label for="wdd">Web Design and Development</label><br>
+    <input type="radio" id="cis" name="major" value="computerInformationTechnology">
+    <label for="cis">Computer Information Technonlgy</label><br>
+    <input type="radio" id="ce" name="major" value="computerEngineering">
+    <label for="ce">Computer Engineering</label><br><br><br>
+
+    <label for="comments">Comments</label>
+    <textarea id="comments" name="comments"></textarea><br><br>
+
+    <input type="submit">
+  </form>
+</body>
+</html>
