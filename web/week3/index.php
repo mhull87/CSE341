@@ -41,7 +41,7 @@
     <input type="checkbox" id="antarctica" name="continents[]" value="an">
     <label for="antarctica">Antarctica</label><br><br><br>
 
-    <input type="submit">
+    <button class="btn"><input type="submit"></button>
   </form>
 </body>
 </html>
