@@ -12,6 +12,6 @@
   <p>Email: <a href="mailto:<?php echo $_POST["email"]; ?>"><?php echo$_POST["email"]; ?></a></p>
   <p>Major: <?php echo $_POST["major"]; ?></p>
   <p>Comments: <?php echo $_POST["comments"]; ?></p>
-  <p>Continents Visited: <?php echo $_POST["continents"]; ?></p>
+  <p>Continents Visited: <?php echo $_POST["continents[]"]; ?></p>
 </body>
 </html>
