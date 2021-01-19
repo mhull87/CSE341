@@ -18,7 +18,7 @@
     <?php echo "<ul>"; ?>
     <?php foreach($_POST["continents"] as $selected)
   {
-    echo "<li class='bullets'>".$selected."</li></br>";
+    echo "<li class='bullets'>".$selected."</li>";
   } ?>
     <?php echo "</ul>"; ?>
   </p>
