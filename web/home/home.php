@@ -11,4 +11,4 @@
     remarkable scheduling and organizational skills. I’d really love to work for you.</p>
 </main>
 
-<?php include 'common/footer.php'; ?>
+<?php include '../common/footer.php'; ?>
