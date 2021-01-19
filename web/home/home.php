@@ -1,4 +1,4 @@
-<?php include 'common/header.php'; ?>
+<?php include '../common/header.php'; ?>
 
 <main>
   <h1>Melissa Hull</h1>
