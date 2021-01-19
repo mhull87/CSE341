@@ -31,8 +31,8 @@ if ($selected == 'na') {
 
 echo "</ul>"; ?>
   </p>
-</body>
 
 <?php include '../home/footer.php'; ?>
 
+</body>
 </html>
