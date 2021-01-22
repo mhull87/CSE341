@@ -1,4 +1,4 @@
-<?php include '../common/header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/common/header.php"; ?>
 
 <h1>Melissa Hull's Portfolio</h1>
 <ul>

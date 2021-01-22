@@ -32,7 +32,8 @@ if ($selected == 'na') {
 echo "</ul>"; ?>
   </p>
 
-<?php include '../common/footer.php'; ?>
+  <?php include '../common/footer.php'; ?>
 
 </body>
+
 </html>

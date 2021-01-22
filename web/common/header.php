@@ -14,6 +14,3 @@
 
   </header>
 
-  <nav>
-    <?php include 'common/nav.php'; ?>
-  </nav>
