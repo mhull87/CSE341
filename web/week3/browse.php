@@ -1,5 +1,3 @@
-<? session_start(); ?>
-
 <?php include $_SERVER['DOCUMENT_ROOT']."/cse341/web/common/header.php"; ?>
 
 <main>
