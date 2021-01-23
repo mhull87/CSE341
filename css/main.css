@@ -46,9 +46,9 @@ a:visited {
   color: violet;
 }
 
-button, .submitbtn {
+button {
   background-color: rgb(112, 21, 112);
-  border: 2px violet dotted;
+  border: 1px black solid;
   border-radius: 20px;
   padding: .5rem;
   color: rgb(255, 239, 255);
@@ -59,7 +59,7 @@ button, .submitbtn {
 }
 
 button:hover {
-  box-shadow: 0 0 20px 10px rgb(140, 228, 255);
+  box-shadow: 0 0 40px 40px violet;
 }
 
 .btn {
@@ -80,33 +80,4 @@ textarea {
 
 p {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.profileimg {
-  float: left;
-  margin: 0 4% 4%;
-  border: 2px dotted violet;
-  border-radius: 20px;
-  box-shadow: 5px 10px 20px rgb(140, 228, 255);
-}
-
-.bullets {
-  list-style: disc;
-}
-
-.shoppingcartp {
-  padding: 0;
-  margin: 0;
-}
-
-.removebtn {
-  background-color:red;
-  border: 2px black dotted;
-  border-radius: 0;
-  padding: .2rem;
-  color: white;
-  font: 1rem 'Bad Script', cursive;
-  cursor: pointer;
-  transition: box-shadow .3s ease-in-out;
-  margin: 1rem;
 }
