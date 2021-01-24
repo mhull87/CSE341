@@ -1,6 +1,6 @@
 <?php session_start();
 
-include $_SERVER['DOCUMENT_ROOT']."/cse341/web/common/header.php"; ?>
+include '../common/header.php'; ?>
 
 <main>
   <h1>Your Shopping Cart</h1>

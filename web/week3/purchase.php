@@ -1,6 +1,6 @@
 <?php session_start();
 
-include $_SERVER['DOCUMENT_ROOT']."/cse341/web/common/header.php";
+include '../common/header.php';
 
 $name = htmlspecialchars($_POST['name']);
 $address = htmlspecialchars($_POST['address']);

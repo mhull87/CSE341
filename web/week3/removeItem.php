@@ -1,6 +1,6 @@
 <?php session_start();
 
-include $_SERVER['DOCUMENT_ROOT']."/cse341/web/common/header.php"; ?>
+include '../common/header.php'; ?>
 
 <h1>Item Removed</h1>
 
@@ -10,8 +10,8 @@ foreach ($_SESSION as $key=>$val) {
         unset($_SESSION[$val]);
     }
 }
-
 ?>
+
 <footer>
   <button onclick="location.href = 'shoppingCart.php'" title="Back To Cart">Back To Cart</button>
   <button onclick="location.href = 'checkOut.php'" title="Check Out">Check Out</button>
