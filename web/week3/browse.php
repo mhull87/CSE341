@@ -3,6 +3,15 @@
 include $_SERVER['DOCUMENT_ROOT']."/cse341/web/common/header.php";
 ?>
 
+include $_SERVER['DOCUMENT_ROOT']."/cse341/web/common/header.php"; 
+if(!empty($_SESSION['Folder']))
+{
+    echo $_SESSION['Folder'];
+}
+else
+{
+    echo "Session not set yet.";
+}?>
 <main>
   <h1>School Supplies</h1>
   <form action="shoppingCart.php" method="POST">
