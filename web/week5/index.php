@@ -24,6 +24,7 @@ catch (PDOException $ex)
 
 foreach ($db->query('SELECT username, password FROM note_user') as $row)
 {
+  echo 'foreach example';
   echo 'user: '.$row['username'];
   echo ' password: '.$row['password'];
   echo '<br/>';
@@ -32,7 +33,7 @@ foreach ($db->query('SELECT username, password FROM note_user') as $row)
 $statement = $db->query('SELECT username, password FROM note_user');
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
-  echo 'user: '.$row['username'].' password: '.$row['password'].'<br/>';
+  echo 'while example <br/> user: '.$row['username'].' password: '.$row['password'].'<br/>';
 }
 
 $statement = $db->query('SELECT username, passowrd FROM note_user');
