@@ -40,13 +40,13 @@ catch (PDOException $ex)
 // $results = $statement2->fetchAll(PDO::FETCH_ASSOC);
 
 
-$stmt = $db->prepare('SELECT * FROM table WHERE id=:id AND name=:name');
+$stmt = $db->prepare('SELECT * FROM note_user WHERE id=:id AND name=:name');
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// $stmt2 = $db->prepare('SELECT * FROM table WHERE id=:id AND name=:name');
+// $stmt2 = $db->prepare('SELECT * FROM note_user WHERE id=:id AND name=:name');
 // $stmt2->execute(array(':name' => $name, ':id' => $id));
 // $rows = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 ?>
