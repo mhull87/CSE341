@@ -38,4 +38,5 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 $statement = $db->query('SELECT username, passowrd FROM note_user');
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+echo $results;
 ?>
