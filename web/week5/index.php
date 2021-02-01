@@ -21,12 +21,11 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-if ($db)
-{
-  echo 'Connected'.$db;
 
-}else 
+foreach ($db->query('SELECT username, password FROM note_user') as $row)
 {
-  echo "Not Connected";
+  echo 'user: '.$row['username'];
+  echo ' password: '.$row['password'];
+  echo '<br/>';
 }
 ?>
