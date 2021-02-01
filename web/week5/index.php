@@ -21,4 +21,12 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
+if ($db)
+{
+  echo 'Connected'.$db;
+
+}else 
+{
+  echo "Not Connected";
+}
 ?>
