@@ -51,9 +51,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET")
     
     <br><br>';
   }
+  searchBook($id, $db);
+
 } else
 {
-  searchBook($id, $db);
+ // searchBook($id, $db);
 }
 
  function searchBook($id, $db)
