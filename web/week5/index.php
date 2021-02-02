@@ -42,26 +42,33 @@ catch (PDOException $ex)
   <h1>Scripture Resources</h1>
 
   <form method='post' action=" <?php htmlspecialchars($_SERVER["PHP_SELF"]) ?> ">
-<label for="text">Search: </label>
-<input type="text" id="text" name="text">
-</form>
+    <label for="text">Search: </label>
+    <input type="text" id="text" name="text">
+  </form>
 
 
- <?php 
+  <?php 
 if ($_SERVER["REQUEST_METHOD"] == "GET")
 {
-   foreach($db->query('SELECT book, chapter, verse, content FROM Scriptures') AS $row)
+   foreach($db->query('SELECT * FROM Scriptures') AS $row)
   {
-    echo '<b>'.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</b> - "'.$row['content'].'"<br><br>';
+    echo '<b>'.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</b> - 
+    <form action="details.php" method="POST">
+    <input type="hidden" name="id" value="' . $row['id'] . '">
+    <input type="submit">
+    </form>
+    
+    <br><br>';
   }
 } else
 {
   searchBook($text, $db);
 }
+
  function searchBook($text, $db)
 {
   $stmt = $db->prepare('SELECT book, chapter, verse, content FROM Scriptures WHERE book=:text');
- $stmt->bindValue(':text', $text, PDO::PARAM_INT);
+ $stmt->bindValue(':text', $text, PDO::PARAM_STR);
  $stmt->execute();
  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
   foreach($rows AS $row)
@@ -71,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET")
 
 }
 
-  ?> 
+  ?>
 </body>
 
 </html>
