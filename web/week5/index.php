@@ -1,4 +1,10 @@
 <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+  $text = $_POST['text'];
+}
+
+
 
 try
 {
@@ -25,19 +31,49 @@ catch (PDOException $ex)
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scripture Resources</title>
 </head>
+
 <body>
   <h1>Scripture Resources</h1>
-  <?php foreach($db->query('SELECT book, chapter, verse, content FROM Scriptures') AS $row)
+
+  <form method='post' action=" <?php htmlspecialchars($_SERVER["PHP_SELF"]) ?> ">
+<label for="text">Search: </label>
+<input type="text" id="text" name="text">
+</form>
+
+
+ <?php 
+if ($_SERVER["REQUEST_METHOD"] == "GET")
+{
+   foreach($db->query('SELECT book, chapter, verse, content FROM Scriptures') AS $row)
   {
     echo '<b>'.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</b> - "'.$row['content'].'"<br><br>';
   }
-  ?>
+} else
+{
+  searchBook($text, $db);
+}
+ function searchBook($text, $db)
+{
+  $stmt = $db->prepare('SELECT book, chapter, verse, content FROM Scriptures WHERE book=:text');
+ $stmt->bindValue(':text', $text, PDO::PARAM_INT);
+ $stmt->execute();
+ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  foreach($rows AS $row)
+  {
+    echo '<b>'.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</b> - "'.$row['content'].'"<br><br>';
+  }
+
+}
+
+  ?> 
 </body>
+
 </html>
 <!-- foreach ($db->query('SELECT username, password FROM note_user') as $row)
 {
@@ -52,7 +88,7 @@ catch (PDOException $ex)
 //   echo 'while example <br/> user: '.$row['username'].' password: '.$row['password'].'<br/>';
 // }
 
-// $statement2 = $db->query('SELECT username, passowrd FROM note_user');
+// $statement2 = $db->query('SELECT username, password FROM note_user');
 // $results = $statement2->fetchAll(PDO::FETCH_ASSOC);
 
 
