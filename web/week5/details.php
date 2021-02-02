@@ -42,21 +42,9 @@ catch (PDOException $ex)
 
 
   <?php 
-if ($_SERVER["REQUEST_METHOD"] == "GET")
-{
-   foreach($db->query('SELECT * FROM Scriptures') AS $row)
-  {
-    echo '<b>'.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</b> - 
-    <form action
-    
-    <br><br>';
-  }
+
   details($id, $db);
 
-} else
-{
- // searchBook($id, $db);
-}
 
  function details($id, $db)
 {
