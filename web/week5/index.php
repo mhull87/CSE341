@@ -53,15 +53,9 @@ catch (PDOException $ex)
   <?php 
 if ($_SERVER["REQUEST_METHOD"] == "GET" AND $text == "")
 {
-   foreach($db->query('SELECT * FROM Scriptures') AS $row)
+   foreach($db->query('SELECT book, chapter, verse, content FROM Scriptures') AS $row)
   {
-    echo '<b>'.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</b> - 
-    <form action="details.php" method="POST">
-    <input type="hidden" name="id" value="' . $row['id'] . '">
-    <input type="submit">
-    </form>
-    
-    <br><br>';
+    echo '<b>'.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</b> - "'.$row['content'].'"<br><br>';
   }
 } else
 {

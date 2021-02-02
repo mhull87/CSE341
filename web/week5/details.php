@@ -51,14 +51,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET")
     
     <br><br>';
   }
-  searchBook($id, $db);
+  details($id, $db);
 
 } else
 {
  // searchBook($id, $db);
 }
 
- function searchBook($id, $db)
+ function details($id, $db)
 {
   $stmt = $db->prepare('SELECT book, chapter, verse, content FROM Scriptures WHERE id=:id');
  $stmt->bindValue(':id', $id, PDO::PARAM_INT);
