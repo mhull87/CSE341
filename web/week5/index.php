@@ -1,4 +1,7 @@
 <?php
+
+$text = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
   $text = $_POST['text'];
@@ -48,7 +51,7 @@ catch (PDOException $ex)
 
 
   <?php 
-if ($_SERVER["REQUEST_METHOD"] == "GET")
+if ($_SERVER["REQUEST_METHOD"] == "GET" AND $text == "")
 {
    foreach($db->query('SELECT * FROM Scriptures') AS $row)
   {
