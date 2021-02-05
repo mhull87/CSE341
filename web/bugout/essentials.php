@@ -23,7 +23,7 @@ catch (PDOException $ex)
   die();
 }
 
-$query = 'SELECT item_name, item_use FROM items';
+$query = 'SELECT item_name, item_use item_id FROM items';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -41,8 +41,14 @@ include 'common/header.php';
       {
         $name = $item['item_name'];
         $use = $item['item_use'];
+        $id = $item['item_id'];
 
-        echo "<li><p>Item: $name<br>Use: $use</p></li>";
+        echo "<li>$name<br>
+        <form action='details.php' method='POST'>
+        <input type'hidden' name='item_id' value='$id'>
+        <input type='submit' vlaue='Details' name='details' id='details'>
+        </form>
+        </li>";
       }
     ?>
   </ul>

@@ -11,7 +11,7 @@ include 'common/header.php';
     <label for="password">Password</label><br>
     <input type="password" name="password" id="password"><br><br>
     <input type="submit" value="Login">
-  </form>
+  </form><br>
 
   <a href="register.php">Not a member yet?</a>
 
