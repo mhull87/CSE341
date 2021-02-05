@@ -30,7 +30,7 @@ $stmtbag = $db->prepare($bag);
 $stmtbag->execute();
 $bagitems = $stmtbag->fetchAll(PDO::FETCH_ASSOC);
 
-$extra = 'SELECT i.item_name, e.packed, e.quantity, i.item_use, e.location
+$extra = 'SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
           FROM extras e JOIN items i ON e.item_id = i.item_id';
 $stmtextra = $db->prepare($extra);
 $stmtextra->execute();
