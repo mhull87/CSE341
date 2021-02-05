@@ -3,7 +3,7 @@ include 'common/header.php';
 ?>
 
 <main>
-  <h2>Add Items To Your Bug Out Bag</h2>
+  <h2>Add Other Items To Your Bug Out Bag</h2>
   <form action="#" method="POST">
 
     <label for="item_name">Item Name</label><br>

@@ -38,10 +38,10 @@ include 'common/header.php';
     <?php
       foreach ($items as $item)
       {
-        $id = $item['item_name'];
+        $name = $item['item_name'];
         $use = $item['item_use'];
 
-        echo "<li><p>$id</p><p>$use</p></li>";
+        echo "<li><p>$name</p><p>$use</p></li>";
       }
     ?>
   </ul>
