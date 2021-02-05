@@ -42,7 +42,7 @@ include 'common/header.php';
         $name = $item['item_name'];
         $use = $item['item_use'];
 
-        echo "<li><p>$name</p><p>$use</p></li>";
+        echo "<li><p>Item: $name<br>Use: $use</p></li>";
       }
     ?>
   </ul>
