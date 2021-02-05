@@ -29,6 +29,6 @@ nav li a {
   color: white;
 }
 
-nav li:hover a {
+nav li:hover {
   color: sienna;
 }
