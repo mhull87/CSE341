@@ -1,7 +1,7 @@
 CREATE TABLE items (
-  item_id SERIAL NOT NULL,
-  item_name VARCHAR(50) PRIMARY KEY NOT NULL,
-  item_use VARCHAR(200)
+  item_id SERIAL PRIMARY KEY,
+  item_name VARCHAR(50) NOT NULL UNIQUE,
+  item_use VARCHAR(255)
 );
 
 INSERT INTO items (item_name, item_use)
@@ -21,25 +21,34 @@ INSERT INTO items (item_name, item_use)
   VALUES ('Food', '72-hour emergency food supply.');
 
 CREATE TABLE bugout_bag (
-  bag_id SERIAL PRIMARY KEY NOT NULL,
+  bag_id SERIAL PRIMARY KEY,
+  item_id INT NOT NULL REFERENCES items (item_id),
   packed VARCHAR(3) NOT NULL,
-  quantity INT,
-  item_name VARCHAR(50) NOT NULL REFERENCES items (item_name)
+  quantity INT
 );
 
-INSERT INTO bugout_bag (packed, quantity, item_name)
-  VALUES ('yes', 3, 'Life Straw');
+INSERT INTO bugout_bag (packed, quantity, item_id)
+  VALUES ('yes', 3, 1);
 
-INSERT INTO bugout_bag (packed, item_name)
-  VALUES ('no', 'Food');
+INSERT INTO bugout_bag (packed, item_id)
+  VALUES ('no', 5);
 
 CREATE TABLE extras (
-  extra_id SERIAL PRIMARY KEY NOT NULL,
+  extra_id SERIAL PRIMARY KEY,
   packed VARCHAR(3) NOT NULL,
   quantity INT,
-  item_name VARCHAR(50) NOT NULL REFERENCES items (item_name),
+  item_id INT NOT NULL REFERENCES items (item_id),
   item_location VARCHAR(50) NOT NULL
 );
 
-INSERT INTO extras (packed, item_name, item_location)
-  VALUES ('yes', 'Extra batteries', 'Stash 1');
+INSERT INTO extras (packed, item_id, item_location)
+  VALUES ('yes', 4, 'Stash 1');
+
+SELECT * FROM bugout_bag b JOIN items i ON b.item_id = i.item_id;
+
+SELECT * FROM bugout_bag b JOIN items i ON b.item_id = i.item_id
+WHERE b.packed = 'yes';
+
+SELECT b.packed, i.item_name FROM items i JOIN bugout_bag b ON b.item_id = i.item_id WHERE b.packed = 'yes';
+
+SELECT item_name, item_use FROM items;

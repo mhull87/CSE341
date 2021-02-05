@@ -1,5 +1,5 @@
 <footer>
-
+  <hr>
 </footer>
 </body>
 

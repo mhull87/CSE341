@@ -1,6 +1,5 @@
 <ul>
-<li><a href="#">Survival Essentials</a></li>
-<li><a href="#">Helpful Extras</a></li>
-<li><a href="#">My Bug Out Bag</a></li>
-<li><a href="#">My Extras</a></li>
+  <li><a href="index.php">Home</a></li>
+  <li><a href="essentials.php">Survival Essentials</a></li>
+  <li><a href="mybag.php">My Bug Out Bag</a></li>
 </ul>
