@@ -1,5 +1,6 @@
 <?php
 //require_once('connections/dbConnect.php');
+//$db = get_db();
 try
 {
   $dbUrl = getenv('DATABASE_URL');
