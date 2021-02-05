@@ -41,7 +41,7 @@ include 'common/header.php';
         $id = $item['item_name'];
         $use = $item['item_use'];
 
-        echo "<li><p>$id $use</p></li>";
+        echo "<li><p>$id</p><p>$use</p></li>";
       }
     ?>
   </ul>
