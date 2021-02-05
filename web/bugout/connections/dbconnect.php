@@ -22,7 +22,7 @@
     $dbPort = $dbopts["port"];
     $dbUser = $dbopts["user"];
     $dbPassword = $dbopts["pass"];
-    $dbName = ltrim($dbopts["path"], '/');
+    $dbName = ltrim($dbopts["path"],'/');
 
     //create the PDO connection
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort,dbname=$dbName", $dbUser, $dbPassword);
