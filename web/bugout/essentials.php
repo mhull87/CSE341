@@ -1,5 +1,5 @@
 <?php
-require_once('/connections/dbConnect.php');
+require_once('connections/dbConnect.php');
 $db = get_db();
 
 $query = 'SELECT item_name, item_use FROM items';
