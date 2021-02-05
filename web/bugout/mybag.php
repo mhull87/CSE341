@@ -24,11 +24,17 @@ catch (PDOException $ex)
   die();
 }
 
-$query = 'SELECT i.item_name, b.packed, b.quantity, i.item_use, b.item_location
+$bag = 'SELECT i.item_name, b.packed, b.quantity, i.item_use
           FROM bugout_bag b JOIN items i ON b.item_id = i.item_id';
-$stmt = $db->prepare($query);
-$stmt->execute();
-$items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$stmtbag = $db->prepare($bag);
+$stmtbag->execute();
+$bagitems = $stmtbag->fetchAll(PDO::FETCH_ASSOC);
+
+$extra = 'SELECT i.item_name, e.packed, e.quantity, i.item_use, e.location
+          FROM extras e JOIN items i ON e.item_id = i.item_id';
+$stmtextra = $db->prepare($extra);
+$stmtextra->execute();
+$itemsextra = $stmtextra->fetchAll(PDO::FETCH_ASSOC);
 
 include 'common/header.php';
 ?>
@@ -40,12 +46,12 @@ include 'common/header.php';
   <!-- list out the items in the bag -->
   <ul>
   <?php
-    foreach ($items as $item)
+    foreach ($bagitems as $bagitem)
     {
-      $name = $item['item_name'];
-      $packed = $item['packed'];
-      $quantity = $item['quantity'];
-      $use = $item['item_use'];
+      $name = $bagitem['item_name'];
+      $packed = $bagitem['packed'];
+      $quantity = $bagitem['quantity'];
+      $use = $bagitem['item_use'];
 
       echo "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
     }
@@ -59,13 +65,13 @@ include 'common/header.php';
   <!-- list out the extras they have -->
   <ul>
     <?php 
-    foreach ($items as $item)
+    foreach ($itemsextra as $itemextra)
     {
-      $name = $item['item_name'];
-      $packed = $item['packed'];
-      $quantity = $item['quantity'];
-      $use = $item['item_use'];
-      $location = $item['item_location'];
+      $name = $itemextra['item_name'];
+      $packed = $itemextra['packed'];
+      $quantity = $itemextra['quantity'];
+      $use = $itemextra['item_use'];
+      $location = $itemextra['item_location'];
 
       echo "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use<br>Location: $location</p></li>";
     }
