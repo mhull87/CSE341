@@ -12,6 +12,7 @@
 <body>
   <header>
     <h1>Bug Out Survival</h1>
+    <a class="login" href="../login.php">Login</a>
   </header>
 
   <nav>
