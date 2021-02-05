@@ -46,7 +46,7 @@ include 'common/header.php';
         echo "<li>$name<br>
         <form action='details.php' method='POST'>
         <input type='hidden' name='id' value='$id'>
-        <input type='submit' value='Details' name='details' id='details'><br>
+        <input type='submit' value='Details' name='details' id='details'><br><br>
         </form>
         </li>";
       }
