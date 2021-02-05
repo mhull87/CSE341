@@ -13,3 +13,5 @@
   <header>
 <h1>Bug Out Survival</h1>
   </header>
+
+  <?php include 'nav.php'; ?>
