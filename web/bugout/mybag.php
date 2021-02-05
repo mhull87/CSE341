@@ -24,7 +24,7 @@ catch (PDOException $ex)
   die();
 }
 
-$query = 'SELECT i.item_name, b.packed, b.quantity, i.item_use, b.location
+$query = 'SELECT i.item_name, b.packed, b.quantity, i.item_use, b.item_location
           FROM bugout_bag b JOIN items i ON b.item_id = i.item_id';
 $stmt = $db->prepare($query);
 $stmt->execute();
@@ -45,7 +45,7 @@ include 'common/header.php';
       $name = $item['item_name'];
       $packed = $item['packed'];
       $quantity = $item['quantity'];
-      $use = $item['use'];
+      $use = $item['item_use'];
 
       echo "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
     }
@@ -64,8 +64,8 @@ include 'common/header.php';
       $name = $item['item_name'];
       $packed = $item['packed'];
       $quantity = $item['quantity'];
-      $use = $item['use'];
-      $location = $item['location'];
+      $use = $item['item_use'];
+      $location = $item['item_location'];
 
       echo "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use<br>Location: $location</p></li>";
     }
