@@ -93,3 +93,20 @@ p {
 .bullets {
   list-style: disc;
 }
+
+.shoppingcartp {
+  padding: 0;
+  margin: 0;
+}
+
+.removebtn {
+  background-color:red;
+  border: 2px black dotted;
+  border-radius: 0;
+  padding: .2rem;
+  color: white;
+  font: 1rem 'Bad Script', cursive;
+  cursor: pointer;
+  transition: box-shadow .3s ease-in-out;
+  margin: 1rem;
+}
