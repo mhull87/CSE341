@@ -42,7 +42,7 @@ include 'common/header.php';
     $stmt = $db->prepare('SELECT item_id, item_name, item_use FROM items WHERE item_id=:id');
   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
   $stmt->execute();
-  $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     echo "<p>$id $name $use</p>";
   
