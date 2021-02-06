@@ -26,8 +26,8 @@ echo
     <input type='radio' name='packed' id='need' value='no'>
     <label for='need'>No</label><br><br>
 
-    <label for='item_location'>Location</label>
-    <input type='text' name='item_location' id='item_location'>
+    <label for='item_location'>Location</label><br>
+    <input type='text' name='item_location' id='item_location'><br><br>
 
     <input type='hidden' name='id' value='$id'>
 
