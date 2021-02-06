@@ -3,29 +3,6 @@
   $name = $_POST['name'];
   $use = $_POST['use'];
 
-
-try
-{
-  $dbUrl = getenv('DATABASE_URL');
-
-  $dbOpts = parse_url($dbUrl);
-
-  $dbHost = $dbOpts["host"];
-  $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
-  $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
-
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
-
 include 'common/header.php';
 ?>
 
@@ -35,9 +12,15 @@ include 'common/header.php';
 <?php
     echo "<p>Item #: $id<br>Name: $name<br>Use: $use</p>
     <form action='addtobag.php' method='POST'>
+    <input type='hidden' name='id' value='$id'>
+    <input type='hidden' name='name' value='$name'>
+    <input type='hidden' name='use' value='$use'>
     <input type='submit' value='Add To Bag'>
     </form>
     <form action='addtomyextras.php' method='POST'>
+    <input type='hidden' name='id' value='$id'>
+    <input type='hidden' name='name' value='$name'>
+    <input type='hidden' name='use' value='$use'>
     <input type='submit' value='Add To Extras'>
     </form>";
   ?>
