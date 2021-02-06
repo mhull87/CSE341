@@ -33,7 +33,13 @@ include 'common/header.php';
   <h2>Item Details</h2>
 
 <?php
-    echo "<p>Item #: $id<br>Name: $name<br>Use: $use</p>";
+    echo "<p>Item #: $id<br>Name: $name<br>Use: $use</p>
+    <form action='#' method='POST'>
+    <input type='submit' value='Add To Bag'>
+    </form>
+    <form action='#' method='POST'>
+    <input type='submit' value='Add To Extras'>
+    </form>";
   ?>
 </main>
 

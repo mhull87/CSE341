@@ -18,7 +18,28 @@ INSERT INTO items (item_name)
   VALUES ('Extra batteries');
 
 INSERT INTO items (item_name, item_use)
-  VALUES ('Food', '72-hour emergency food supply.');
+  VALUES ('Food', 'At least a 72-hour emergency food supply is suggest.');
+
+INSERT INTO items (item_name, item_use)
+  VALUES ('Waterproof Matches', 'Starting fires in any weather condition.');
+
+INSERT INTO items (item_name)
+  VALUES ('Water');
+
+INSERT INTO items (item_name)
+  VALUES ('Whistle');
+
+INSERT INTO items (item_name, item_use)
+  VALUES ('First Aid Kit', 'Bandaids, Bandages, Tape, Neosporin');
+
+INSERT INTO items (item_name)
+  VALUES ('Hand Crank Emergency Radio');
+
+INSERT INTO items (item_name)
+  VALUES ('blanket');
+
+INSERT INTO items (item_name)
+  VALUES ('Compass');
 
 CREATE TABLE bugout_bag (
   bag_id SERIAL PRIMARY KEY,
