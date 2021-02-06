@@ -34,10 +34,10 @@ include 'common/header.php';
 
 <?php
     echo "<p>Item #: $id<br>Name: $name<br>Use: $use</p>
-    <form action='#' method='POST'>
+    <form action='addtobag.php' method='POST'>
     <input type='submit' value='Add To Bag'>
     </form>
-    <form action='#' method='POST'>
+    <form action='addtomyextras.php' method='POST'>
     <input type='submit' value='Add To Extras'>
     </form>";
   ?>
