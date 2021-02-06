@@ -1,10 +1,8 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST')
-{
   $id = $_POST['id'];
   $name = $_POST['name'];
   $use = $_POST['use'];
-}
+
 
 try
 {
@@ -35,18 +33,7 @@ include 'common/header.php';
   <h2>Item Details</h2>
 
 <?php
-  details ($id, $name, $use, $db);
-
-  function details ($id, $name, $use, $db)
-  {
-    $stmt = $db->prepare('SELECT item_id, item_name, item_use FROM items WHERE item_id=:id');
-  $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-  $stmt->execute();
-  $stmt->fetchAll(PDO::FETCH_ASSOC);
-
     echo "<p>$id $name $use</p>";
-  
-}
   ?>
 </main>
 
