@@ -58,8 +58,9 @@ include 'common/header.php';
   ?>
   </ul>
 
-  <a href="#">Sort By Packed</a><br><br>
-  <a href="#">Sort By Needed</a>
+  <a href="#">See All Packed</a>
+  <a href="#">See All Needed</a>
+  <a href="#">See All</a>
 
   <h3>My Extras</h3>
 
@@ -79,8 +80,10 @@ include 'common/header.php';
 ?>
 
   </ul>
-  <a href="#">Sort By Packed</a><br><br>
+  <a href="#">Sort By Packed</a>
   <a href="#">Sort By Needed</a>
+  <a href="#">See All</a>
+
 </main>
 
 <?php
