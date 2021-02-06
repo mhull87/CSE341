@@ -64,10 +64,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" AND $text == "")
 
  function searchBook($text, $db)
 {
-  $stmt = $db->prepare('SELECT * FROM Scriptures WHERE book=:text');
- $stmt->bindValue(':text', $text, PDO::PARAM_STR);
- $stmt->execute();
- $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $stmt = $db->prepare('SELECT * FROM Scriptures    WHERE book=:text');
+  $stmt->bindValue(':text', $text, PDO::PARAM_STR);
+  $stmt->execute();
+  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
   foreach($rows AS $row)
   {
     echo '<b>'.$row['book'].' '.$row['chapter'].':'.$row['verse'].'</b> - 

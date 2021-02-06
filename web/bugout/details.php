@@ -2,6 +2,8 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
   $id = $_POST['id'];
+  $name = $_POST['name'];
+  $use = $_POST['use'];
 }
 
 try
@@ -33,14 +35,16 @@ include 'common/header.php';
   <h2>Item Details</h2>
 
 <?php
-  details ($id, $db);
+  details ($id, $name, $use, $db);
 
-  function details ($id, $db)
+  function details ($id, $name, $use, $db)
   {
-    $stmt = $db->prepare('SELECT item_name, item_use FROM items WHERE id=:id');
+    $stmt = $db->prepare('SELECT item_id, item_name, item_use FROM items WHERE id=:id, name=:name, use=:use');
     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->bindValue(':name', $name, PDO::PARAM_STR);
+    $stmt->bindValue(':use', $use, PDO::PARAM_STR);
 
-    echo "<p>$id</p>";
+    echo "<p>$id $name $use</p>";
   }
   ?>
 </main>
