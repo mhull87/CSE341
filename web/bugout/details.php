@@ -33,7 +33,7 @@ include 'common/header.php';
   <h2>Item Details</h2>
 
 <?php
-    echo "<p>$id $name $use</p>";
+    echo "<p>Item #: $id<br>Name: $name<br>Use: $use</p>";
   ?>
 </main>
 
