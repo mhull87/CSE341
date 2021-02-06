@@ -45,7 +45,7 @@ include 'common/header.php';
 
   <!-- list out the items in the bag -->
   <ul>
-  <?php
+    <?php
     foreach ($bagitems as $bagitem)
     {
       $name = $bagitem['item_name'];
@@ -58,8 +58,9 @@ include 'common/header.php';
   ?>
   </ul>
 
-  <a href="addtobag.php">Add Items</a><br><br>
-  
+  <a href="#">Sort By Packed</a><br><br>
+  <a href="#">Sort By Needed</a>
+
   <h3>My Extras</h3>
 
   <!-- list out the extras they have -->
@@ -77,8 +78,9 @@ include 'common/header.php';
     }
 ?>
 
-    </ul>
-  <a href="addtomyextras.php">My Extras</a>
+  </ul>
+  <a href="#">Sort By Packed</a><br><br>
+  <a href="#">Sort By Needed</a>
 </main>
 
 <?php

@@ -25,6 +25,10 @@ echo
     <input type='radio' name='packed' id='need' value='no'>
     <label for='need'>No</label><br><br>
 
+    <input type='hidden' name='id' value='$id'>
+
+    <input type='hidden' name='use' value='$use'>
+
     <input type='submit' id='addtobagbtn' value='Add To My Bug Out Bag'>
 
   </form>
