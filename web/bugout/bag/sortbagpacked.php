@@ -1,7 +1,6 @@
 <?php
 
 require_once '../connections/dbconnect.php';
-include '../common/header.php';
 
 $db = get_db();
 
@@ -10,6 +9,9 @@ $seepacked = 'SELECT i.item_name, b.quantity FROM bugout_bag b JOIN items i ON b
 $stmt = $db->prepare($seepacked);
 $stmt->execute();
 $bagitems = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+include '../common/header.php';
+
 ?>
 
 <main>
