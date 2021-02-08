@@ -18,6 +18,7 @@ include 'common/header.php';
   <!-- list the items table -->
   <ul>
     <?php
+    getEssentails();
     function getEssentails()
     {
     $db = get_db();
