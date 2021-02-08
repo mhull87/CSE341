@@ -18,9 +18,7 @@ include 'common/header.php';
   <!-- list the items table -->
   <ul>
     <?php
-    getEssentails();
-    function getEssentails()
-    {
+   
     $db = get_db();
     
     $query = 'SELECT item_name, item_use, item_id FROM items';
@@ -45,7 +43,7 @@ include 'common/header.php';
         </form>
         </li>";
       }
-    }
+    
     ?>
   </ul>
 
