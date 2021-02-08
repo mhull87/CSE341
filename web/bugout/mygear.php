@@ -47,7 +47,7 @@ include 'common/header.php';
   <!-- list out the items in the bag -->
     <?php
 
-    echo "<ul>";
+    echo "<ul class='allitems'>";
   
     foreach ($bagitems as $bagitem)
     {
@@ -86,7 +86,7 @@ include 'common/header.php';
     // echo "</ul>";
   ?>
 
-  <button class="showpacked" onclick="showpacked()">See All Packed</button>
+  <button class="showpackedbtn" onclick="showpacked()">See All Packed</button>
   <a href="#">See All Needed</a>
   <a href="#">See All</a>
 
