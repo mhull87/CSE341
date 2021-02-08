@@ -9,12 +9,12 @@ $stmtbag = $db->prepare($bag);
 $stmtbag->execute();
 $bagitems = $stmtbag->fetchAll(PDO::FETCH_ASSOC);
 
-$bagpacked = 'SELECT i.item_name, b.quantity FROM butout_bag b JOIN items i ON b.item_id = i.item_id WHERE b.packed = "yes"';
+$bagpacked = 'SELECT i.item_name, b.quantity FROM bugout_bag b JOIN items i ON b.item_id = i.item_id WHERE b.packed = "yes"';
 $stmtbagpacked = $db->prepare($bagpacked);
 $stmtbagpacked->execute();
 $bagpackeditems = $stmtbagpacked->fetchAll(PDO::FETCH_ASSOC);
 
-$bagnotpacked = 'SELECT i.item_name, b.quantity FROM butout_bag b JOIN items i ON b.item_id = i.item_id WHERE b.packed = "no"';
+$bagnotpacked = 'SELECT i.item_name, b.quantity FROM bugout_bag b JOIN items i ON b.item_id = i.item_id WHERE b.packed = "no"';
 $stmtbagnotpacked = $db->prepare($bagnotpacked);
 $stmtbagnotpacked->execute();
 $bagnotpackeditems = $stmtbagnotpacked->fetchAll(PDO::FETCH_ASSOC);
