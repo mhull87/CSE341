@@ -9,10 +9,7 @@ $stmtbag = $db->prepare($bag);
 $stmtbag->execute();
 $bagitems = $stmtbag->fetchAll(PDO::FETCH_ASSOC);
 
- $bagpacked = 'SELECT i.item_name, b.quantity FROM bugout_bag b JOIN items i ON b.item_id = i.item_id WHERE b.packed = "yes"';
-$stmtbagpacked = $db->prepare($bagpacked);
-$stmtbagpacked->execute();
-$bagpackeditems = $stmtbagpacked->fetchAll(PDO::FETCH_ASSOC);
+
 
 /*$bagnotpacked = 'SELECT i.item_name, b.quantity FROM bugout_bag b JOIN items i ON b.item_id = i.item_id WHERE b.packed = "no"';
 $stmtbagnotpacked = $db->prepare($bagnotpacked);
@@ -59,19 +56,6 @@ include 'common/header.php';
       echo "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
     }
 
-    echo "</ul>
-      <ul class='showpacked'>";
-
-    foreach ($bagpackeditems as $bagpackeditem)
-    {
-      $name = $bagpackeditem['item_name'];
-      $packed = $bagpackeditem['packed'];
-      $quantity = $bagpackeditem['quantity'];
-      $use = $bagpackeditem['item_use'];
-
-      echo "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
-    }
-    echo "</ul>";
     // <ul class='hidden'>";
 
     // foreach ($bagnotpackeditems as $bagnotpackeditem)
@@ -86,7 +70,7 @@ include 'common/header.php';
     // echo "</ul>";
   ?>
 
-  <button class="showpackedbtn" onclick="showpacked()">See All Packed</button>
+  <a href="bag/sortbagpacked.php">See All Packed</button>
   <a href="#">See All Needed</a>
   <a href="#">See All</a>
 
