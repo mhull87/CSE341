@@ -35,6 +35,13 @@ include 'common/header.php';
 
       echo "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
     }
+
+    function packed()
+{
+$seepacked = 'SELECT i.item_name, b.quantity FROM butout_bag b JOIN items i ON b.item_id = i.item_id WHERE b.packed = "yes" || b.packed = "Yes" || b.packed = "YES"';
+
+return $seepacked;
+}
   ?>
   </ul>
 
