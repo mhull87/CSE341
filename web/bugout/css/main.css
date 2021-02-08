@@ -36,3 +36,7 @@ nav ul li:hover {
 p {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.hidden {
+  display: none;
+}

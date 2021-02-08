@@ -1,6 +1,5 @@
 <?php
 require_once 'connections/dbconnect.php';
-require_once 'bag/sortbag.php';
 
 $db = get_db();
 
@@ -10,11 +9,33 @@ $stmtbag = $db->prepare($bag);
 $stmtbag->execute();
 $bagitems = $stmtbag->fetchAll(PDO::FETCH_ASSOC);
 
+$bagpacked = 'SELECT i.item_name, b.quantity FROM butout_bag b JOIN items i ON b.item_id = i.item_id WHERE b.packed = "yes"';
+$stmtbagpacked = $db->prepare($bagpacked);
+$stmtbagpacked->execute();
+$bagpackeditems = $stmtbagpacked->fetchAll(PDO::FETCH_ASSOC);
+
+$bagnotpacked = 'SELECT i.item_name, b.quantity FROM butout_bag b JOIN items i ON b.item_id = i.item_id WHERE b.packed = "no"';
+$stmtbagnotpacked = $db->prepare($bagnotpacked);
+$stmtbagnotpacked->execute();
+$bagnotpackeditems = $stmtbagnotpacked->fetchAll(PDO::FETCH_ASSOC);
+
 $extra = 'SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
           FROM extras e JOIN items i ON e.item_id = i.item_id';
 $stmtextra = $db->prepare($extra);
 $stmtextra->execute();
 $itemsextra = $stmtextra->fetchAll(PDO::FETCH_ASSOC);
+
+$extrapacked = 'SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
+          FROM extras e JOIN items i ON e.item_id = i.item_id WHERE e.packed = "yes"';
+$stmtpackedextra = $db->prepare($extrapacked);
+$stmtpackedextra->execute();
+$itemspackedextra = $stmtpackedextra->fetchAll(PDO::FETCH_ASSOC);
+
+$extranotpacked = 'SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
+          FROM extras e JOIN items i ON e.item_id = i.item_id WHERE e.packed = "no"';
+$stmtnotpackedextra = $db->prepare($extranotpacked);
+$stmtnorpackedextra->execute();
+$itemsextranotpacked = $stmtnotpackedextra->fetchAll(PDO::FETCH_ASSOC);
 
 include 'common/header.php';
 ?>
@@ -24,8 +45,10 @@ include 'common/header.php';
   <h3>My Bug Out Bag</h3>
 
   <!-- list out the items in the bag -->
-  <ul>
     <?php
+
+    echo "<ul>";
+  
     foreach ($bagitems as $bagitem)
     {
       $name = $bagitem['item_name'];
@@ -35,11 +58,35 @@ include 'common/header.php';
 
       echo "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
     }
-  ?>
-  
-  </ul>
 
-    <a href="bag/sortbag.php">See All Packed</a>
+    echo "</ul>
+    <ul class='showpacked'>";
+
+    foreach ($bagpackeditems as $bagpackeditem)
+    {
+      $name = $bagpackeditem['item_name'];
+      $packed = $bagpackeditem['packed'];
+      $quantity = $bagpackeditem['quantity'];
+      $use = $bagpackeditem['item_use'];
+
+      echo "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
+    }
+    echo "</ul>
+    <ul class='hidden'>";
+
+    foreach ($bagnotpackeditems as $bagnotpackeditem)
+    {
+      $name = $bagnotpackeditem['item_name'];
+      $packed = $bagnotpackeditem['packed'];
+      $quantity = $bagnotpackeditem['quantity'];
+      $use = $bagnotpackeditem['item_use'];
+
+      echo "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
+    }
+    echo "</ul>";
+  ?>
+
+  <button class="showpacked" onclick="showpacked()">See All Packed</button>
   <a href="#">See All Needed</a>
   <a href="#">See All</a>
 
