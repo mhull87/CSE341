@@ -8,7 +8,7 @@ function packed()
 {
 $seepacked = 'SELECT i.item_name, b.quantity FROM butout_bag b JOIN items i ON b.item_id = i.item_id WHERE b.packed = "yes" || b.packed = "Yes" || b.packed = "YES"';
 
-echo $seepacked;
+return $seepacked;
 }
 header('Location: ../mygear.php');
 ?>
