@@ -22,11 +22,11 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-
+*/
 $query = 'SELECT item_name, item_use, item_id FROM items';
 $stmt = $db->prepare($query);
 $stmt->execute();
-$items = $stmt->fetchAll(PDO::FETCH_ASSOC); */
+$items = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
 include 'common/header.php';
 ?>
