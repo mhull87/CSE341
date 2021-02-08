@@ -1,6 +1,6 @@
 <?php
 
-require_once 'connections/dbconnect.php';
+require_once '../connections/dbconnect.php';
 
 $db = get_db();
 
