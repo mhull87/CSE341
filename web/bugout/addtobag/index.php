@@ -21,5 +21,5 @@ $stmt->bindValue(':quantity', $quantity, PDO::PARAM_INT);
 $stmt->execute();
 $stmt->closeCursor();
 
-include '../mygear.php';
+header('Location: ../mygear.php');
 ?>
