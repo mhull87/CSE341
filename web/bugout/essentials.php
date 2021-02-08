@@ -1,7 +1,7 @@
 <?php
-//require_once('connections/dbConnect.php');
-//$db = get_db();
-try
+require_once 'connections/dbconnect.php';
+$db = get_db();
+/* try
 {
   $dbUrl = getenv('DATABASE_URL');
 
@@ -26,7 +26,7 @@ catch (PDOException $ex)
 $query = 'SELECT item_name, item_use, item_id FROM items';
 $stmt = $db->prepare($query);
 $stmt->execute();
-$items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$items = $stmt->fetchAll(PDO::FETCH_ASSOC); */
 
 include 'common/header.php';
 ?>
