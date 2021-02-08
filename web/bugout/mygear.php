@@ -1,5 +1,6 @@
 <?php
 require_once 'connections/dbconnect.php';
+require_once 'bag/sortbag.php';
 
 $db = get_db();
 
