@@ -1,32 +1,6 @@
 <?php
 require_once 'connections/dbconnect.php';
-$db = get_db();
-/* try
-{
-  $dbUrl = getenv('DATABASE_URL');
-
-  $dbOpts = parse_url($dbUrl);
-
-  $dbHost = $dbOpts["host"];
-  $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
-  $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
-
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
-*/
-$query = 'SELECT item_name, item_use, item_id FROM items';
-$stmt = $db->prepare($query);
-$stmt->execute();
-$items = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+require_once 'model/essentials-model.php';
 
 include 'common/header.php';
 ?>
@@ -34,9 +8,27 @@ include 'common/header.php';
 <main>
   <h2>Survival Essentials</h2>
 
+  <?php
+  if (isset($message))
+  {
+    echo $message;
+  }
+  ?>
+
   <!-- list the items table -->
   <ul>
     <?php
+    function getEssentails()
+    {
+    $db = get_db();
+    
+    $query = 'SELECT item_name, item_use, item_id FROM items';
+    $stmt = $db->prepare($query);
+    
+    $stmt->execute();
+    $items = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+    $stmt->closeCursor();
+    
       foreach ($items as $item)
       {
         $name = $item['item_name'];
@@ -52,6 +44,7 @@ include 'common/header.php';
         </form>
         </li>";
       }
+    }
     ?>
   </ul>
 

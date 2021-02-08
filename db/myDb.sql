@@ -73,3 +73,11 @@ WHERE b.packed = 'yes';
 SELECT b.packed, i.item_name FROM items i JOIN bugout_bag b ON b.item_id = i.item_id WHERE b.packed = 'yes';
 
 SELECT item_name, item_use FROM items;
+
+CREATE TABLE bugoutuser (
+  user_id SERIAL PRIMARY KEY,
+  userfname VARCHAR(25) NOT NULL,
+  userlname VARCHAR(25) NOT NULL,
+  useremail VARCHAR(50) NOT NULL,
+  userpassword VARCHAR(50) NOT NULL
+);

@@ -1,4 +1,8 @@
 <?php
+require_once 'connections/dbconnect.php';
+
+$db = get_db();
+
 include 'common/header.php';
 ?>
 
