@@ -7,8 +7,6 @@ $use = $_POST['use'];
 $quantity = $_POST['quantity'];
 $packed = $_POST['packed'];
 
-
-
 $query = "INSERT INTO bugout_bag (item_id, packed, quantity)
           VALUES (:id, :packed, :quantity)";
 

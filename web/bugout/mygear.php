@@ -37,7 +37,7 @@ include 'common/header.php';
   ?>
   </ul>
 
-  <a href="#">See All Packed</a>
+  <button onclick="packed()">Packed</button>
   <a href="#">See All Needed</a>
   <a href="#">See All</a>
 
