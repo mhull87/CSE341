@@ -39,7 +39,7 @@ include 'common/header.php';
   
   </ul>
 
-    <a href="sortbag.php">See All Packed</a>
+    <a href="bag/sortbag.php">See All Packed</a>
   <a href="#">See All Needed</a>
   <a href="#">See All</a>
 
