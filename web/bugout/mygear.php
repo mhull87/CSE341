@@ -24,9 +24,8 @@ include 'common/header.php';
   <h3>My Bug Out Bag</h3>
 
   <!-- list out the items in the bag -->
+  <ul>
     <?php
-
-    echo "<ul class='allitems'>";
   
     foreach ($bagitems as $bagitem)
     {
@@ -37,7 +36,10 @@ include 'common/header.php';
 
       echo "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
     }
+
   ?>
+
+  </ul>
 
   <a href="bag/sortbagpacked.php">Bag Packed</a><br><br>
   <a href="bag/sortbagnotpacked.php">Bag Needed</a>
@@ -60,6 +62,7 @@ include 'common/header.php';
 ?>
 
   </ul>
+  
   <a href="bag/extraspacked.php">Extras Packed</a><br><br>
   <a href="bag/extrasneeded.php">Extras Needed</a>
 
