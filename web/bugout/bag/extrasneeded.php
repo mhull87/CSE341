@@ -36,7 +36,7 @@ include '../common/header.php';
 
   </ul>
   <a href="extraspacked.php">Extras Packed</a><br><br>
-  <a href="../mygear.php">All</a>
+  <a href="../mygear.php">My Gear</a>
 
 </main>
 

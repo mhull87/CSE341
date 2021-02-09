@@ -10,7 +10,7 @@ echo
 "<main>
   <h2>Add Items To Your Extras</h2>
 
-  <form action='#' method='POST'>
+  <form action='bag/addtoextras.php' method='POST'>
 
     <label for='item_name'>Item Name</label><br>
     <input name='item_name' id='item_name' value='$name' type='text' readonly><br><br>

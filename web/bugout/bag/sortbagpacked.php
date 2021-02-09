@@ -37,7 +37,7 @@ include '../common/header.php';
 
 ?>
 
-  <a href="bag/sortbagnotpacked.php">See All Needed</a><br><br>
+  <a href="sortbagnotpacked.php">See All Needed</a><br><br>
   <a href="../mygear.php">My Gear</a>
 
 </main>
