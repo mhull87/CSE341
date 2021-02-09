@@ -5,7 +5,7 @@ require_once '../connections/dbconnect.php';
 $db = get_db();
 
 $extranotpacked = "SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
-          FROM extras e JOIN items i ON e.item_id = i.item_id WHERE e.packed = 'yes'";
+          FROM extras e JOIN items i ON e.item_id = i.item_id WHERE e.packed = 'no'";
 
 $stmt = $db->prepare($extranotpacked);
 $stmt->execute();
