@@ -5,7 +5,7 @@ require_once '../connections/dbconnect.php';
 $db = get_db();
 
 $extranotpacked = "SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
-          FROM extras e JOIN items i ON e.item_id = i.item_id WHERE e.packed = 'yes';
+          FROM extras e JOIN items i ON e.item_id = i.item_id WHERE e.packed = 'yes'";
 
 $stmt = $db->prepare($extranotpacked);
 $stmt->execute();
@@ -35,7 +35,7 @@ include '../common/header.php';
 ?>
 
   </ul>
-  <a href="extraspacked.php">Extras Packed</a>
+  <a href="extraspacked.php">Extras Packed</a><br><br>
   <a href="../mygear.php">All</a>
 
 </main>

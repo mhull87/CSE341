@@ -35,8 +35,8 @@ include '../common/header.php';
 ?>
 
   </ul>
-  <a href="extrasneeded.php">Extras Needed</a>
-  <a href="#">All</a>
+  <a href="extrasneeded.php">Extras Needed</a><br><br>
+  <a href="../mygear.php">My Gear</a>
 
 </main>
 

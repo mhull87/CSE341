@@ -39,7 +39,7 @@ include 'common/header.php';
     }
   ?>
 
-  <a href="bag/sortbagpacked.php">Bag Packed</a>
+  <a href="bag/sortbagpacked.php">Bag Packed</a><br><br>
   <a href="bag/sortbagnotpacked.php">Bag Needed</a>
 
   <h3>My Extras</h3>
@@ -60,7 +60,7 @@ include 'common/header.php';
 ?>
 
   </ul>
-  <a href="bag/extraspacked.php">Extras Packed</a>
+  <a href="bag/extraspacked.php">Extras Packed</a><br><br>
   <a href="bag/extrasneeded.php">Extras Needed</a>
 
 </main>
