@@ -4,7 +4,7 @@ require_once '../connections/dbconnect.php';
 
 $db = get_db();
 
-$seepacked = 'SELECT i.item_name, b.quantity FROM bugout_bag b JOIN items i ON b.item_id = i.item_id WHERE b.packed = "yes"';
+$seepacked = "SELECT i.item_name, b.quantity FROM bugout_bag b JOIN items i ON b.item_id = i.item_id WHERE b.packed = 'yes'";
 
 $stmt = $db->prepare($seepacked);
 $stmt->execute();
