@@ -10,30 +10,12 @@ $stmtbag->execute();
 $bagitems = $stmtbag->fetchAll(PDO::FETCH_ASSOC);
 
 
-
-/*$bagnotpacked = 'SELECT i.item_name, b.quantity FROM bugout_bag b JOIN items i ON b.item_id = i.item_id WHERE b.packed = "no"';
-$stmtbagnotpacked = $db->prepare($bagnotpacked);
-$stmtbagnotpacked->execute();
-$bagnotpackeditems = $stmtbagnotpacked->fetchAll(PDO::FETCH_ASSOC);
-
 $extra = 'SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
           FROM extras e JOIN items i ON e.item_id = i.item_id';
 $stmtextra = $db->prepare($extra);
 $stmtextra->execute();
 $itemsextra = $stmtextra->fetchAll(PDO::FETCH_ASSOC);
 
-$extrapacked = 'SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
-          FROM extras e JOIN items i ON e.item_id = i.item_id WHERE e.packed = "yes"';
-$stmtpackedextra = $db->prepare($extrapacked);
-$stmtpackedextra->execute();
-$itemspackedextra = $stmtpackedextra->fetchAll(PDO::FETCH_ASSOC);
-
-$extranotpacked = 'SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
-          FROM extras e JOIN items i ON e.item_id = i.item_id WHERE e.packed = "no"';
-$stmtnotpackedextra = $db->prepare($extranotpacked);
-$stmtnorpackedextra->execute();
-$itemsextranotpacked = $stmtnotpackedextra->fetchAll(PDO::FETCH_ASSOC);
- */
 include 'common/header.php';
 ?>
 
@@ -55,24 +37,10 @@ include 'common/header.php';
 
       echo "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
     }
-
-    // <ul class='hidden'>";
-
-    // foreach ($bagnotpackeditems as $bagnotpackeditem)
-    // {
-    //   $name = $bagnotpackeditem['item_name'];
-    //   $packed = $bagnotpackeditem['packed'];
-    //   $quantity = $bagnotpackeditem['quantity'];
-    //   $use = $bagnotpackeditem['item_use'];
-
-    //   echo "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
-    // }
-    // echo "</ul>";
   ?>
 
-  <a href="bag/sortbagpacked.php">See All Packed</button>
-  <a href="#">See All Needed</a>
-  <a href="#">See All</a>
+  <a href="bag/sortbagpacked.php">Bag Packed</a>
+  <a href="bag/sortbagnotpacked.php">Bag Needed</a>
 
   <h3>My Extras</h3>
 
@@ -92,9 +60,8 @@ include 'common/header.php';
 ?>
 
   </ul>
-  <a href="#">Sort By Packed</a>
-  <a href="#">Sort By Needed</a>
-  <a href="#">See All</a>
+  <a href="bag/extraspacked.php">Extras Packed</a>
+  <a href="bag/extrasneeded.php">Extras Needed</a>
 
 </main>
 

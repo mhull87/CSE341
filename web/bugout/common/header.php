@@ -7,15 +7,7 @@
   <title>Bug Out Survival</title>
   <link href="/bugout/css/main.css" type="text/css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Staatliches&display=swap" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $(".showpackedbyn").click(function(){
-    $(".showpacked").toggle();
-    $(".allitems").toggle();
-  });
-});
-</script>
+
 </head>
 
 <body>
