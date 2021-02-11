@@ -1,8 +1,4 @@
 <?php
-$id = $_POST['id'];
-$name = $_POST['name'];
-$use = $_POST['use'];
-
 include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
 
 if (isset($message))
@@ -10,6 +6,7 @@ if (isset($message))
   echo $message;
 }
 ?>
+
 <main>
   <h2>Add Items To Your Bug Out Bag</h2>
 
