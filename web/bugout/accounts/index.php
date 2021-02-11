@@ -2,7 +2,7 @@
 //Accounts controller
 
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/connections/dbconnect.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'bugout/model/accounts-model.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/model/accounts-model.php';
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == null)
