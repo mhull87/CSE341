@@ -60,7 +60,7 @@ switch ($action)
 
     </form>
 
-    <form action='addtomyextras.php' method='POST'>
+    <form action='../bag/index.php' method='POST'>
     <input type='hidden' name='id' value='$id'>
     <input type='hidden' name='name' value='$name'>
     <input type='hidden' name='use' value='$use'>
