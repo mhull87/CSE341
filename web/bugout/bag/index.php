@@ -2,6 +2,7 @@
 //This is the bag controller
 
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/connections/dbconnect.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/model/bag-model.php';
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == null) 
@@ -12,7 +13,7 @@ if ($action == null)
 switch ($action)
 {
   case 'login':
-    include $_SERVER['DOCUMENT_ROOT'].'/bugout/view/login.php';
+    include '../accounts/index.php?action=login';
     break;
 
   case 'addtobag':
@@ -25,7 +26,7 @@ switch ($action)
     if (empty($packed))
     {
       $message = "<h3>Item name and packed value are required.</h3>";
-      include $_SERVER['DOCUMENT_ROOT'].'/bugout/bag/index.php';
+      include '../bag/index.php';
       exit;
     }
     else
@@ -40,7 +41,7 @@ switch ($action)
         {
           $message = "<h3>Sorry, the addition failed. Please try again.</h3>";
         }
-      include $_SERVER['DOCUMENT_ROOT'].'/bugout/view/addtobag.php';
+      include '../view/addtobag.php';
       exit;
     }
     break;
@@ -56,7 +57,7 @@ switch ($action)
       if (empty($packed || empty($item_location)))
       {
         $message = "<h3>Item name, packed value, and location are required.</h3>";
-        include $_SERVER['DOCUMENT_ROOT'].'/bugout/bag/index.php';
+        include '../bag/index.php';
         exit;
       }
       else

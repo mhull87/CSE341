@@ -2,6 +2,7 @@
 //This is the essentials controller
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/connections/dbconnect.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/model/essentials-model.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/model/bag-model.php';
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == null)
@@ -16,9 +17,8 @@ switch ($action)
     break;
 
   case 'essentialslist':
-        $items = getEssentails();
+    $items = getEssentails();
 
-    
     $itemslist = '<ul>';
     
     foreach ($items as $item)
@@ -50,7 +50,7 @@ switch ($action)
     $use = $_POST['use'];
 
     $details = "<p>Item #: $id<br>Name: $name<br>Use: $use</p>
-    <form action='addtobag.php' method='POST'>
+    <form action='../bag/index.php' method='POST'>
     <input type='hidden' name='id' value='$id'>
     <input type='hidden' name='name' value='$name'>
     <input type='hidden' name='use' value='$use'>
@@ -61,6 +61,8 @@ switch ($action)
     <input type='hidden' name='name' value='$name'>
     <input type='hidden' name='use' value='$use'>
     <input type='submit' value='Add To Extras'>
+
+    <input type='hidden' name='action' value='addtobag'>
     </form>";
     include '../view/details.php';
     break;
