@@ -61,8 +61,6 @@ switch ($action)
       $addOutcome = addtobag($id, $packed, $quantity);
         if ($addOutcome === 1)
         {
-          $name = $_POST['name'];
-
           $message = "<h3>Item added to your bugout bag.</h3>";
         }
         else
@@ -85,7 +83,7 @@ switch ($action)
       $item_location = $_POST['item_location'];
 
       $addtoextrasform =
-      "<form action='/bugout/bag/index.php' method='POST'>
+      "<form action='/bugout/bag/index.php?action=addtoextras' method='POST'>
 
         <label for='item_name'>Item Name</label><br>
         <input name='item_name' id='item_name' value='$name' type='text' readonly><br><br>
@@ -117,7 +115,7 @@ switch ($action)
       if (empty($packed || empty($item_location) || empty($quantity)))
       {
         $message = "<h3>Item name, quantity, packed value, and location are required.</h3>";
-        include '../view/addtomyextras.php.php';
+        include '../view/addtomyextras.php';
         exit;
       }
       else
@@ -132,9 +130,11 @@ switch ($action)
           {
             $message = "<h3>Sorry, the addition failed. Please try again.</h3>";
           }
+
         include '../view/mygear.php';
         exit;
       }
+      
       break;
 
     default:
