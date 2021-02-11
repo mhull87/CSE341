@@ -13,7 +13,7 @@
 <body>
   <header>
     <h1>Bug Out Survival</h1>
-    <a class="login" href="../view/login.php">Login</a>
+    <a class="login" href="/bugout/view/login.php">Login</a>
   </header>
 
   <nav>
