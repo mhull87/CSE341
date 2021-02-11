@@ -28,7 +28,7 @@ switch ($action)
       $id = $item['item_id'];
 
       $itemslist .= "<li>$name<br>
-      <form action='../essentials/index.php' method='POST'>
+      <form method='POST'>
       <input type='hidden' name='id' value='$id'>
       <input type='hidden' name='name' value='$name'>
       <input type='hidden' name='use' value='$use'>
@@ -68,7 +68,7 @@ switch ($action)
 
     <input type='hidden' name='action' value='addtoextras'>
     </form>";
-    
+
     include '../view/details.php';
     break;
 

@@ -17,7 +17,6 @@ switch ($action)
     break;
 
   case 'addtobag':
-    echo 'in add to bag case';
     $id = $_POST['id'];
     $name = $_POST['name'];
     $use = $_POST['use'];
