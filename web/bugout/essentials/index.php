@@ -15,7 +15,7 @@ switch ($action)
     include $_SERVER['DOCUMENT_ROOT'].'/bugout/view/login.php';
     break;
 
-  case '':
+  case 'essentialslist':
     $items = getEssentails();
 
     foreach ($items as $item)
