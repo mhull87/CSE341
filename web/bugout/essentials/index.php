@@ -18,14 +18,15 @@ switch ($action)
   case 'essentialslist':
         $items = getEssentails();
 
-    $name = urlencode($item['item_name']);
-    $use = urlencode($item['item_use']);
-    $id = urlencode($item['item_id']);
     
     $itemslist = '<ul>';
     
     foreach ($items as $item)
     {
+      $name = urlencode($item['item_name']);
+      $use = urlencode($item['item_use']);
+      $id = urlencode($item['item_id']);
+
       $itemslist .= "<li>$name<br>
       <form action='../essentials/index.php' method='POST'>
       <input type='hidden' name='id' value='$id'>
