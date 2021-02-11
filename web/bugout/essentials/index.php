@@ -16,12 +16,11 @@ switch ($action)
     break;
 
   case 'essentialslist':
-    $name = $item['item_name'];
-    $use = $item['item_use'];
-    $id = $item['item_id'];
     
     $items = getEssentails();
+
     $itemslist = '<ul>';
+
     foreach ($items as $item)
     {
       $itemslist .= "<li>$name<br>
@@ -35,7 +34,9 @@ switch ($action)
       </form>
       </li>";
     }
+
     $itemslist .= '</ul>';
+
     include $_SERVER['DOCUMENT_ROOT'].'/bugout/view/essentials.php';
     break;
 
