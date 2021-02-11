@@ -24,7 +24,7 @@ switch ($action)
     $packed = $_POST['packed'];
 
     $addtobagform = 
-    "<form action='/bugout/bag/index.php' method='POST'>
+    "<form action='?' method='POST'>
   
       <label for='item_name'>Item Name</label><br>
       <input name='item_name' id='item_name' value='$name' type='text' readonly><br><br>
@@ -52,6 +52,7 @@ switch ($action)
 
     if (empty($packed))
     {
+      echo 'in the if';
       $message = "<h3>Item name and packed value are required.</h3>";
       include '../view/addtobag.php';
       exit;
@@ -59,7 +60,7 @@ switch ($action)
     else
     {
       $addOutcome = addtobag($id, $name, $use, $quantity, $packed);
-
+        echo 'in the outer else';
         if ($addOutcome === 1)
         {
           $message = "<h3>$name added to your bugout bag.</h3>";
