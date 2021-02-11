@@ -12,7 +12,7 @@ if ($action == null)
 switch ($action)
 {
   case 'login':
-    include '../view/login.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/bugout/view/login.php';
     break;
 
   case 'addtobag':
@@ -25,7 +25,7 @@ switch ($action)
     if (empty($packed))
     {
       $message = "<h3>Item name and packed value are required.</h3>";
-      include '../bag/index.php';
+      include $_SERVER['DOCUMENT_ROOT'].'/bugout/bag/index.php';
       exit;
     }
     else
@@ -40,7 +40,7 @@ switch ($action)
         {
           $message = "<h3>Sorry, the addition failed. Please try again.</h3>";
         }
-      include '../view/addtobag.php';
+      include $_SERVER['DOCUMENT_ROOT'].'/bugout/view/addtobag.php';
       exit;
     }
     break;
@@ -56,7 +56,7 @@ switch ($action)
       if (empty($packed || empty($item_location)))
       {
         $message = "<h3>Item name, packed value, and location are required.</h3>";
-        include '../bag/index.php';
+        include $_SERVER['DOCUMENT_ROOT'].'/bugout/bag/index.php';
         exit;
       }
       else
@@ -71,7 +71,7 @@ switch ($action)
           {
             $message = "<h3>Sorry, the addition failed. Please try again.</h3>";
           }
-        header('Location: ../mygear.php');
+        header('Location: /bugout/view/mygear.php');
         exit;
       }
       break;

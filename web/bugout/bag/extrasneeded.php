@@ -11,7 +11,7 @@ $stmt = $db->prepare($extranotpacked);
 $stmt->execute();
 $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-include '../common/header.php';
+include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
 
 ?>
 
@@ -36,10 +36,10 @@ include '../common/header.php';
 
   </ul>
   <a href="extraspacked.php">Extras Packed</a><br><br>
-  <a href="../mygear.php">My Gear</a>
+  <a href="/bugout/view/mygear.php">My Gear</a>
 
 </main>
 
 <?php
-include 'common/footer.php';
+include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/footer.php';
 ?>

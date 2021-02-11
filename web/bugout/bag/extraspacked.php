@@ -5,13 +5,13 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/connections/dbconnect.php';
 $db = get_db();
 
 $extrapacked = "SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
-          FROM extras e JOIN items i ON e.item_id = i.item_id WHERE e.packed = 'yes'";
+                FROM extras e JOIN items i ON e.item_id = i.item_id WHERE e.packed = 'yes'";
 
 $stmt = $db->prepare($extrapacked);
 $stmt->execute();
 $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-include '../common/header.php';
+include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
 
 ?>
 
@@ -36,10 +36,10 @@ include '../common/header.php';
 
   </ul>
   <a href="extrasneeded.php">Extras Needed</a><br><br>
-  <a href="../mygear.php">My Gear</a>
+  <a href="/bugout/view/mygear.php">My Gear</a>
 
 </main>
 
 <?php
-include 'common/footer.php';
+include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/footer.php';
 ?>
