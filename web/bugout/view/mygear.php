@@ -68,8 +68,8 @@ if (isset($message))
 
   </ul>
   
-  <a href="/bugout/bag/extraspacked.php">Extras Packed</a><br><br>
-  <a href="/bugout/bag/extrasneeded.php">Extras Needed</a>
+  <a href="/bugout/bag/index.php?action=extraspacked">Extras Packed</a><br><br>
+  <a href="/bugout/bag/index.php?action=extrasneeded">Extras Needed</a>
 
 </main>
 

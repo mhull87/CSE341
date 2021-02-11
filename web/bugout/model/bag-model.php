@@ -3,23 +3,23 @@
 
 function addtobag($id, $packed, $quantity)
 {
-$db = get_db();
+  $db = get_db();
 
-$query = "INSERT INTO bugout_bag (item_id, packed, quantity)
-          VALUES (:id, :packed, :quantity)";
+  $query = "INSERT INTO bugout_bag (item_id, packed, quantity)
+            VALUES (:id, :packed, :quantity)";
 
-$stmt = $db->prepare($query);
+  $stmt = $db->prepare($query);
 
-$stmt->bindValue(':id', $id, PDO::PARAM_INT);
-$stmt->bindValue(':packed', $packed, PDO::PARAM_STR);
-$stmt->bindValue(':quantity', $quantity, PDO::PARAM_INT);
-$stmt->execute();
+  $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+  $stmt->bindValue(':packed', $packed, PDO::PARAM_STR);
+  $stmt->bindValue(':quantity', $quantity, PDO::PARAM_INT);
+  $stmt->execute();
 
-$rowsChanged = $stmt->rowCount();
+  $rowsChanged = $stmt->rowCount();
 
-$stmt->closeCursor();
+  $stmt->closeCursor();
 
-return $rowsChanged;
+  return $rowsChanged;
 }
 
 function addtoextras($id, $packed, $quantity, $item_location)
@@ -42,5 +42,22 @@ function addtoextras($id, $packed, $quantity, $item_location)
   $stmt->closeCursor();
 
   return $rowsChanged;
+}
+
+function extrasneeded()
+{
+  $db = get_db();
+
+  $query = "SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
+                    FROM extras e JOIN items i ON e.item_id = i.item_id 
+                    WHERE e.packed = 'no'";
+
+  $stmt = $db->prepare($query);
+  $stmt->execute();
+
+  $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $stmt->closeCursor();
+
+  return $items;
 }
 ?>

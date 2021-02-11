@@ -1,6 +1,5 @@
 <?php
 //This is the bag controller
-
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/connections/dbconnect.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/model/bag-model.php';
 
@@ -112,7 +111,7 @@ switch ($action)
 
       </form>";
 
-      if (empty($packed) || empty($item_location) || empty($quantity))
+      if (empty($packed || empty($item_location) || empty($quantity)))
       {
         $message = "<h3>Item name, quantity, packed value, and location are required.</h3>";
         include '../view/addtomyextras.php';
@@ -134,9 +133,29 @@ switch ($action)
         include '../view/mygear.php';
         exit;
       }
-
+      
       break;
 
-    default:
-      include '../view/addtobag.php';
+  case 'extrasneeded':
+    $items = extrasneeded();
+
+    foreach ($items as $item)
+    {
+      $name = $item['item_name'];
+      $packed = $item['packed'];
+      $quantity = $item['quantity'];
+      $use = $item['item_use'];
+      $location = $item['item_location'];
+
+      $itemlist = "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use<br>Location: $location</p></li>";
+    }
+
+  case 'extraspacked':
+      
+  case 'bagneeded':
+
+  case 'bagpacked':
+
+  default:
+    include '../view/addtobag.php';
 }
