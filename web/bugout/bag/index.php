@@ -149,7 +149,7 @@ switch ($action)
       $use = $item['item_use'];
       $location = $item['item_location'];
 
-      $itemlist .= "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use<br>Location: $location</p></li>";
+      $itemslist .= "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use<br>Location: $location</p></li>";
     }
 
     $itemslist .= '</ul>';

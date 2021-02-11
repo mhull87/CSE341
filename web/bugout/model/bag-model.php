@@ -49,8 +49,8 @@ function extrasneeded()
   $db = get_db();
 
   $query = "SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
-                    FROM extras e JOIN items i ON e.item_id = i.item_id 
-                    WHERE e.packed = 'no'";
+            FROM extras e JOIN items i ON e.item_id = i.item_id 
+            WHERE e.packed = 'no'";
 
   $stmt = $db->prepare($query);
   $stmt->execute();
