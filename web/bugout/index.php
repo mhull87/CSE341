@@ -1,5 +1,5 @@
 <?php
-include '/common/header.php';
+include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
 ?>
 
 <main>
