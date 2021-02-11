@@ -1,6 +1,6 @@
 <?php
-require_once '/bugout/connections/dbconnect.php';
-require_once '/bugout/model/essentials-model.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/connections/dbconnect.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/model/essentials-model.php';
 
 include '/bugout/common/header.php';
 ?>

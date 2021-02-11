@@ -11,5 +11,5 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
 </main>
 
 <?php
-include 'common/footer.php';
+include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/footer.php';
 ?>
