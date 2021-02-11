@@ -53,7 +53,7 @@ switch ($action)
     if (empty($packed))
     {
       $message = "<h3>Item name and packed value are required.</h3>";
-      header('Location: index.php');
+      include '../view/addtobag.php';
       exit;
     }
     else
