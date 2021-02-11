@@ -5,6 +5,11 @@ $use = $_POST['use'];
 
 include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
 
+if (isset($message))
+{
+  echo $message;
+}
+
 echo
 
 "<main>

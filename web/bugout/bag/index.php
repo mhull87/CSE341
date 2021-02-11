@@ -26,7 +26,7 @@ switch ($action)
     if (empty($packed))
     {
       $message = "<h3>Item name and packed value are required.</h3>";
-      include '../bag/index.php';
+      header('Location: index.php');
       exit;
     }
     else
