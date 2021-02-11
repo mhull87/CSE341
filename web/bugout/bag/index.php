@@ -23,10 +23,8 @@ switch ($action)
     $quantity = $_POST['quantity'];
     $packed = $_POST['packed'];
 
-    $addtobagitem = "<main>
-    <h2>Add Items To Your Bug Out Bag</h2>
-  
-    <form action='/bugout/bag/index.php' method='POST'>
+    $addtobagform = 
+    "<form action='/bugout/bag/index.php' method='POST'>
   
       <label for='item_name'>Item Name</label><br>
       <input name='item_name' id='item_name' value='$name' type='text' readonly><br><br>
@@ -50,8 +48,7 @@ switch ($action)
   
       <input type='hidden' name='action' value='addtobag'>
   
-    </form>
-  </main>";
+    </form>";
 
     if (empty($packed))
     {
