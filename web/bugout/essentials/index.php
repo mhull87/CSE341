@@ -41,7 +41,7 @@ switch ($action)
 
     $itemslist .= '</ul>';
 
-    include $_SERVER['DOCUMENT_ROOT'].'/bugout/view/essentials.php';
+    include '../view/essentials.php';
     break;
 
   case 'details':

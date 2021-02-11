@@ -7,12 +7,10 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
   <h3>My Extras - Needed</h3>
 
   <!-- list out the extras they have -->
-  <ul>
     <?php 
     echo $itemslist;
     ?>
 
-  </ul>
   <a href="extraspacked.php">Extras Packed</a><br><br>
   <a href="/bugout/view/mygear.php">My Gear</a>
 

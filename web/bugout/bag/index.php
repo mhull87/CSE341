@@ -139,6 +139,8 @@ switch ($action)
   case 'extrasneeded':
     $items = extrasneeded();
 
+    $itemslist = '<ul>';
+
     foreach ($items as $item)
     {
       $name = $item['item_name'];
@@ -147,8 +149,13 @@ switch ($action)
       $use = $item['item_use'];
       $location = $item['item_location'];
 
-      $itemlist = "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use<br>Location: $location</p></li>";
+      $itemlist .= "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use<br>Location: $location</p></li>";
     }
+
+    $itemslist .= '</ul>';
+
+    include '../view/extrasneeded.php';
+    break;
 
   case 'extraspacked':
       
