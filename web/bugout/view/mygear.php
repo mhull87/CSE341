@@ -4,19 +4,20 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/connections/dbconnect.php';
 $db = get_db();
 
 $bag = 'SELECT i.item_name, b.packed, b.quantity, i.item_use
-          FROM bugout_bag b JOIN items i ON b.item_id = i.item_id';
+        FROM bugout_bag b JOIN items i ON b.item_id = i.item_id';
+
 $stmtbag = $db->prepare($bag);
 $stmtbag->execute();
 $bagitems = $stmtbag->fetchAll(PDO::FETCH_ASSOC);
 
-
 $extra = 'SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
           FROM extras e JOIN items i ON e.item_id = i.item_id';
+
 $stmtextra = $db->prepare($extra);
 $stmtextra->execute();
 $itemsextra = $stmtextra->fetchAll(PDO::FETCH_ASSOC);
 
-include '../common/header.php';
+include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
 ?>
 
 <main>
@@ -36,13 +37,12 @@ include '../common/header.php';
 
       echo "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
     }
-
   ?>
 
   </ul>
 
-  <a href="bag/sortbagpacked.php">Bag Packed</a><br><br>
-  <a href="bag/sortbagnotpacked.php">Bag Needed</a>
+  <a href="/bugout/bag/sortbagpacked.php">Bag Packed</a><br><br>
+  <a href="/bugout/bag/sortbagnotpacked.php">Bag Needed</a>
 
   <h3>My Extras</h3>
 
@@ -63,11 +63,11 @@ include '../common/header.php';
 
   </ul>
   
-  <a href="bag/extraspacked.php">Extras Packed</a><br><br>
-  <a href="bag/extrasneeded.php">Extras Needed</a>
+  <a href="/bugout/bag/extraspacked.php">Extras Packed</a><br><br>
+  <a href="/bugout/bag/extrasneeded.php">Extras Needed</a>
 
 </main>
 
 <?php
-include '../common/footer.php';
+include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/footer.php';
 ?>

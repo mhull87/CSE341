@@ -2,7 +2,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/connections/dbconnect.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/model/essentials-model.php';
 
-include '/bugout/common/header.php';
+include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
 ?>
 
 <main>
@@ -22,6 +22,7 @@ include '/bugout/common/header.php';
     $db = get_db();
     
     $query = 'SELECT item_name, item_use, item_id FROM items';
+
     $stmt = $db->prepare($query);
     
     $stmt->execute();
@@ -43,7 +44,6 @@ include '/bugout/common/header.php';
         </form>
         </li>";
       }
-    
     ?>
   </ul>
 
@@ -51,5 +51,5 @@ include '/bugout/common/header.php';
 </main>
 
 <?php
-include '/bugout/common/footer.php';
+include $_SERVER['DOCUMENT_ROOT'].'/bugout//footer.php';
 ?>

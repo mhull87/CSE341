@@ -3,7 +3,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/connections/dbconnect.php';
 
 $db = get_db();
 
-include '/bugout/common/header.php';
+include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
 ?>
 
 <main>
@@ -17,10 +17,10 @@ include '/bugout/common/header.php';
     <input type="submit" value="Login">
   </form><br>
 
-  <a href="register.php">Not a member yet?</a>
+  <a href="/bugout/view/register.php">Not a member yet?</a>
 
 </main>
 
 <?php
-include '/bugout/common/footer.php';
+include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/footer.php';
 ?>
