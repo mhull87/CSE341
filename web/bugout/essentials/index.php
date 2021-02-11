@@ -16,23 +16,26 @@ switch ($action)
     break;
 
   case 'essentialslist':
+    $name = $item['item_name'];
+    $use = $item['item_use'];
+    $id = $item['item_id'];
+    
     $items = getEssentails();
 
     foreach ($items as $item)
     {
-      $name = $item['item_name'];
-      $use = $item['item_use'];
-      $id = $item['item_id'];
-
       $itemslist = "<li>$name<br>
-      <form action='details.php' method='POST'>
+      <form action='../essentials/index.php' method='POST'>
       <input type='hidden' name='id' value='$id'>
       <input type='hidden' name='name' value='$name'>
       <input type='hidden' name='use' value='$use'>
       <input type='submit' value='Details' name='details' id='details'><br><br>
+
+      <input type='hidden' name='action' value='details'>
       </form>
       </li>";
     }
+
     include $_SERVER['DOCUMENT_ROOT'].'/bugout/view/essentials.php';
     break;
 
