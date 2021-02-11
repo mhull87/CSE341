@@ -16,11 +16,14 @@ switch ($action)
     break;
 
   case 'essentialslist':
+        $items = getEssentails();
+
+    $name = urlencode($item['item_name']);
+    $use = urlencode($item['item_use']);
+    $id = urlencode($item['item_id']);
     
-    $items = getEssentails();
-
     $itemslist = '<ul>';
-
+    
     foreach ($items as $item)
     {
       $itemslist .= "<li>$name<br>
