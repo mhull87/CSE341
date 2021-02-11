@@ -6,11 +6,10 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
   <h2>Survival Essentials</h2>
 
   <!-- list the items table -->
-  <ul>
     <?php
       echo $itemslist;
     ?>
-  </ul>
+
 
 </main>
 

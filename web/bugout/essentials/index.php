@@ -21,10 +21,10 @@ switch ($action)
     $id = $item['item_id'];
     
     $items = getEssentails();
-
+    $itemslist = '<ul>';
     foreach ($items as $item)
     {
-      $itemslist = "<li>$name<br>
+      $itemslist .= "<li>$name<br>
       <form action='../essentials/index.php' method='POST'>
       <input type='hidden' name='id' value='$id'>
       <input type='hidden' name='name' value='$name'>
@@ -35,7 +35,7 @@ switch ($action)
       </form>
       </li>";
     }
-
+    $itemslist .= '</ul>';
     include $_SERVER['DOCUMENT_ROOT'].'/bugout/view/essentials.php';
     break;
 
