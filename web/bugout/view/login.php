@@ -1,23 +1,28 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/connections/dbconnect.php';
-
-$db = get_db();
-
 include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
 ?>
 
 <main>
   <h2>Log Into Bug Out Survival</h2>
 
-  <form action="#" method="POST">
+  <?php
+  if (isset($message))
+  {
+    echo $message;
+  }
+  ?>
+
+  <form action="/bugout/accounts/index.php" method="POST">
     <label for="email">Email</label><br>
     <input name="email" id="email" type="email"><br><br>
     <label for="password">Password</label><br>
     <input type="password" name="password" id="password"><br><br>
     <input type="submit" value="Login">
+
+    <input type="hidden" name="action" value="login">
   </form><br>
 
-  <a href="/bugout/view/register.php">Not a member yet?</a>
+  <a href="/bugout/accounts/index.php?action=register" title="Register for a Bugout Survival account.">Not a member yet?</a>
 
 </main>
 

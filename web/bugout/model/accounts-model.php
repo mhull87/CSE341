@@ -1,10 +1,12 @@
 <?php
+//This is the accounts model
+
 function register($userfname, $userlname, $useremail, $userpassword)
 {
+  $db = get_db();
+  
   $query = 'INSERT INTO users (userfname, userlname, useremail, userpassword)
             VALUES (:userfname, :userlname, :useremail, :userpassword)';
-
-  $db = get_db();
 
   $stmt = $db->prepare($query);
 
@@ -14,6 +16,31 @@ function register($userfname, $userlname, $useremail, $userpassword)
   $stmt->bindValue(':userpassword', $userpassword, PDO::PARAM_STR);
 
   $stmt->execute();
+
+  $rowsChanged = $stmt->rowCount();
+
   $stmt->closeCursor();
+
+  return $rowsChanged;
+}
+
+function login($useremail, $userpassword)
+{
+  $db = get_db();
+  
+  $query = '';
+
+  $stmt = $db->prepare($query);
+
+  $stmt->bindValue(':useremail', $useremail, PDO::PARAM_STR);
+  $stmt->bindValue(':userpassword', $userpassword, PDO::PARAM_STR);
+
+  $stmt->execute();
+
+  $rowsChanged = $stmt->rowCount();
+
+  $stmt->closeCursor();
+
+  return $rowsChanged;
 }
 ?>

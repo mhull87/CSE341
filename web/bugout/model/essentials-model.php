@@ -10,5 +10,6 @@ $stmt = $db->prepare($query);
 $stmt->execute();
 $items = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 $stmt->closeCursor();
+return $items;
 }
 ?>
