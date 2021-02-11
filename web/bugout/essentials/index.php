@@ -23,9 +23,9 @@ switch ($action)
     
     foreach ($items as $item)
     {
-      $name = urlencode($item['item_name']);
-      $use = urlencode($item['item_use']);
-      $id = urlencode($item['item_id']);
+      $name = $item['item_name'];
+      $use = $item['item_use'];
+      $id = $item['item_id'];
 
       $itemslist .= "<li>$name<br>
       <form action='../essentials/index.php' method='POST'>
