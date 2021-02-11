@@ -32,6 +32,8 @@ echo
 
     <input type='submit' id='addtobagbtn' value='Add To My Bug Out Bag'>
 
+    <input type='hidden' name='action' value='addtobag'>
+
   </form>
 </main>";
 
