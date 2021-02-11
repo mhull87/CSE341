@@ -59,7 +59,7 @@ switch ($action)
     }
     else
     {
-      $addOutcome = addtobag($id, $name, $use, $quantity, $packed);
+      $addOutcome = addtobag($id, $packed, $quantity);
         echo 'in the outer else';
         if ($addOutcome === 1)
         {
