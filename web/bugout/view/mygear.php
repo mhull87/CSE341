@@ -1,5 +1,5 @@
 <?php
-require_once '/bugout/connections/dbconnect.php';
+require_once '../connections/dbconnect.php';
 
 $db = get_db();
 
@@ -16,7 +16,7 @@ $stmtextra = $db->prepare($extra);
 $stmtextra->execute();
 $itemsextra = $stmtextra->fetchAll(PDO::FETCH_ASSOC);
 
-include '/bugout/common/header.php';
+include '../common/header.php';
 ?>
 
 <main>
@@ -69,5 +69,5 @@ include '/bugout/common/header.php';
 </main>
 
 <?php
-include '/bugout/common/footer.php';
+include '../common/footer.php';
 ?>

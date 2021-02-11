@@ -17,5 +17,5 @@
   </header>
 
   <nav>
-    <?php include 'bugout/common/nav.php'; ?>
+    <?php include '/bugout/common/nav.php'; ?>
   </nav>
