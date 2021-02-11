@@ -112,7 +112,7 @@ switch ($action)
 
       </form>";
 
-      if (empty($packed || empty($item_location) || empty($quantity)))
+      if (empty($packed) || empty($item_location) || empty($quantity))
       {
         $message = "<h3>Item name, quantity, packed value, and location are required.</h3>";
         include '../view/addtomyextras.php';
@@ -134,7 +134,7 @@ switch ($action)
         include '../view/mygear.php';
         exit;
       }
-      
+
       break;
 
     default:
