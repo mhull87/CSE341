@@ -13,9 +13,9 @@
 <body>
   <header>
     <h1>Bug Out Survival</h1>
-    <a class="login" href="/bugout/login.php">Login</a>
+    <a class="login" href="/bugout/view/login.php">Login</a>
   </header>
 
   <nav>
-    <?php include 'nav.php'; ?>
+    <?php include 'bugout/common/nav.php'; ?>
   </nav>
