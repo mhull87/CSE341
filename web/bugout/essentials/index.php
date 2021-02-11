@@ -2,6 +2,7 @@
 //This is the essentials controller
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/connections/dbconnect.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/model/essentials-model.php';
+require_once $_SERVER['DOCUMETN_ROOT'].'/bugout/model/accounts-model.php';
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == null)
