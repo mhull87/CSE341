@@ -18,6 +18,11 @@ $stmtextra->execute();
 $itemsextra = $stmtextra->fetchAll(PDO::FETCH_ASSOC);
 
 include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
+
+if (isset($message))
+{
+  echo $message;
+}
 ?>
 
 <main>
