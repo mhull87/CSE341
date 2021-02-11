@@ -52,7 +52,6 @@ switch ($action)
 
     if (empty($packed))
     {
-      echo 'in the if';
       $message = "<h3>Item name and packed value are required.</h3>";
       include '../view/addtobag.php';
       exit;
@@ -63,6 +62,8 @@ switch ($action)
         echo 'in the outer else';
         if ($addOutcome === 1)
         {
+          $name = $_POST['name'];
+
           $message = "<h3>$name added to your bugout bag.</h3>";
         }
         else
@@ -70,7 +71,7 @@ switch ($action)
           $message = "<h3>Sorry, the addition failed. Please try again.</h3>";
         }
 
-      include '../view/addtobag.php';
+      include '../view/mygear.php';
       exit;
     }
 
