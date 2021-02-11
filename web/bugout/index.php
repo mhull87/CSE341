@@ -1,5 +1,5 @@
 <?php
-include '/bugout/common/header.php';
+include '/web/bugout/common/header.php';
 ?>
 
 <main>
