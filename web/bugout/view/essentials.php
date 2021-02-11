@@ -15,7 +15,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
   <!-- list the items table -->
   <ul>
     <?php
-      echo $items;
+      echo $itemslist;
     ?>
   </ul>
 

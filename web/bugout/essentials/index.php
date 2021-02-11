@@ -24,7 +24,7 @@ switch ($action)
       $use = $item['item_use'];
       $id = $item['item_id'];
 
-      echo "<li>$name<br>
+      $itemslist = "<li>$name<br>
       <form action='details.php' method='POST'>
       <input type='hidden' name='id' value='$id'>
       <input type='hidden' name='name' value='$name'>
@@ -34,6 +34,10 @@ switch ($action)
       </li>";
     }
     include $_SERVER['DOCUMENT_ROOT'].'/bugout/view/essentials.php';
+    break;
+
+  default:
+    include '../index.php';
 }
 
 ?>
