@@ -17,6 +17,7 @@ switch ($action)
     break;
 
   case 'addtobag':
+    echo 'in add to bag case';
     $id = $_POST['id'];
     $name = $_POST['name'];
     $use = $_POST['use'];
@@ -41,9 +42,11 @@ switch ($action)
         {
           $message = "<h3>Sorry, the addition failed. Please try again.</h3>";
         }
+
       include '../view/addtobag.php';
       exit;
     }
+
     break;
 
   case 'addtoextras':
@@ -76,4 +79,7 @@ switch ($action)
         exit;
       }
       break;
+
+    default:
+      include '../view/addtobag.php';
 }
