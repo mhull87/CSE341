@@ -1,8 +1,8 @@
 <?php
-require_once 'connections/dbconnect.php';
-require_once 'model/essentials-model.php';
+require_once '/bugout/connections/dbconnect.php';
+require_once '/bugout/model/essentials-model.php';
 
-include 'common/header.php';
+include '/bugout/common/header.php';
 ?>
 
 <main>
@@ -51,5 +51,5 @@ include 'common/header.php';
 </main>
 
 <?php
-include 'common/footer.php';
+include '/bugout/common/footer.php';
 ?>

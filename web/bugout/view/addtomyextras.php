@@ -3,14 +3,14 @@ $id = $_POST['id'];
 $name = $_POST['name'];
 $use = $_POST['use'];
 
-include 'common/header.php';
+include '/bugout/common/header.php';
 
 echo
 
 "<main>
   <h2>Add Items To Your Extras</h2>
 
-  <form action='bag/addtoextras.php' method='POST'>
+  <form action='/bugout/bag/index.php' method='POST'>
 
     <label for='item_name'>Item Name</label><br>
     <input name='item_name' id='item_name' value='$name' type='text' readonly><br><br>
@@ -35,9 +35,11 @@ echo
 
     <input type='submit' id='addtomyextrasbtn' value='Add To My Extras'>
 
+    <input type='hidden' name='action' value='addtoextras'>
+
   </form>
 
 </main>";
 
-include 'common/footer.php'
+include '/bugout/common/footer.php'
 ?>

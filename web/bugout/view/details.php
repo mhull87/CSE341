@@ -3,7 +3,7 @@
   $name = $_POST['name'];
   $use = $_POST['use'];
 
-include 'common/header.php';
+include '/bugout/common/header.php';
 ?>
 
 <main>
@@ -27,5 +27,5 @@ include 'common/header.php';
 </main>
 
 <?php
-include 'common/footer.php';
+include '/bugout/common/footer.php';
 ?>

@@ -1,9 +1,9 @@
 <?php
-require_once 'connections/dbconnect.php';
+require_once '/bugout/connections/dbconnect.php';
 
 $db = get_db();
 
-include 'common/header.php';
+include '/bugout/common/header.php';
 ?>
 
 <main>
@@ -22,5 +22,5 @@ include 'common/header.php';
 </main>
 
 <?php
-include 'common/footer.php';
+include '/bugout/common/footer.php';
 ?>
