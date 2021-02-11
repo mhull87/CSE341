@@ -2,7 +2,6 @@
 //This is the essentials controller
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/connections/dbconnect.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/model/essentials-model.php';
-require_once $_SERVER['DOCUMETN_ROOT'].'/bugout/model/accounts-model.php';
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == null)
@@ -13,7 +12,7 @@ if ($action == null)
 switch ($action)
 {
   case 'login':
-    include '../view/login.php';
+    include '../accounts/index.php?action=login';
     break;
 
   case 'essentialslist':

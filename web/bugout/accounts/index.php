@@ -13,7 +13,7 @@ if ($action == null)
 switch ($action)
 {
   case 'login':
-    include $_SERVER['DOCUMENT_ROOT'].'/bugout/view/login.php';
+    include '../view/login.php';
     break;
 
   case 'register':
