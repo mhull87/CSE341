@@ -33,6 +33,7 @@ switch ($action)
       </form>
       </li>";
     }
+    include $_SERVER['DOCUMENT_ROOT'].'/bugout/view/essentials.php';
 }
 
 ?>
