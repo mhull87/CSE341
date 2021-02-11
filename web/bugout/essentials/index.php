@@ -28,7 +28,7 @@ switch ($action)
       $id = $item['item_id'];
 
       $itemslist .= "<li>$name<br>
-      <form method='POST'>
+      <form action='".htmlspecialchars($_SERVER["PHP_SELF"])."' method='POST'>
       <input type='hidden' name='id' value='$id'>
       <input type='hidden' name='name' value='$name'>
       <input type='hidden' name='use' value='$use'>
