@@ -17,5 +17,5 @@
   </header>
 
   <nav>
-    <?php include '../common/nav.php'; ?>
+    <?php include 'nav.php'; ?>
   </nav>
