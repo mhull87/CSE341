@@ -82,7 +82,7 @@ function bagneeded()
 {
   $db = get_db();
 
-  $query = "SELECT i.item_name, b.quantity 
+  $query = "SELECT i.item_name, b.packed, b.quantity, i.item_use 
             FROM bugout_bag b JOIN items i ON b.item_id = i.item_id 
             WHERE b.packed = 'no'";
 
@@ -99,7 +99,7 @@ function bagpacked()
 {
   $db = get_db();
 
-  $query = "SELECT i.item_name, b.quantity 
+  $query = "SELECT i.item_name, b.packed, b.quantity, i.item_use 
             FROM bugout_bag b JOIN items i ON b.item_id = i.item_id 
             WHERE b.packed = 'yes'";
 
