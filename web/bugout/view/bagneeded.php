@@ -11,7 +11,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
     echo $itemslist;
   ?>
 
-  <a href="../bag/index.php?action=bagneeded">See All Packed</a><br><br>
+  <a href="../bag/index.php?action=bagpacked">See All Packed</a><br><br>
   <a href="/bugout/view/mygear.php">My Gear</a>
 
 </main>
