@@ -67,7 +67,7 @@ switch ($action)
           $message = "<h3>Sorry, the addition failed. Please try again.</h3>";
         }
 
-      include '../view/mygear.php';
+      include '../bag/index.php?action=mygear';
       exit;
     }
 
@@ -130,7 +130,7 @@ switch ($action)
             $message = "<h3>Sorry, the addition failed. Please try again.</h3>";
           }
 
-        include '../view/mygear.php';
+        include '../bag/index.php?action=mygear';
         exit;
       }
       
