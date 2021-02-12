@@ -4,14 +4,14 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
 
 <main>
   <h2>My Survival Page</h2>
-  <h3>My Extras - Needed</h3>
+  <h3>My Bug Out Bag - Packed</h3>
 
-  <!-- list out the extras they have -->
-    <?php 
+  <!-- list out the items in the bag -->
+  <?php
     echo $itemslist;
-    ?>
+  ?>
 
-  <a href="../bag/index.php?action=extraspacked">Extras Packed</a><br><br>
+  <a href="../bag/index.php?action=bagpacked">See All Needed</a><br><br>
   <a href="/bugout/view/mygear.php">My Gear</a>
 
 </main>

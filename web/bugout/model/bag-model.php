@@ -60,4 +60,87 @@ function extrasneeded()
 
   return $items;
 }
+
+function extraspacked()
+{
+  $db = get_db();
+
+  $query = "SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
+            FROM extras e JOIN items i ON e.item_id = i.item_id 
+            WHERE e.packed = 'yes'";
+
+  $stmt = $db->prepare($query);
+  $stmt->execute();
+
+  $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $stmt->closeCursor();
+
+  return $items;
+}
+
+function bagneeded()
+{
+  $db = get_db();
+
+  $query = "SELECT i.item_name, b.quantity 
+            FROM bugout_bag b JOIN items i ON b.item_id = i.item_id 
+            WHERE b.packed = 'no'";
+
+  $stmt = $db->prepare($query);
+  $stmt->execute();
+
+  $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $stmt->closeCursor();
+
+  return $items;
+}
+
+function bagpacked()
+{
+  $db = get_db();
+
+  $query = "SELECT i.item_name, b.quantity 
+            FROM bugout_bag b JOIN items i ON b.item_id = i.item_id 
+            WHERE b.packed = 'yes'";
+
+  $stmt = $db->prepare($query);
+  $stmt->execute();
+
+  $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $stmt->closeCursor();
+
+  return $items;
+}
+
+function mygearbag()
+{
+  $db = get_db();
+
+  $bag = 'SELECT i.item_name, b.packed, b.quantity, i.item_use
+          FROM bugout_bag b JOIN items i ON b.item_id = i.item_id';
+
+  $stmtbag = $db->prepare($bag);
+  $stmtbag->execute();
+
+  $bagitems = $stmtbag->fetchAll(PDO::FETCH_ASSOC);
+  $stmtbag->closeCursor();
+
+  return $bagitems;
+}
+
+function mygearextras()
+{
+  $db = get_db();
+  
+  $extra = 'SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
+            FROM extras e JOIN items i ON e.item_id = i.item_id';
+
+  $stmtextra = $db->prepare($extra);
+  $stmtextra->execute();
+
+  $itemsextra = $stmtextra->fetchAll(PDO::FETCH_ASSOC);
+  $stmtextra->closeCursor();
+
+  return $itemsextra;
+}
 ?>
