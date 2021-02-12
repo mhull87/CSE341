@@ -12,7 +12,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
   ?>
 
   <a href="../bag/index.php?action=bagpacked">See All Packed</a><br><br>
-  <a href="/bugout/view/mygear.php">My Gear</a>
+  <a href="../bag/index.php?action=mygear">My Gear</a>
 
 </main>
 
