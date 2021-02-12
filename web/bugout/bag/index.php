@@ -67,7 +67,7 @@ switch ($action)
           $message = "<h3>Sorry, the addition failed. Please try again.</h3>";
         }
 
-      include '../bag/index.php?action=mygear';
+      include $_SERVER['DOCUMENT_ROOT'].'/bugout/bag/index.php?action=mygear';
       exit;
     }
 
@@ -130,8 +130,8 @@ switch ($action)
             $message = "<h3>Sorry, the addition failed. Please try again.</h3>";
           }
 
-        include '../bag/index.php?action=mygear';
-        exit;
+          include $_SERVER['DOCUMENT_ROOT'].'/bugout/bag/index.php?action=mygear';
+          exit;
       }
       
       break;
