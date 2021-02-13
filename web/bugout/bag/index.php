@@ -58,17 +58,8 @@ switch ($action)
     else
     {
       $addOutcome = addtobag($id, $packed, $quantity);
-      if ($addOutcome === 1)
-      {
-        $message = "<p>Item added to your bugout bag.</p>";
-      }
-      else
-      {
-        $message = "<p>Sorry, the addition failed. Please try again.</p>";
-      }
-
+      $message = '<p>Item added to your bugout bag</p>';
       header('Location: /bugout/bag/index.php?action=mygear');
-      exit;
     }
 
     break;
@@ -113,8 +104,8 @@ switch ($action)
 
       if (empty($packed || empty($item_location) || empty($quantity)))
       {
-        $message = "<p>Item name, quantity, and packed value, and location are all required.</p>";
-        header('Location: /bugout/bag/index.php?action=mygear');
+        $message = "<p>Item name, quantity, packed value, and location are required.</p>";
+        include '../view/addtomyextras.php';
         exit;
       }
       else
