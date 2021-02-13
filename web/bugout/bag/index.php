@@ -29,11 +29,11 @@ switch ($action)
       <input name='item_name' id='item_name' value='$name' type='text' readonly><br><br>
   
       <label for='quantity'>Quantity</label><br>
-      <input type='number' min='0' name='quantity' id='quantity'><br><br>
+      <input type='number' min='0' name='quantity' id='quantity' required><br><br>
   
       <p>Is It Packed?</p>
   
-      <input type='radio' name='packed' id='packed' value='yes'>
+      <input type='radio' name='packed' id='packed' value='yes' checked>
       <label for='packed'>Yes</label><br>
   
       <input type='radio' name='packed' id='need' value='no'>
@@ -49,17 +49,9 @@ switch ($action)
   
     </form>";
 
-    if (empty($packed) || empty($quantity))
-    {
-      $message = "<p>Item name, quantity, and packed value are all required.</p>";
-      exit;
-    }
-    else
-    {
       $addOutcome = addtobag($id, $packed, $quantity);
       $message = '<p>Item added to your bugout bag</p>';
       header('Location: /bugout/bag/index.php?action=mygear');
-    }
 
     break;
 
