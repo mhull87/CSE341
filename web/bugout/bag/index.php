@@ -52,7 +52,7 @@ switch ($action)
     if (empty($packed || empty($item_location) || empty($quantity)))
     {
       $message = "<p>Item name, quantity, packed value, and location are required.</p>";
-      include '../view/addtomyextras.php';
+      include '../view/addtobag.php';
       exit;
     }
     else
