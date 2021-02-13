@@ -67,8 +67,8 @@ switch ($action)
           $message = "<h3>Sorry, the addition failed. Please try again.</h3>";
         }
 
-      include 'index.php';
-      exit;
+        include '../view/essentials.php';
+        exit;
     }
 
     break;
