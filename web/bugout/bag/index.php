@@ -70,7 +70,8 @@ switch ($action)
       include 'index.php?action=mygear';
       exit;
     }
-
+    
+    include 'index.php?action=mygear';
     break;
 
   case 'addtoextras':
