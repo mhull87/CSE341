@@ -58,7 +58,6 @@ switch ($action)
     else
     {
       $addOutcome = addtobag($id, $packed, $quantity);
-      $message = '<p>Item added to your bugout bag</p>';
       header('Location: /bugout/bag/index.php?action=mygear');
     }
 
@@ -73,7 +72,7 @@ switch ($action)
       $item_location = $_POST['item_location'];
 
       $addtoextrasform =
-      "<form action='/bugout/bag/index.php?action=addtoextras' method='POST'>
+      "<form action='/bugout/bag/index.php' method='POST'>
 
         <label for='item_name'>Item Name</label><br>
         <input name='item_name' id='item_name' value='$name' type='text' readonly><br><br>
@@ -104,25 +103,14 @@ switch ($action)
 
       if (empty($packed || empty($item_location) || empty($quantity)))
       {
-        $message = "<h3>Item name, quantity, packed value, and location are required.</h3>";
+        $message = "<p>Item name, quantity, packed value, and location are required.</p>";
         include '../view/addtomyextras.php';
         exit;
       }
       else
       {
         $addOutcome = addtoextras($id, $packed, $quantity, $item_location);
-
-          if ($addOutcome === 1)
-          {
-            $message = "<h3>Item added to your extras.</h3>";
-          }
-          else
-          {
-            $message = "<h3>Sorry, the addition failed. Please try again.</h3>";
-          }
-
-          include $_SERVER['DOCUMENT_ROOT'].'/bugout/bag/index.php?action=mygear';
-          exit;
+        header('Location: /bugout/bag/index.php?action=mygear');
       }
       
       break;
