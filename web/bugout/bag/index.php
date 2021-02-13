@@ -29,11 +29,11 @@ switch ($action)
       <input name='item_name' id='item_name' value='$name' type='text' readonly><br><br>
   
       <label for='quantity'>Quantity</label><br>
-      <input type='number' min='0' name='quantity' id='quantity'><br><br>
+      <input type='number' min='0' name='quantity' id='quantity' required><br><br>
   
       <p>Is It Packed?</p>
   
-      <input type='radio' name='packed' id='packed' value='yes'>
+      <input type='radio' name='packed' id='packed' value='yes' checked>
       <label for='packed'>Yes</label><br>
   
       <input type='radio' name='packed' id='need' value='no'>
