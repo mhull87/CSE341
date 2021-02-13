@@ -51,7 +51,7 @@ switch ($action)
 
     if (empty($packed) || empty($quantity))
     {
-      $message = "<h3>Item name, quantity, and packed value are required.</h3>";
+      $message = "<p>Item name, quantity, and packed value are all required.</p>";
       include '../view/addtobag.php';
       exit;
     }
@@ -60,15 +60,16 @@ switch ($action)
       $addOutcome = addtobag($id, $packed, $quantity);
         if ($addOutcome === 1)
         {
-          $message = "<h3>Item added to your bugout bag.</h3>";
+          $message = "<p>Item added to your bugout bag.</p>";
+          include '../index.php';
+          exit;
         }
         else
         {
-          $message = "<h3>Sorry, the addition failed. Please try again.</h3>";
+          $message = "<p>Sorry, the addition failed. Please try again.</p>";
+          header('Location: index.php');
+          exit;
         }
-
-        include $_SERVER['DOCUMENT_ROOT'].'/bugout/bag/index.php?';
-        exit;
     }
 
     break;
