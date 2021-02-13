@@ -49,10 +49,19 @@ switch ($action)
   
     </form>";
 
+    if (empty($packed || empty($item_location) || empty($quantity)))
+    {
+      $message = "<p>Item name, quantity, packed value, and location are required.</p>";
+      include '../view/addtomyextras.php';
+      exit;
+    }
+    else
+    {
+
       $addOutcome = addtobag($id, $packed, $quantity);
       $message = '<p>Item added to your bugout bag</p>';
       header('Location: /bugout/bag/index.php?action=mygear');
-
+    }
     break;
 
   case 'addtoextras':
