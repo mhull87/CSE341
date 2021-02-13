@@ -61,14 +61,14 @@ switch ($action)
         if ($addOutcome === 1)
         {
           $message = "<h3>Item added to your bugout bag.</h3>
-                      <form method='POST'>
+                      <form action='/bugout/bag/index.php' method='POST'>
                       <input type='hidden' name='action' value='mygear'>
                       </form>";
         }
         else
         {
           $message = "<h3>Sorry, the addition failed. Please try again.</h3>
-                      <form method='POST'>
+                      <form action='/bugout/bag/index.php' method='POST'>
                       <input type='hidden' name='action' value='mygear'>
                       </form>";
         }
