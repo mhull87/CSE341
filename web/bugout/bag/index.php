@@ -58,18 +58,8 @@ switch ($action)
     else
     {
       $addOutcome = addtobag($id, $packed, $quantity);
-        if ($addOutcome === 1)
-        {
-          $message = "<p>Item added to your bugout bag.</p>";
-          include 'index.php';
-          exit;
-        }
-        else
-        {
-          $message = "<p>Sorry, the addition failed. Please try again.</p>";
-          header('Location: index.php');
-          exit;
-        }
+      $message = '<p>Item added to your bugout bag</p>';
+      header('Location: /bugout/bag/index.php?action=mygear');
     }
 
     break;
