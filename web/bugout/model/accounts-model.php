@@ -5,7 +5,7 @@ function register($userfname, $userlname, $useremail, $userpassword)
 {
   $db = get_db();
   
-  $query = 'INSERT INTO users (userfname, userlname, useremail, userpassword)
+  $query = 'INSERT INTO bugoutuser (userfname, userlname, useremail, userpassword)
             VALUES (:userfname, :userlname, :useremail, :userpassword)';
 
   $stmt = $db->prepare($query);

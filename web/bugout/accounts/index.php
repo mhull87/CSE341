@@ -27,27 +27,27 @@ switch ($action)
     if (empty($userfname) || empty($userlname) || empty($useremail) || empty($userpassword))
     {
       $message = "<p>Please provide information for all fields</p>";
-      include $_SERVER['DOCUMENT_ROOT'].'/bugout/view/register.php';
+      include '../view/register.php';
       exit;
     }
 
-    $outcome = register ($userfname, $userlname, $useremail, $userpassword);
+    $outcome = register($userfname, $userlname, $useremail, $userpassword);
 
     if ($outcome == 1)
     {
       $message = "<h3>Thank you for registering $userfname. Please login to continue.</h3>";
-      include $_SERVER['DOCUMENT_ROOT'].'/bugout/view/login.php';
+      include '../view/login.php';
       exit;
     }
     else
     {
       $message = "<h3>Sorry $userfname, the registration failed. Please try again.</p>";
-      include $_SERVER['DOCUMENT_ROOT'].'/bugout/view/regester.php';
+      include '../view/regester.php';
       exit;
     }
 
   default:
-    include $_SERVER['DOCUMENT_ROOT'].'/bugout/index.php';
+    include '../index.php';
     break;
 }
 ?>
