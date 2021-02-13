@@ -52,7 +52,6 @@ switch ($action)
     if (empty($packed) || empty($quantity))
     {
       $message = "<p>Item name, quantity, and packed value are all required.</p>";
-      header('Location: /bugout/bag/index.php?action=addtobag');
       exit;
     }
     else
