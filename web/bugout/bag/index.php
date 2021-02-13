@@ -58,7 +58,7 @@ switch ($action)
     else
     {
       $addOutcome = addtobag($id, $packed, $quantity);
-        if ($addOutcome === 1)
+        if ($addOutcome == 1)
         {
           $message = "<h3>Item added to your bugout bag.</h3>";
         }
@@ -70,7 +70,7 @@ switch ($action)
       include 'index.php?action=mygear';
       exit;
     }
-    
+
     include 'index.php?action=mygear';
     break;
 
