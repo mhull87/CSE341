@@ -197,7 +197,16 @@ switch ($action)
     include '../view/bagpacked.php';
     break;
   
-  case 'mygear':
+  case 'edit':
+
+  case 'delete':
+    $id = $_POST['id'];
+    delete($id);
+    header('Location: ../bag/index.php?action=mygear');
+    exit;
+    break;
+
+    case 'mygear':
     $bagitems = mygearbag();
 
     $bagitemslist = '<ul>';
@@ -208,8 +217,19 @@ switch ($action)
       $packed = $bagitem['packed'];
       $quantity = $bagitem['quantity'];
       $use = $bagitem['item_use'];
+      $id = $bagitem['item_id'];
 
       $bagitemslist .= "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
+      $bagitemslist .= "<form action='?' method='POST'>
+                        <input type='hidden' name='id' value='$id'>
+                        <input type='submit' value='Edit Item'>
+                        <input type='hidden' name='action' value='edit'>
+                        </form>";
+      $bagitemslist .= "<form action='?' method='POST'>
+                        <input type='hidden' name='id' value='$id'>
+                        <input type='submit' value='Delete Item'>
+                        <input type='hidden' name='action' value='delete'>
+                        </form>";
     }
 
     $bagitemslist .= '</ul>';
@@ -227,6 +247,8 @@ switch ($action)
       $location = $itemextra['item_location'];
 
       $extraitemslist .= "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use<br>Location: $location</p></li>";
+      $extraitemslist .= "<a href='../bag/index.php?action=edit'>Edit Item</a>";
+      $extraitemslist .= "<a href='../bag/index.php?action=delete'>Delete Item</a>";
     }
 
     $extraitemslist .= '</ul>';

@@ -116,7 +116,7 @@ function mygearbag()
 {
   $db = get_db();
 
-  $bag = 'SELECT i.item_name, b.packed, b.quantity, i.item_use
+  $bag = 'SELECT i.item_name, b.packed, b.quantity, i.item_use, i.item_id
           FROM bugout_bag b JOIN items i ON b.item_id = i.item_id';
 
   $stmtbag = $db->prepare($bag);
@@ -142,5 +142,19 @@ function mygearextras()
   $stmtextra->closeCursor();
 
   return $itemsextra;
+}
+
+function delete($id)
+{
+  $db = get_db();
+
+  $delete = 'DELETE FROM bugout_bag
+            WHERE item_id = :id';
+
+  $stmt = $db->prepare($delete);
+
+  $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+  $stmt->execute();
+  $stmt->closeCursor();
 }
 ?>
