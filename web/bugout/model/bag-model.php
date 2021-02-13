@@ -116,7 +116,7 @@ function mygearbag()
 {
   $db = get_db();
 
-  $bag = 'SELECT i.item_name, b.packed, b.quantity, i.item_use, i.item_id
+  $bag = 'SELECT i.item_name, b.packed, b.quantity, i.item_use, b.bag_id
           FROM bugout_bag b JOIN items i ON b.item_id = i.item_id';
 
   $stmtbag = $db->prepare($bag);
@@ -144,12 +144,21 @@ function mygearextras()
   return $itemsextra;
 }
 
+function edit($id)
+{
+  $db = get_db();
+
+  $edit = 'SELECT FROM bugout_bag
+          WHERE bag_id = :id';
+          
+}
+
 function delete($id)
 {
   $db = get_db();
 
   $delete = 'DELETE FROM bugout_bag
-            WHERE item_id = :id';
+            WHERE bag_id = :id';
 
   $stmt = $db->prepare($delete);
 

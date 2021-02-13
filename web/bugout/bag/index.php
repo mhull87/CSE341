@@ -198,6 +198,35 @@ switch ($action)
     break;
   
   case 'edit':
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $quantity = $_POST['quantity'];
+
+    edit($id);
+    $editbagform = 
+    "<form action='/bugout/bag/index.php' method='POST'>
+  
+      <label for='item_name'>Item Name</label><br>
+      <input name='item_name' id='item_name' value='$name' type='text' readonly><br><br>
+  
+      <label for='quantity'>Quantity</label><br>
+      <input type='number' min='0' name='quantity' value='$quantity' id='quantity' required><br><br>
+  
+      <p>Is It Packed?</p>
+  
+      <input type='radio' name='packed' id='packed' value='yes' checked>
+      <label for='packed'>Yes</label><br>
+  
+      <input type='radio' name='packed' id='need' value='no'>
+      <label for='need'>No</label><br><br>
+    
+      <input type='submit' id='updateitemgbtn' value='Update Item'>
+  
+      <input type='hidden' name='action' value='replace'>
+  
+    </form>";
+    
+    include '../view/editbag.php';
 
   case 'delete':
     $id = $_POST['id'];
@@ -206,7 +235,7 @@ switch ($action)
     exit;
     break;
 
-    case 'mygear':
+  case 'mygear':
     $bagitems = mygearbag();
 
     $bagitemslist = '<ul>';
@@ -217,11 +246,13 @@ switch ($action)
       $packed = $bagitem['packed'];
       $quantity = $bagitem['quantity'];
       $use = $bagitem['item_use'];
-      $id = $bagitem['item_id'];
+      $id = $bagitem['bag_id'];
 
       $bagitemslist .= "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
       $bagitemslist .= "<form action='?' method='POST'>
                         <input type='hidden' name='id' value='$id'>
+                        <input type='hidden' name='name' value='$name'>
+                        <input type='hidden' name='quantity' value='$quantity'>
                         <input type='submit' value='Edit Item'>
                         <input type='hidden' name='action' value='edit'>
                         </form>";
