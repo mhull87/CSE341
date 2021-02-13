@@ -61,7 +61,7 @@ switch ($action)
         if ($addOutcome === 1)
         {
           $message = "<p>Item added to your bugout bag.</p>";
-          include '../index.php';
+          include 'index.php';
           exit;
         }
         else
