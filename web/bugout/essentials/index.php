@@ -73,7 +73,33 @@ switch ($action)
     break;
 
   default:
-    include '../index.php';
+    $items = getEssentails();
+
+    $itemslist = '<ul>';
+    
+    foreach ($items as $item)
+    {
+      $name = $item['item_name'];
+      $use = $item['item_use'];
+      $id = $item['item_id'];
+
+      $itemslist .= "<li>$name<br>
+      <form action='?' method='POST'>
+      <input type='hidden' name='id' value='$id'>
+      <input type='hidden' name='name' value='$name'>
+      <input type='hidden' name='use' value='$use'>
+      <input type='submit' value='Details' name='details' id='details'><br><br>
+
+      <input type='hidden' name='action' value='details'>
+      </form>
+      </li>";
+    }
+
+    $itemslist .= '</ul>';
+
+    include '../view/essentials.php';
+    break;
+  ;
 }
 
 ?>

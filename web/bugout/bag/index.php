@@ -60,17 +60,11 @@ switch ($action)
       $addOutcome = addtobag($id, $packed, $quantity);
         if ($addOutcome === 1)
         {
-          $message = "<h3>Item added to your bugout bag.</h3>
-                      <form action='/bugout/bag/index.php?action=mygear' method='POST'>
-                      <input type='hidden' name='action' value='mygear'>
-                      </form>";
+          $message = "<h3>Item added to your bugout bag.</h3>";
         }
         else
         {
-          $message = "<h3>Sorry, the addition failed. Please try again.</h3>
-                      <form action='/bugout/bag/index.php?action=mygear' method='POST'>
-                      <input type='hidden' name='action' value='mygear'>
-                      </form>";
+          $message = "<h3>Sorry, the addition failed. Please try again.</h3>";
         }
 
       include 'index.php';
@@ -261,7 +255,40 @@ switch ($action)
     include '../view/mygear.php';
     break;
 
-
   default:
-    include '../view/addtobag.php';
+    $bagitems = mygearbag();
+
+    $bagitemslist = '<ul>';
+
+    foreach ($bagitems as $bagitem)
+    {
+      $name = $bagitem['item_name'];
+      $packed = $bagitem['packed'];
+      $quantity = $bagitem['quantity'];
+      $use = $bagitem['item_use'];
+
+      $bagitemslist .= "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
+    }
+
+    $bagitemslist .= '</ul>';
+
+    $itemsextra = mygearextras();
+
+    $extraitemslist = '<ul>';
+
+    foreach ($itemsextra as $itemextra)
+    {
+      $name = $itemextra['item_name'];
+      $packed = $itemextra['packed'];
+      $quantity = $itemextra['quantity'];
+      $use = $itemextra['item_use'];
+      $location = $itemextra['item_location'];
+
+      $extraitemslist .= "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use<br>Location: $location</p></li>";
+    }
+
+    $extraitemslist .= '</ul>';
+
+    include '../view/mygear.php';
+    break;
 }
