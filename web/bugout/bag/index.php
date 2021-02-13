@@ -67,11 +67,10 @@ switch ($action)
           $message = "<h3>Sorry, the addition failed. Please try again.</h3>";
         }
 
-      include '../view/mygear.php';
+      include $_SERVER['DOCUMENT_ROOT'].'/bugout/bag/index.php?action=mygear';
       exit;
     }
 
- //   include 'index.php?action=mygear';
     break;
 
   case 'addtoextras':
