@@ -150,7 +150,12 @@ function edit($id)
 
   $edit = 'SELECT FROM bugout_bag
           WHERE bag_id = :id';
-          
+
+  $stmt = $db->prepare($edit);
+
+  $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+  $stmt->execute();
+  $stmt->closeCursor();
 }
 
 function delete($id)
