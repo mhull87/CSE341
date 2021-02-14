@@ -162,8 +162,7 @@ function update($id, $quantity, $packed)
 {
   $db = get_db();
 
-  $update = 'SELECT bag_id, quantity, packed FROM bugout_bag;
-            UPDATE bugout_bag
+  $update = 'UPDATE bugout_bag
             SET quantity = :quantity,
                 packed = :packed
             WHERE bag_id = :id';
