@@ -169,9 +169,9 @@ function update($id, $quantity, $packed)
 
   $stmt = $db->prepare($update);
 
-  $stmt->bindValue(':quantity', $quantity, PDO::PARAM_INT);
-  $stmt->bindValue(':packed', $packed, PDO::PARAM_STR);
-  $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+  $stmt->bindValue(':quantity', $quantity);
+  $stmt->bindValue(':packed', $packed);
+  $stmt->bindValue(':id', $id);
   $stmt->execute();
   $stmt->closeCursor();
 }
