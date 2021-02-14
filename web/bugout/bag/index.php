@@ -273,6 +273,13 @@ switch ($action)
     exit;
     break;
 
+  case 'deleteextra':
+    $id = $_POST['id'];
+    deleteextra($id);
+    header('Location: ../bag/index.php');
+    exit;
+    break;
+  
   case 'delete':
     $id = $_POST['id'];
     delete($id);
@@ -358,7 +365,7 @@ switch ($action)
       $extraitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
                         <input type='hidden' name='id' value='$id'>
                         <input type='submit' value='Delete Item'>
-                        <input type='hidden' name='action' value='delete'>
+                        <input type='hidden' name='action' value='deleteextra'>
                         </form>";
     }
 

@@ -225,4 +225,18 @@ function delete($id)
   $stmt->execute();
   $stmt->closeCursor();
 }
+
+function deleteextra($id)
+{
+  $db = get_db();
+
+  $delete = 'DELETE FROM extras
+            WHERE extra_id = :id';
+
+  $stmt = $db->prepare($delete);
+
+  $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+  $stmt->execute();
+  $stmt->closeCursor();
+}
 ?>
