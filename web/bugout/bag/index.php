@@ -227,6 +227,8 @@ switch ($action)
     </form>";
 
     include '../view/editbag.php';
+    exit;
+    break;
 
   case 'delete':
     $id = $_POST['id'];
@@ -249,18 +251,18 @@ switch ($action)
       $id = $bagitem['bag_id'];
 
       $bagitemslist .= "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
-      $bagitemslist .= "<form action='/bugout/bag/index.php?action=edit' method='POST'>
+      $bagitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
                         <input type='hidden' name='id' value='$id'>
                         <input type='hidden' name='name' value='$name'>
                         <input type='hidden' name='quantity' value='$quantity'>
                         <input type='submit' value='Edit Item'>
                         <input type='hidden' name='action' value='edit'>
                         </form>";
-      // $bagitemslist .= "<form action='' method='POST'>
-      //                   <input type='hidden' name='id' value='$id'>
-      //                   <input type='submit' value='Delete Item'>
-      //                   <input type='hidden' name='action' value='delete'>
-      //                   </form>";
+      $bagitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
+                        <input type='hidden' name='id' value='$id'>
+                        <input type='submit' value='Delete Item'>
+                        <input type='hidden' name='action' value='delete'>
+                        </form>";
     }
 
     $bagitemslist .= '</ul>';
