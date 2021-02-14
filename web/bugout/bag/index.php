@@ -201,6 +201,7 @@ switch ($action)
     $id = $_POST['id'];
     $name = $_POST['name'];
     $quantity = $_POST['quantity'];
+    $var_dump($id, $name, $quantity);
 
     edit($id);
     $editbagform = 
