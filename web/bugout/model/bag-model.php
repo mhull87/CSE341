@@ -117,7 +117,8 @@ function mygearbag()
   $db = get_db();
 
   $bag = 'SELECT i.item_name, b.packed, b.quantity, i.item_use, b.bag_id
-          FROM bugout_bag b JOIN items i ON b.item_id = i.item_id';
+          FROM bugout_bag b JOIN items i ON b.item_id = i.item_id
+          ORDER BY b.bag_id';
 
   $stmtbag = $db->prepare($bag);
   $stmtbag->execute();
@@ -132,8 +133,9 @@ function mygearextras()
 {
   $db = get_db();
   
-  $extra = 'SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
-            FROM extras e JOIN items i ON e.item_id = i.item_id';
+  $extra = 'SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location, e.extra_id
+            FROM extras e JOIN items i ON e.item_id = i.item_id
+            ORDER BY e.extra_id';
 
   $stmtextra = $db->prepare($extra);
   $stmtextra->execute();
