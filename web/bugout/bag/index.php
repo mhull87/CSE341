@@ -233,7 +233,7 @@ switch ($action)
   case 'delete':
     $id = $_POST['id'];
     delete($id);
-    header('Location: ../bag/index.php?action=mygear');
+    header('Location: ../bag/index.php');
     exit;
     break;
 
