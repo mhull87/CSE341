@@ -258,6 +258,7 @@ switch ($action)
       $packed = $bagitem['packed'];
       $quantity = $bagitem['quantity'];
       $use = $bagitem['item_use'];
+      $id = $bagitem['bag_id'];
 
       $bagitemslist .= "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
       $bagitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
@@ -294,5 +295,6 @@ switch ($action)
     $extraitemslist .= '</ul>';
 
     include '../view/mygear.php';
+    exit;
     break;
 }
