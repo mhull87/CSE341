@@ -158,6 +158,24 @@ function edit($id)
   $stmt->closeCursor();
 }
 
+function update($id, $quantity, $packed)
+{
+  $db = get_db();
+
+  $update = 'UPDATE bugout_bag
+            SET quantity = :quantity,
+                packed = :packed
+            WHERE bag_id = :id';
+
+  $stmt = $db->prepare($update);
+
+  $stmt->bindValue(':quantity', $quantity, PDO::PARAM_INT);
+  $stmt->bindValue(':packed', $packed, PDO::PARAM_STR);
+  $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+  $stmt->execute();
+  $stmt->closeCursor();
+}
+
 function delete($id)
 {
   $db = get_db();

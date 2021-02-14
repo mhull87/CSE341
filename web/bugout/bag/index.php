@@ -222,7 +222,7 @@ switch ($action)
     
       <input type='submit' id='updateitemgbtn' value='Update Item'>
   
-      <input type='hidden' name='action' value='replace'>
+      <input type='hidden' name='action' value='update'>
   
     </form>";
 
@@ -237,56 +237,14 @@ switch ($action)
     exit;
     break;
 
-  case 'mygear':
-    $bagitems = mygearbag();
+  case 'update':
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $quantity = $_POST['quantity'];
 
-    $bagitemslist = '<ul>';
-
-    foreach ($bagitems as $bagitem)
-    {
-      $name = $bagitem['item_name'];
-      $packed = $bagitem['packed'];
-      $quantity = $bagitem['quantity'];
-      $use = $bagitem['item_use'];
-      $id = $bagitem['bag_id'];
-
-      $bagitemslist .= "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
-      $bagitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
-                        <input type='hidden' name='id' value='$id'>
-                        <input type='hidden' name='name' value='$name'>
-                        <input type='hidden' name='quantity' value='$quantity'>
-                        <input type='submit' value='Edit Item'>
-                        <input type='hidden' name='action' value='edit'>
-                        </form>";
-      $bagitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
-                        <input type='hidden' name='id' value='$id'>
-                        <input type='submit' value='Delete Item'>
-                        <input type='hidden' name='action' value='delete'>
-                        </form>";
-    }
-
-    $bagitemslist .= '</ul>';
-
-    $itemsextra = mygearextras();
-
-    $extraitemslist = '<ul>';
-
-    foreach ($itemsextra as $itemextra)
-    {
-      $name = $itemextra['item_name'];
-      $packed = $itemextra['packed'];
-      $quantity = $itemextra['quantity'];
-      $use = $itemextra['item_use'];
-      $location = $itemextra['item_location'];
-
-      $extraitemslist .= "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use<br>Location: $location</p></li>";
-      $extraitemslist .= "<a href='../bag/index.php?action=edit'>Edit Item</a>";
-      $extraitemslist .= "<a href='../bag/index.php?action=delete'>Delete Item</a>";
-    }
-
-    $extraitemslist .= '</ul>';
-
-    include '../view/mygear.php';
+    update($id, $packed, $quantity);
+    header('Location: /bugout/bag/index.php');
+    exit;
     break;
 
   default:
@@ -322,6 +280,19 @@ switch ($action)
     }
 
     $extraitemslist .= '</ul>';
+    $bagitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
+                      <input type='hidden' name='id' value='$id'>
+                      <input type='hidden' name='name' value='$name'>
+                      <input type='hidden' name='quantity' value='$quantity'>
+                      <input type='submit' value='Edit Item'>
+                      <input type='hidden' name='action' value='edit'>
+                      </form>";
+    $bagitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
+                      <input type='hidden' name='id' value='$id'>
+                      <input type='submit' value='Delete Item'>
+                      <input type='hidden' name='action' value='delete'>
+                      </form>";
+
 
     include '../view/mygear.php';
     break;
