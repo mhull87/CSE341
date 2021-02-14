@@ -225,7 +225,7 @@ switch ($action)
       <input type='hidden' name='action' value='replace'>
   
     </form>";
-    
+
     include '../view/editbag.php';
 
   case 'delete':
@@ -249,14 +249,14 @@ switch ($action)
       $id = $bagitem['bag_id'];
 
       $bagitemslist .= "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
-      $bagitemslist .= "<form action='?' method='POST'>
+      $bagitemslist .= "<form action='' method='POST'>
                         <input type='hidden' name='id' value='$id'>
                         <input type='hidden' name='name' value='$name'>
                         <input type='hidden' name='quantity' value='$quantity'>
                         <input type='submit' value='Edit Item'>
                         <input type='hidden' name='action' value='edit'>
                         </form>";
-      $bagitemslist .= "<form action='?' method='POST'>
+      $bagitemslist .= "<form action='' method='POST'>
                         <input type='hidden' name='id' value='$id'>
                         <input type='submit' value='Delete Item'>
                         <input type='hidden' name='action' value='delete'>
