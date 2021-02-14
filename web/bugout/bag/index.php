@@ -58,7 +58,7 @@ switch ($action)
     else
     {
       $addOutcome = addtobag($id, $packed, $quantity);
-      header('Location: /bugout/bag/index.php?action=mygear');
+      header('Location: /bugout/bag/index.php');
     }
 
     break;
@@ -110,7 +110,7 @@ switch ($action)
       else
       {
         $addOutcome = addtoextras($id, $packed, $quantity, $item_location);
-        header('Location: /bugout/bag/index.php?action=mygear');
+        header('Location: /bugout/bag/index.php');
       }
       
       break;
@@ -209,7 +209,7 @@ switch ($action)
     "<form action='/bugout/bag/index.php' method='POST'>
   
       <label for='item_name'>Item Name</label><br>
-      <input name='item_name' id='item_name' value='$name' type='text' readonly><br><br>
+      <input name='id' id='item_name' value='$name' type='text' readonly><br><br>
   
       <label for='quantity'>Quantity</label><br>
       <input type='number' min='0' name='quantity' value='$quantity' id='quantity' required><br><br>
