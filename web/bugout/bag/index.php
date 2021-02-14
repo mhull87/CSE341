@@ -209,10 +209,10 @@ switch ($action)
     "<form action='/bugout/bag/index.php' method='POST'>
   
       <label for='item_name'>Item Name</label><br>
-      <input name='id' id='item_name' value='$name' type='text' readonly><br><br>
+      <input name='name' id='item_name' value='$name' type='text' readonly><br><br>
   
       <label for='quantity'>Quantity</label><br>
-      <input type='number' min='0' name='quantity' value='$quantity' id='quantity' required><br><br>
+      <input type='number' min='0' name='quantity' placeholder='$quantity' id='quantity' required><br><br>
   
       <p>Is It Packed?</p>
   
@@ -221,6 +221,8 @@ switch ($action)
   
       <input type='radio' name='packed' id='need' value='no'>
       <label for='need'>No</label><br><br>
+
+      <input type='hidden' name='id' value='$id'>
     
       <input type='submit' id='updateitemgbtn' value='Update Item'>
   
