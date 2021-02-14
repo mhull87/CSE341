@@ -160,6 +160,20 @@ function edit($id)
   $stmt->closeCursor();
 }
 
+function editextras($id)
+{
+  $db = get_db();
+
+  $edit = 'SELECT FROM extras
+          WHERE extra_id = :id';
+
+  $stmt = $db->prepare($edit);
+
+  $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+  $stmt->execute();
+  $stmt->closeCursor();
+}
+
 function update($id, $quantity, $packed)
 {
   $db = get_db();
@@ -173,6 +187,26 @@ function update($id, $quantity, $packed)
 
   $stmt->bindValue(':quantity', $quantity, PDO::PARAM_INT);
   $stmt->bindValue(':packed', $packed, PDO::PARAM_STR);
+  $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+  $stmt->execute();
+  $stmt->closeCursor();
+}
+
+function updateextras($id, $quantity, $packed, $item_location)
+{
+  $db = get_db();
+
+  $update = 'UPDATE extras
+            SET quantity = :quantity,
+            packed = :packed,
+            item_location = :item_location
+            WHERE extra_id = :id';
+
+  $stmt = $db->prepare($update);
+
+  $stmt->bindValue(':quantity', $quantity, PDO::PARAM_INT);
+  $stmt->bindValue(':packed', $packed, PDO::PARAM_STR);
+  $stmt->bindValue(':item_location', $item_location, PDO::PARAM_STR);
   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
   $stmt->execute();
   $stmt->closeCursor();

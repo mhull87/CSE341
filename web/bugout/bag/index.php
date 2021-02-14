@@ -197,12 +197,51 @@ switch ($action)
     include '../view/bagpacked.php';
     break;
   
+  case 'editextras':
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $quantity = $_POST['quantity'];
+    $packed = $_POST['packed'];
+    $location = $_POST['location'];
+
+    editextras($id);
+    $editextrasform =
+    "<form action='/bugout/bag/index.php' method='POST'>
+
+      <label for='item_name'>Item Name</label><br>
+      <input name='name' id='item_name' value='$name' type='text' readonly><br><br>
+
+      <label for='quantity'>Quantity</label><br>
+      <input type='number' min='0' name='quantity' value='$quantity' id='quantity' required><br><br>
+
+      <p>Is It Packed?</p>
+
+      <input type='radio' name='packed' id='packed' value='yes' checked>
+      <label for='packed'>Yes</label><br>
+
+      <input type='radio' name='packed' id='need' value='no'>
+      <label for='need'>No</label><br><br>
+
+      <label for='item_location'>Location</label><br>
+      <input type='text' name='location' value='$location' id='item_location' required><br><br>
+
+      <input type='hidden' name='id' value='$id'>
+
+      <input type='submit' id='addtomyextrasbtn' value='Add To My Extras'>
+
+      <input type='hidden' name='action' value='updateextras'>
+
+    </form>";
+
+    include '../view/editextras.php';
+    exit;
+    break;
+  
   case 'edit':
     $id = $_POST['id'];
     $name = $_POST['name'];
     $quantity = $_POST['quantity'];
     $packed = $_POST['packed'];
-    var_dump($id, $name, $quantity, $packed);
 
     edit($id);
     $editbagform = 
@@ -241,6 +280,17 @@ switch ($action)
     exit;
     break;
 
+  case 'updateextras':
+    $id = $_POST['id'];
+    $quantity = $_POST['quantity'];
+    $location = $_POST['location'];
+    $packed = $_POST['packed'];
+
+    updateextras($id, $quantity, $packed, $location);
+    header('Location: ../bag/index.php');
+    exit;
+    break;
+  
   case 'update':
     $id = $_POST['id'];
     $quantity = $_POST['quantity'];
@@ -293,8 +343,23 @@ switch ($action)
       $quantity = $itemextra['quantity'];
       $use = $itemextra['item_use'];
       $location = $itemextra['item_location'];
+      $id = $itemextra['extra_id'];
 
       $extraitemslist .= "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use<br>Location: $location</p></li>";
+      $extraitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
+                        <input type='hidden' name='id' value='$id'>
+                        <input type='hidden' name='name' value='$name'>
+                        <input type='hidden' name='quantity' value='$quantity'>
+                        <input type='hidden' name='packed' value='$packed'>
+                        <input type='submit' value='Edit Item'>
+                        <input type='hidden' name='location' value='$location'>
+                        <input type='hidden' name='action' value='editextras'>
+                        </form>";
+      $extraitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
+                        <input type='hidden' name='id' value='$id'>
+                        <input type='submit' value='Delete Item'>
+                        <input type='hidden' name='action' value='delete'>
+                        </form>";
     }
 
     $extraitemslist .= '</ul>';
