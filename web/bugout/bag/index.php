@@ -245,7 +245,7 @@ switch ($action)
     $packed = $_POST['packed'];
 
     update($id, $packed, $quantity);
-    header('Location: /bugout/bag/index.php');
+    header('Location: ../bag/index.php');
     exit;
     break;
 
