@@ -57,7 +57,7 @@ CREATE TABLE bugout_bag (
   -- user_id INT NOT NULL REFERENCES bugoutuser (user_id),
   item_id INT NOT NULL REFERENCES items (item_id),
   packed VARCHAR(3) NOT NULL,
-  quantity INT
+  quantity INT NOT NULL
 );
 
 CREATE TABLE extras (

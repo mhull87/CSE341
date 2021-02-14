@@ -49,7 +49,7 @@ switch ($action)
   
     </form>";
 
-    if (empty($packed) || empty($quantity))
+    if (empty($packed))
     {
       $message = "<p>Item name, quantity, and packed value are all required.</p>";
       include '../view/addtobag.php';
@@ -101,7 +101,7 @@ switch ($action)
 
       </form>";
 
-      if (empty($packed) || empty($item_location) || empty($quantity))
+      if (empty($packed))
       {
         $message = "<p>Item name, quantity, packed value, and location are required.</p>";
         include '../view/addtomyextras.php';
