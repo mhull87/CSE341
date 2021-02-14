@@ -260,6 +260,18 @@ switch ($action)
       $use = $bagitem['item_use'];
 
       $bagitemslist .= "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
+      $bagitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
+                        <input type='hidden' name='id' value='$id'>
+                        <input type='hidden' name='name' value='$name'>
+                        <input type='hidden' name='quantity' value='$quantity'>
+                        <input type='submit' value='Edit Item'>
+                        <input type='hidden' name='action' value='edit'>
+                        </form>";
+      $bagitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
+                        <input type='hidden' name='id' value='$id'>
+                        <input type='submit' value='Delete Item'>
+                        <input type='hidden' name='action' value='delete'>
+                        </form>";
     }
 
     $bagitemslist .= '</ul>';
@@ -280,19 +292,6 @@ switch ($action)
     }
 
     $extraitemslist .= '</ul>';
-    $bagitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
-                      <input type='hidden' name='id' value='$id'>
-                      <input type='hidden' name='name' value='$name'>
-                      <input type='hidden' name='quantity' value='$quantity'>
-                      <input type='submit' value='Edit Item'>
-                      <input type='hidden' name='action' value='edit'>
-                      </form>";
-    $bagitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
-                      <input type='hidden' name='id' value='$id'>
-                      <input type='submit' value='Delete Item'>
-                      <input type='hidden' name='action' value='delete'>
-                      </form>";
-
 
     include '../view/mygear.php';
     break;
