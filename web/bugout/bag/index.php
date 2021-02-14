@@ -267,6 +267,7 @@ switch ($action)
                         <input type='hidden' name='id' value='$id'>
                         <input type='hidden' name='name' value='$name'>
                         <input type='hidden' name='quantity' value='$quantity'>
+                        <input type='hidden' name='packed' value='$packed'>
                         <input type='submit' value='Edit Item'>
                         <input type='hidden' name='action' value='edit'>
                         </form>";
