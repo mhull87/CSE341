@@ -201,7 +201,8 @@ switch ($action)
     $id = $_POST['id'];
     $name = $_POST['name'];
     $quantity = $_POST['quantity'];
-    var_dump($id, $name, $quantity);
+    $packed = $_POST['packed'];
+    var_dump($id, $name, $quantity, $packed);
 
     edit($id);
     $editbagform = 
@@ -240,8 +241,8 @@ switch ($action)
 
   case 'update':
     $id = $_POST['id'];
-    $name = $_POST['name'];
     $quantity = $_POST['quantity'];
+    $packed = $_POST['packed'];
 
     update($id, $packed, $quantity);
     header('Location: /bugout/bag/index.php');
