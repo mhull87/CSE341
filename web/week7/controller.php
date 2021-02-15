@@ -77,9 +77,10 @@ switch ($action)
     {
       $badlogin = true;
     }
+    
 
   default:
-    include 'home.php';
+    include 'index.php';
     break;
 }
 ?>

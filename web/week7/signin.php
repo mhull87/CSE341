@@ -30,7 +30,7 @@ if (isset($message) || isset($badlogin))
     <input type="hidden" name="action" value="login">
   </form>
 
-  <a href="index.php">Not a member yet? Sign Up</a>
+  <a href="signup.php">Not a member yet? Sign Up</a>
 </body>
 
 </html>
