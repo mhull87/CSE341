@@ -47,15 +47,9 @@ switch ($action)
     $pass = filter_input(INPUT_POST, 'pass');
     $badlogin = false;
 
-    //check for missing data
-    if (empty($username) || empty($pass))
-    {
-      $message = "<p>Incorrect username or passowrd.</p>";
-      include 'signin.php';
-    }
-
     $result = login($username, $pass, $badlogin);
 
+    include 'index.php';
     var_dump($_SESSION);
 
     break;
