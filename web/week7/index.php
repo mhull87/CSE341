@@ -1,4 +1,9 @@
-
+<?php
+if (isset($message))
+{
+  echo $message;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
