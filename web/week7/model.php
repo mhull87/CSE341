@@ -33,12 +33,10 @@ function login($username)
 
   $stmt->bindValue(':username', $username, PDO::PARAM_STR);
 
-  $stmt->execute();
-
-  $hash = $stmt->fetch(PDO::FETCH_ASSOC);
+  $result = $stmt->execute();
 
   $stmt->closeCursor();
 
-  return $hash;
+  return $result;
 }
 ?>

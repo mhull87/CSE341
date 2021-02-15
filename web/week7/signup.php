@@ -1,12 +1,10 @@
 <?php
 session_start();
 
-if (isset($message) || isset($badlogin))
+if (isset($message))
 {
   echo $message;
-  echo $badlogin;
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -15,22 +13,22 @@ if (isset($message) || isset($badlogin))
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign-In</title>
+  <title>Sign-Up</title>
 </head>
 
 <body>
-  <h1>Sign-In</h1>
+  <h1>Sign-up</h1>
 
   <form method='post' action="controller.php">
     <label for="username">Username: </label>
     <input type="text" id="username" name="username">
     <label for="pass">Password: </label>
     <input type="password" id="pass" name="pass">
-    <input type="submit" value="Login">
-    <input type="hidden" name="action" value="login">
+    <input type="submit" value="Register">
+    <input type="hidden" name="action" value="register">
   </form>
 
-  <a href="index.php">Not a member yet? Sign Up</a>
+  <a href="signin.php">Sign In Here</a>
 </body>
 
 </html>

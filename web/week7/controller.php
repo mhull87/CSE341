@@ -20,7 +20,8 @@ switch ($action)
     if (empty($username) || empty($pass))
     {
       $message = "<p>Please provide information for all fields</p>";
-      include 'index.php';
+      header('Location: signup.php');
+      die();
       exit;
     }
 
@@ -28,43 +29,53 @@ switch ($action)
     if ($outcome === 1)
     {
       $message = "<h3>Thank you for registering $username. Please login to continue.</h3>";
+      header('Location: signin.php');
+      die();
     }
     else
     {
       $message = "<h3>Sorry $username, the registration failed. Please try again.</p>";
+      header('Location: signup.php');
+      die();
     }
 
-    header('Location: index.php');
-    die();
     break;
 
   case 'login':
     //filter and store the data
     $username = filter_input(INPUT_POST, 'username');
     $pass = filter_input(INPUT_POST, 'pass');
+    $badlogin = false;
 
     //check for missing data
-    if (empty($username) || empty($pass))
+    if (empty($username) || empty($pass) || $badlogin = true)
     {
-      $message = "<p>Please provide information for all fields</p>";
-      include 'home.php';
+      $message = "<p>Incorrect username or passowrd.</p>";
+      include 'signin.php';
       exit;
     }
 
-    $hash = login($username);
+    $result = login($username);
 
-    if (password_verify($pass, $hash))
+    if ($result)
     {
-      $_SESSION['username'] = $username;
-      include 'home.php';
-      echo 'Successful Sign In';
-      var_dump($_SESSION);
+      $row = $stmt->fetch(PDO::FETCH_ASSOC);
+      $hash = $row['password'];
+
+      if (password_verify($pass, $hash))
+      {
+        $_SESSION['username'] = $username;
+        header('Location: index.php');
+        die();
+      }
+      else
+      {
+        $badlogin = true;
+      }
     }
     else
     {
-      $message = "<h3>Sorry $username, the login failed. Please try again.</p>";
-      include 'home.php';
-      var_dump($_SESSION);
+      $badlogin = true;
     }
 
   default:
