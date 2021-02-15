@@ -13,7 +13,7 @@ if ($action == null)
 switch ($action)
 {
   case 'login':
-    $outcome = login($userfname, $userlname, $useremail, $userpassword);
+    $outcome = login($username, $pass);
 
     if ($outcome === 1)
     {
