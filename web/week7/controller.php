@@ -13,6 +13,9 @@ if ($action == null)
 switch ($action)
 {
   case 'login':
+    $username = filter_input(INPUT_POST, 'username');
+    $pass = filter_input(INPUT_POST, 'pass');
+    
     $outcome = login($username, $pass);
 
     if ($outcome === 1)
