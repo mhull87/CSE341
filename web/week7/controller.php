@@ -58,12 +58,13 @@ switch ($action)
       $_SESSION['username'] = $username;
       include 'home.php';
       echo 'Successful Sign In';
-      echo $_SESSION;
+      var_dump($_SESSION);
     }
     else
     {
       $message = "<h3>Sorry $username, the login failed. Please try again.</p>";
       include 'home.php';
+      var_dump($_SESSION);
     }
 
   default:
