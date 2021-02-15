@@ -15,13 +15,13 @@ switch ($action)
   case 'login':
     $username = filter_input(INPUT_POST, 'username');
     $pass = filter_input(INPUT_POST, 'pass');
-    
+
     $outcome = login($username, $pass);
 
     if ($outcome === 1)
     {
       $message = "<h3>Thank you for logging in $username.</h3>";
-      include 'index.php';
+      header('Location: index.php');
       exit;
     }
     else
