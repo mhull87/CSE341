@@ -27,11 +27,11 @@ switch ($action)
     else
     {
       $message = "<h3>Sorry $username, the login failed. Please try again.</p>";
-      include 'index.php';
+      header('Location: index.php');
       exit;
     }
 
-    include 'index.php';
+    header('Location: index.php');
     break;
 
   case 'register':
