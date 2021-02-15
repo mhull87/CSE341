@@ -52,7 +52,6 @@ switch ($action)
     {
       $message = "<p>Incorrect username or passowrd.</p>";
       include 'signin.php';
-      exit;
     }
 
     $result = login($username, $pass, $badlogin);
