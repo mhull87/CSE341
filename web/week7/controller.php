@@ -28,16 +28,10 @@ switch ($action)
     if ($outcome === 1)
     {
       $message = "<h3>Thank you for registering $username. Please login to continue.</h3>";
-      header('Location: index.php');
-      echo 'registered';
-      die();
-      exit;
     }
     else
     {
       $message = "<h3>Sorry $username, the registration failed. Please try again.</p>";
-      include '../view/regester.php';
-      exit;
     }
 
     header('Location: index.php');
