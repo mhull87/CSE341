@@ -55,28 +55,9 @@ switch ($action)
       exit;
     }
 
-    $result = login($username);
+    $result = login($username, $pass, $badlogin);
 
-    if ($result)
-    {
-      $row = $stmt->fetch(PDO::FETCH_ASSOC);
-      $hash = $row['password'];
-
-      if (password_verify($pass, $hash))
-      {
-        $_SESSION['username'] = $username;
-        header('Location: index.php');
-        die();
-      }
-      else
-      {
-        $badlogin = true;
-      }
-    }
-    else
-    {
-      $badlogin = true;
-    }
+    break;
     
 
   default:

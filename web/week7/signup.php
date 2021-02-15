@@ -17,7 +17,7 @@ if (isset($message))
 </head>
 
 <body>
-  <h1>Sign-up</h1>
+  <h1>Sign-Up</h1>
 
   <form method='post' action="controller.php">
     <label for="username">Username: </label>
