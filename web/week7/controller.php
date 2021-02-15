@@ -48,7 +48,7 @@ switch ($action)
 
     $user = login($username, $pass);
     echo $user;
-    include 'index.php';
+    include 'signin.php';
     var_dump($_SESSION);
 
     break;
