@@ -56,7 +56,7 @@ switch ($action)
     if (password_verify($pass, $hash))
     {
       $_SESSION['username'] = $username;
-      header('Location: index.php');
+      include 'home.php';
       echo 'Successful Sign In';
       echo $_SESSION;
     }
