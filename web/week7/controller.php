@@ -55,7 +55,9 @@ switch ($action)
       exit;
     }
 
-    $result = login($username, $pass, $badlogin);
+    login($username, $pass, $badlogin);
+
+    var_dump($_SESSION);
 
     break;
     
