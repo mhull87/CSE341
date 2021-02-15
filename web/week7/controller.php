@@ -12,56 +12,57 @@ if ($action == null)
 
 switch ($action)
 {
-  case 'login':
+  case 'register':
     $username = filter_input(INPUT_POST, 'username');
     $pass = filter_input(INPUT_POST, 'pass');
 
-    $outcome = login($username, $pass);
-
-    if ($outcome === 1)
-    {
-      header('Location: index.php');
-      $message = "<h3>Thank you for logging in $username.</h3>";
-      exit;
-    }
-    else
-    {
-      $message = "<h3>Sorry $username, the login failed. Please try again.</p>";
-      header('Location: index.php');
-      exit;
-    }
-
-    header('Location: index.php');
-    break;
-
-  case 'register':
-    //filter and store the data
-    $userfname = filter_input(INPUT_POST, 'userfname');
-    $userlname = filter_input(INPUT_POST, 'userlname');
-    $useremail = filter_input(INPUT_POST, 'useremail');
-    $userpassword = filter_input(INPUT_POST, 'userpassword');
-
     //check for missing data
-    if (empty($userfname) || empty($userlname) || empty($useremail) || empty($userpassword))
+    if (empty($username) || empty($pass))
     {
       $message = "<p>Please provide information for all fields</p>";
-      include '../view/register.php';
+      include 'index.php';
       exit;
     }
 
-    $outcome = register($userfname, $userlname, $useremail, $userpassword);
-
-    if ($outcome == 1)
+    $outcome = register($username, $pass);
+    if ($outcome === 1)
     {
-      $message = "<h3>Thank you for registering $userfname. Please login to continue.</h3>";
+      $message = "<h3>Thank you for registering $username. Please login to continue.</h3>";
       include '../view/login.php';
       exit;
     }
     else
     {
-      $message = "<h3>Sorry $userfname, the registration failed. Please try again.</p>";
+      $message = "<h3>Sorry $username, the registration failed. Please try again.</p>";
       include '../view/regester.php';
       exit;
+    }
+
+    header('Location: index.php');
+    die();
+    break;
+
+  case 'login':
+    //filter and store the data
+    $username = filter_input(INPUT_POST, 'username');
+    $pass = filter_input(INPUT_POST, 'pass');
+
+    //check for missing data
+    if (empty($username) || empty($pass))
+    {
+      $message = "<p>Please provide information for all fields</p>";
+      include 'index.php';
+      exit;
+    }
+
+    $outcome = register($username, $pass);
+    if ($outcome === 1)
+    {
+      $message = "<h3>Thank you for logging in $username.</h3>";
+    }
+    else
+    {
+      $message = "<h3>Sorry $username, the login failed. Please try again.</p>";
     }
 
   default:
