@@ -37,7 +37,7 @@ function login($username, $pass)
 
   if ($result)
   {
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $row = $stmt->fetch();
     $hash = $row['pass'];
 
     if (password_verify($pass, $hash))
