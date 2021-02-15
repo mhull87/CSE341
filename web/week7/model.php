@@ -48,6 +48,6 @@ function login($username, $pass)
     }
   }
   $stmt->closeCursor();
-
+return $username;
 }
 ?>

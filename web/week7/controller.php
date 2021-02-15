@@ -45,10 +45,9 @@ switch ($action)
     //filter and store the data
     $username = filter_input(INPUT_POST, 'username');
     $pass = filter_input(INPUT_POST, 'pass');
-    $badlogin = false;
 
-    login($username, $pass);
-
+    $user = login($username, $pass);
+    echo $user;
     include 'index.php';
     var_dump($_SESSION);
 
