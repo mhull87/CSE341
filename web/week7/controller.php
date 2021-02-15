@@ -48,7 +48,7 @@ switch ($action)
     $badlogin = false;
 
     //check for missing data
-    if (empty($username) || empty($pass) || $badlogin = true)
+    if (empty($username) || empty($pass))
     {
       $message = "<p>Incorrect username or passowrd.</p>";
       include 'signin.php';
