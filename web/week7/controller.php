@@ -55,7 +55,7 @@ switch ($action)
       exit;
     }
 
-    $hash = register($username, $pass);
+    $hash = login($username);
 
     if (password_verify($pass, $hash))
     {
