@@ -40,7 +40,7 @@ switch ($action)
 
   case 'login':
     //filter and store the data
-    $_SESSION['username'] = $username = filter_input(INPUT_POST, 'username');
+    $username = filter_input(INPUT_POST, 'username');
     $pass = filter_input(INPUT_POST, 'pass');
 
     //check for missing data
@@ -55,6 +55,7 @@ switch ($action)
 
     if (password_verify($pass, $hash))
     {
+      $_SESSION['username'] = $username;
       header('Location: index.php');
       echo 'Successful Sign In';
       echo $_SESSION;
@@ -65,7 +66,7 @@ switch ($action)
     }
 
   default:
-    include '../index.php';
+    include 'index.php';
     break;
 }
 ?>

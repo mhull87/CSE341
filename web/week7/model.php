@@ -35,7 +35,7 @@ function login($username)
 
   $stmt->execute();
 
-  $hash =  $stmt->fetch(PDO::FETCH_ASSOC);
+  $hash = $stmt->fetch(PDO::FETCH_ASSOC);
 
   $stmt->closeCursor();
 

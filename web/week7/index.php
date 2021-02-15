@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 if (isset($message))
 {
   echo $message;
