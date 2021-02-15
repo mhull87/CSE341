@@ -44,7 +44,7 @@ switch ($action)
 
   case 'login':
     //filter and store the data
-    $username = filter_input(INPUT_POST, 'username');
+    $_SESSION['username'] = $username = filter_input(INPUT_POST, 'username');
     $pass = filter_input(INPUT_POST, 'pass');
 
     //check for missing data
@@ -55,10 +55,13 @@ switch ($action)
       exit;
     }
 
-    $outcome = register($username, $pass);
-    if ($outcome === 1)
+    $hash = register($username, $pass);
+
+    if (password_verify($pass, $hash))
     {
-      $message = "<h3>Thank you for logging in $username.</h3>";
+      header('Location: index.php');
+      echo 'Successful Sign In';
+      echo $_SESSION;
     }
     else
     {
