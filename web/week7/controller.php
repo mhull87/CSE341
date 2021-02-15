@@ -47,7 +47,7 @@ switch ($action)
     if (empty($username) || empty($pass))
     {
       $message = "<p>Please provide information for all fields</p>";
-      include 'index.php';
+      include 'home.php';
       exit;
     }
 
@@ -63,10 +63,11 @@ switch ($action)
     else
     {
       $message = "<h3>Sorry $username, the login failed. Please try again.</p>";
+      include 'home.php';
     }
 
   default:
-    include 'index.php';
+    include 'home.php';
     break;
 }
 ?>
