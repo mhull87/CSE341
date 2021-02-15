@@ -20,8 +20,8 @@ switch ($action)
 
     if ($outcome === 1)
     {
-      $message = "<h3>Thank you for logging in $username.</h3>";
       header('Location: index.php');
+      $message = "<h3>Thank you for logging in $username.</h3>";
       exit;
     }
     else
