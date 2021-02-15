@@ -22,7 +22,7 @@ function register($username, $pass)
   return $rowsChanged;
 }
 
-function login($username, $pass, $badlogin)
+function login($username, $pass)
 {
   $db = get_db();
 
@@ -35,8 +35,6 @@ function login($username, $pass, $badlogin)
 
   $result = $stmt->execute();
 
-  $badlogin = false;
-
   if ($result)
   {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -48,18 +46,8 @@ function login($username, $pass, $badlogin)
       header('Location: index.php');
       die();
     }
-    else
-    {
-      $badlogin = true;
-    }
   }
-  else
-  {
-    $badlogin = true;
-  }
-
   $stmt->closeCursor();
 
-  return $badlogin;
 }
 ?>

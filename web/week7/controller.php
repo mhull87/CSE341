@@ -47,7 +47,7 @@ switch ($action)
     $pass = filter_input(INPUT_POST, 'pass');
     $badlogin = false;
 
-    $result = login($username, $pass, $badlogin);
+    login($username, $pass);
 
     include 'index.php';
     var_dump($_SESSION);
