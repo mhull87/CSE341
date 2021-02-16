@@ -47,11 +47,11 @@ switch ($action)
     }
 
     //varify password and password confirm match
-    $passcheck = passcheck($userpassword);
+   // $passcheck = passcheck($userpassword);
     
     //hash password before sending it to the database
-    if ($passcheck === 1)
-    {
+//    if ($passcheck === 1)
+//    {
       $outcome = register($userfname, $userlname, $useremail, $userpassword);
         if ($outcome === 1)
         {
@@ -65,7 +65,7 @@ switch ($action)
           include '../view/regester.php';
           exit;
         }
-    }
+ //   }
 
     break;
 
