@@ -16,7 +16,13 @@ switch ($action)
   case 'register':
     $username = filter_input(INPUT_POST, 'username');
     $pass = filter_input(INPUT_POST, 'pass');
+    $passconfirm = filter_input(INPUT_POST, 'passconfirm');
 
+    if ($pass !== $passconfirm)
+    {
+      $message = $_SESSION['Passwords do not match.'];
+      $star = $_SESSION['*'];
+    }
     //check for missing data
     if (empty($username) || empty($pass))
     {

@@ -18,12 +18,15 @@ if (isset($message))
 
 <body>
   <h1>Sign-Up</h1>
+  <?php echo $message ?>
 
   <form method='post' action="controller.php">
     <label for="username">Username: </label>
     <input type="text" id="username" name="username">
-    <label for="pass">Password: </label>
+    <label for="pass">Password: </label><?php $star ?>
     <input type="password" id="pass" name="pass">
+    <label for="passconfirm"></label><?php $star ?>
+    <input type="password" id="passconfirm" name="passconfirm">
     <input type="submit" value="Register">
     <input type="hidden" name="action" value="register">
   </form>
