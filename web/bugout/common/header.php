@@ -7,6 +7,7 @@
   <title>Bug Out Survival</title>
   <link href="/bugout/css/main.css" type="text/css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Staatliches&display=swap" rel="stylesheet">
+  <script src="/bugout/js/main.js"></script>
 
 </head>
 
