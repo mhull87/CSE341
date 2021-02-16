@@ -22,32 +22,23 @@ function register($username, $pass)
   return $rowsChanged;
 }
 
-function login($username, $pass)
+function login($username)
 {
   $db = get_db();
 
-  $query = 'SELECT pass FROM users
+  $query = 'SELECT * FROM users
             WHERE username = :username';
 
   $stmt = $db->prepare($query);
 
   $stmt->bindValue(':username', $username, PDO::PARAM_STR);
 
-  $result = $stmt->execute();
+  $stmt->execute();
 
-  if ($result)
-  {
-    $row = $stmt->fetch();
-    $hash = $row['pass'];
+  $info = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    if (password_verify($pass, $hash))
-    {
-      $_SESSION['username'] = $username;
-      header('Location: index.php');
-      die();
-    }
-  }
   $stmt->closeCursor();
-return $username;
+
+return $info;
 }
 ?>

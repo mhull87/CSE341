@@ -48,10 +48,18 @@ switch ($action)
     $pass = filter_input(INPUT_POST, 'pass');
 
     $_SESSION['username'] = $username;
-    $user = login($username, $pass);
-    echo $user;
+    $user = login($username);
+
+    if ($user)
+    {
+      password_verify($pass, $user['pass']);
+      
+        header('Location: index.php');
+        die();
+      
+    }
+  
     include 'signin.php';
-    var_dump($_SESSION);
 
     break;
     
