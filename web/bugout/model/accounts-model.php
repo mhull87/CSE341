@@ -1,6 +1,5 @@
 <?php
 //This is the accounts model
-session_start();
 
 function register($userfname, $userlname, $useremail, $userpassword)
   {

@@ -17,7 +17,7 @@ switch ($action)
     $useremail = filter_input(INPUT_POST, 'useremail');
     $userpassword = filter_input(INPUT_POST, 'userpassword');
     $_SESSION['useremail'] = $useremail;
-
+    print_r($_SESSION);
     $user = login($useremail);
 
     $check = password_verify($userpassword, $user['userpassword']);
@@ -45,10 +45,9 @@ switch ($action)
       exit;
     }
 
-    //varify password and password confirm match
+    //varify password
    // $passcheck = passcheck($userpassword);
     
-    //hash password before sending it to the database
 //    if ($passcheck === 1)
 //    {
       $outcome = register($userfname, $userlname, $useremail, $userpassword);
@@ -60,8 +59,9 @@ switch ($action)
         }
         else
         {
-          $message = "<h3>Sorry $userfname, the registration failed. Please try again.</p>";
-          include '../view/register.php';
+          $_SESSION['message'] = "<h3>Sorry $userfname, the registration failed. Please try again.</p>";
+          header('Location: ../view/register.php');
+          die();
           exit;
         }
  //   }

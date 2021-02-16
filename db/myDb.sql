@@ -49,7 +49,7 @@ CREATE TABLE bugoutuser (
   userfname VARCHAR(25) NOT NULL,
   userlname VARCHAR(25) NOT NULL,
   useremail VARCHAR(50) NOT NULL,
-  userpassword VARCHAR(50) NOT NULL
+  userpassword VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE bugout_bag (
