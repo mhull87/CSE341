@@ -20,8 +20,8 @@ switch ($action)
 
     if ($pass !== $passconfirm)
     {
-      $message = $_SESSION['Passwords do not match.'];
-      $star = $_SESSION['*'];
+      $message = $_SESSION['wrong'] = '<span color="red">Passwords do not match.</span>';
+      $star = $_SESSION['star'] = '<span color="red">*</span>';
     }
     //check for missing data
     if (empty($username) || empty($pass))
