@@ -30,7 +30,7 @@ else
 
 <body>
   <h1>Welcome home</h1>
-  <p>Your username is: <?php $username ?></p>
+  <p>Your username is: <?php $_SESSION['username'] ?></p>
 
 </body>
 
