@@ -13,7 +13,6 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
   ?>
 
   <form action="/bugout/accounts/index.php" method="POST">
-    <p>*All fields required</p>
     <label for="userfname">First Name</label><br>
     <input type="text" name="userfname" id="userfname" required><br><br>
     <label for="userlname">Last Name</label><br>

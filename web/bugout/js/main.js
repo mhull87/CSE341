@@ -10,6 +10,5 @@ function confirm()
       {
         document.getElementById('check').style.color = 'red';
         document.getElementById('check').innerHTML = '&#10060';
-        document.getElementById('regbtn').disabled = true;
       }
 }
