@@ -16,7 +16,6 @@ switch ($action)
     //filter and store the data
     $useremail = filter_input(INPUT_POST, 'email');
     $userpassword = filter_input(INPUT_POST, 'password');
-    print_r($_SESSION);
     
     $user = login($useremail);
 
@@ -29,6 +28,7 @@ switch ($action)
     else
     {
           $_SESSION['useremail'] = $useremail;
+    print_r($_SESSION);
 
     }
 
