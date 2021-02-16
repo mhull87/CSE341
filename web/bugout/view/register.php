@@ -25,7 +25,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
     <input type="password" name="userpassword" id="userpassword" required><br><br>
     <label for="passconfirm">Confirm Password</label><br>
     <input type="password" name="passconfirm" id="passconfirm" required onkeyup="confirm();">
-    <div id="check"></div>
+    <span id="check"></span>
     <input type="submit" name="submit" value="Register" id="regbtn">
 
     <input type="hidden" name="action" value="register">
