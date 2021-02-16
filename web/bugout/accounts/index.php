@@ -14,8 +14,8 @@ switch ($action)
 {
   case 'login':
     //filter and store the data
-    $useremail = filter_input(INPUT_POST, 'useremail');
-    $userpassword = filter_input(INPUT_POST, 'userpassword');
+    $useremail = filter_input(INPUT_POST, 'email');
+    $userpassword = filter_input(INPUT_POST, 'password');
     $_SESSION['useremail'] = $useremail;
     print_r($_SESSION);
     $user = login($useremail);

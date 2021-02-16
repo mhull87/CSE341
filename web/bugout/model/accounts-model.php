@@ -41,7 +41,7 @@ function login($useremail)
 
     $stmt = $db->prepare($query);
 
-    $stmt->bindValue(':useremail', $useremail);
+    $stmt->bindValue(':useremail', $useremail, PDO::PARAM_STR);
 
     $stmt->execute();
 
