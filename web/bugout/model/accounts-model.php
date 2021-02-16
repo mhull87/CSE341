@@ -37,7 +37,7 @@ function login($useremail)
   {
     $db = get_db();
     
-    $query = 'SELECT useremail, userpassword FROM users
+    $query = 'SELECT useremail, userpassword FROM bugoutuser
               WHERE useremail = :useremail';
 
     $stmt = $db->prepare($query);
