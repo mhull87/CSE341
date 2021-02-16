@@ -36,7 +36,6 @@ switch ($action)
     $userlname = filter_input(INPUT_POST, 'userlname');
     $useremail = filter_input(INPUT_POST, 'useremail');
     $userpassword = filter_input(INPUT_POST, 'userpassword');
-    $passconfirm = filter_input(INPUT_POST, 'passconfirm');
   
     //check for missing data
     if (empty($userfname) || empty($userlname) || empty($useremail) || empty($userpassword))
@@ -62,7 +61,7 @@ switch ($action)
         else
         {
           $message = "<h3>Sorry $userfname, the registration failed. Please try again.</p>";
-          include '../view/regester.php';
+          include '../view/register.php';
           exit;
         }
  //   }
