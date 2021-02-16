@@ -50,14 +50,16 @@ switch ($action)
     $_SESSION['username'] = $username;
     $user = login($username);
 
-    if ($user)
+    $check = password_verify($pass, $user['pass']);
+    
+    if (!$check)
     {
-      password_verify($pass, $user['pass']);
-      
+      $message = 'Invalid';
+    }
         header('Location: index.php');
         die();
       
-    }
+    
   
     include 'signin.php';
 
