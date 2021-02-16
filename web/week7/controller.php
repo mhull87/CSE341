@@ -47,6 +47,7 @@ switch ($action)
     $username = filter_input(INPUT_POST, 'username');
     $pass = filter_input(INPUT_POST, 'pass');
 
+    $_SESSION['username'] = $username;
     $user = login($username, $pass);
     echo $user;
     include 'signin.php';
