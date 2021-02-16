@@ -16,8 +16,8 @@ switch ($action)
     //filter and store the data
     $useremail = filter_input(INPUT_POST, 'email');
     $userpassword = filter_input(INPUT_POST, 'password');
-    $_SESSION['useremail'] = $useremail;
     print_r($_SESSION);
+    
     $user = login($useremail);
 
     $check = password_verify($userpassword, $user['userpassword']);
@@ -25,6 +25,11 @@ switch ($action)
     if (!$check)
     {
       $message ='Invald email or password. Please try again.';
+    } 
+    else
+    {
+          $_SESSION['useremail'] = $useremail;
+
     }
 
     include '../view/login.php';
