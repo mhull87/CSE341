@@ -1,46 +1,55 @@
 <?php
 //This is the accounts model
+session_start();
 
 function register($userfname, $userlname, $useremail, $userpassword)
-{
-  $db = get_db();
-  
-  $query = 'INSERT INTO bugoutuser (userfname, userlname, useremail, userpassword)
-            VALUES (:userfname, :userlname, :useremail, :userpassword)';
+  {
+    $db = get_db();
+    
+    $query = 'INSERT INTO bugoutuser (userfname, userlname, useremail, userpassword)
+              VALUES (:userfname, :userlname, :useremail, :userpassword)';
 
-  $stmt = $db->prepare($query);
+    $stmt = $db->prepare($query);
 
-  $stmt->bindValue(':userfname', $userfname, PDO::PARAM_STR);
-  $stmt->bindValue(':userlname', $userlname, PDO::PARAM_STR);
-  $stmt->bindValue(':useremail', $useremail, PDO::PARAM_STR);
-  $stmt->bindValue(':userpassword', $userpassword, PDO::PARAM_STR);
+    $stmt->bindValue(':userfname', $userfname, PDO::PARAM_STR);
+    $stmt->bindValue(':userlname', $userlname, PDO::PARAM_STR);
+    $stmt->bindValue(':useremail', $useremail, PDO::PARAM_STR);
+    $stmt->bindValue(':userpassword', password_hash($userpassword, PASSWORD_DEFAULT), PDO::PARAM_STR);
 
-  $stmt->execute();
+    $stmt->execute();
 
-  $rowsChanged = $stmt->rowCount();
+    $rowsChanged = $stmt->rowCount();
 
-  $stmt->closeCursor();
+    $stmt->closeCursor();
 
-  return $rowsChanged;
-}
+    return $rowsChanged;
+  }
 
-function login($useremail, $userpassword)
-{
-  $db = get_db();
-  
-  $query = '';
+function passcheck($userpassword)
+  {
+    //at least 5 characters and 1 number
+    $pattern = '/^(?=\D*\d)[a-zA-Z0-9]{1,5}$/';
 
-  $stmt = $db->prepare($query);
+    return preg_match($pattern, $userpassword);
+  }
 
-  $stmt->bindValue(':useremail', $useremail, PDO::PARAM_STR);
-  $stmt->bindValue(':userpassword', $userpassword, PDO::PARAM_STR);
+function login($useremail)
+  {
+    $db = get_db();
+    
+    $query = 'SELECT useremail, userpassword FROM users
+              WHERE useremail = :useremail';
 
-  $stmt->execute();
+    $stmt = $db->prepare($query);
 
-  $rowsChanged = $stmt->rowCount();
+    $stmt->bindValue(':useremail', $useremail, PDO::PARAM_STR);
 
-  $stmt->closeCursor();
+    $stmt->execute();
 
-  return $rowsChanged;
-}
+    $user = $stmt->rowCount();
+
+    $stmt->closeCursor();
+
+    return $user;
+  }
 ?>

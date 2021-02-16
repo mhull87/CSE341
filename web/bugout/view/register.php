@@ -28,6 +28,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
     <input type="submit" name="submit" value="Register" id="regbtn">
 
     <input type="hidden" name="action" value="register">
+    <a href="login.php" title="Go to login page">Already have an account?</a>
   </form>
 </main>
 
