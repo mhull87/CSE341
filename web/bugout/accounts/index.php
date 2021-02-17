@@ -62,6 +62,7 @@ switch ($action)
         if ($outcome === 1)
           {
             $lastreg = getlastreg();
+            echo $lastreg['user_id'];
             createusertables($lastreg['user_id']);
             $message = "<h3>Thank you for registering $userfname. Please login to continue.</h3>";
             include '../view/login.php';
