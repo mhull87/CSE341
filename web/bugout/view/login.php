@@ -12,9 +12,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
     echo $message;
   }
 
-  if (isset($_SESSION['username']))
+  if (isset($_SESSION['message']))
   {
-    print_r($_SESSION);
+    echo $_SESSION['message'];
   }
   ?>
 
