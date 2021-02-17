@@ -37,6 +37,8 @@ switch ($action)
       }
     }
 
+    include '../view/login.php';
+    exit;
     break;
 
   case 'register':
