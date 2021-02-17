@@ -6,8 +6,7 @@ function addtobag($id, $packed, $quantity, $user_id)
   $db = get_db();
 
   $query = "INSERT INTO bugout_bag_$user_id (item_id, packed, quantity)
-            VALUES (:id, :packed, :quantity)
-            WHERE user_id = $user_id";
+            VALUES (:id, :packed, :quantity)";
 
   $stmt = $db->prepare($query);
 
@@ -23,11 +22,11 @@ function addtobag($id, $packed, $quantity, $user_id)
   return $rowsChanged;
 }
 
-function addtoextras($id, $packed, $quantity, $item_location)
+function addtoextras($id, $packed, $quantity, $item_location, $user_id)
 {
   $db = get_db();
 
-  $query = "INSERT INTO extras (item_id, packed, quantity, item_location)
+  $query = "INSERT INTO extras_$user_id (item_id, packed, quantity, item_location)
             VALUES (:id, :packed, :quantity, :item_location)";
 
   $stmt = $db->prepare($query);
@@ -45,12 +44,12 @@ function addtoextras($id, $packed, $quantity, $item_location)
   return $rowsChanged;
 }
 
-function extrasneeded()
+function extrasneeded($user_id)
 {
   $db = get_db();
 
   $query = "SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
-            FROM extras e JOIN items i ON e.item_id = i.item_id 
+            FROM extras_$user_id e JOIN items i ON e.item_id = i.item_id 
             WHERE e.packed = 'no'";
 
   $stmt = $db->prepare($query);
@@ -62,12 +61,12 @@ function extrasneeded()
   return $items;
 }
 
-function extraspacked()
+function extraspacked($user_id)
 {
   $db = get_db();
 
   $query = "SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location
-            FROM extras e JOIN items i ON e.item_id = i.item_id 
+            FROM extras_$user_id e JOIN items i ON e.item_id = i.item_id 
             WHERE e.packed = 'yes'";
 
   $stmt = $db->prepare($query);
@@ -79,12 +78,12 @@ function extraspacked()
   return $items;
 }
 
-function bagneeded()
+function bagneeded($user_id)
 {
   $db = get_db();
 
   $query = "SELECT i.item_name, b.packed, b.quantity, i.item_use 
-            FROM bugout_bag b JOIN items i ON b.item_id = i.item_id 
+            FROM bugout_bag_$user_id b JOIN items i ON b.item_id = i.item_id 
             WHERE b.packed = 'no'";
 
   $stmt = $db->prepare($query);
@@ -96,12 +95,12 @@ function bagneeded()
   return $items;
 }
 
-function bagpacked()
+function bagpacked($user_id)
 {
   $db = get_db();
 
   $query = "SELECT i.item_name, b.packed, b.quantity, i.item_use 
-            FROM bugout_bag b JOIN items i ON b.item_id = i.item_id 
+            FROM bugout_bag_$user_id b JOIN items i ON b.item_id = i.item_id 
             WHERE b.packed = 'yes'";
 
   $stmt = $db->prepare($query);
@@ -150,11 +149,11 @@ function mygearextras($user_id)
   return $itemsextra;
 }
 
-function edit($id)
+function edit($id, $user_id)
 {
   $db = get_db();
 
-  $edit = 'SELECT FROM bugout_bag
+  $edit = 'SELECT FROM bugout_bag_$user_id
           WHERE bag_id = :id';
 
   $stmt = $db->prepare($edit);
@@ -164,11 +163,11 @@ function edit($id)
   $stmt->closeCursor();
 }
 
-function editextras($id)
+function editextras($id, $user_id)
 {
   $db = get_db();
 
-  $edit = 'SELECT FROM extras
+  $edit = 'SELECT FROM extras_$user_id
           WHERE extra_id = :id';
 
   $stmt = $db->prepare($edit);
@@ -178,11 +177,11 @@ function editextras($id)
   $stmt->closeCursor();
 }
 
-function update($id, $quantity, $packed)
+function update($id, $quantity, $packed, $user_id)
 {
   $db = get_db();
 
-  $update = 'UPDATE bugout_bag
+  $update = 'UPDATE bugout_bag_$user_id
             SET quantity = :quantity,
                 packed = :packed
             WHERE bag_id = :id';
@@ -196,11 +195,11 @@ function update($id, $quantity, $packed)
   $stmt->closeCursor();
 }
 
-function updateextras($id, $quantity, $packed, $item_location)
+function updateextras($id, $quantity, $packed, $item_location, $user_id)
 {
   $db = get_db();
 
-  $update = 'UPDATE extras
+  $update = 'UPDATE extras_$user_id
             SET quantity = :quantity,
             packed = :packed,
             item_location = :item_location
@@ -216,11 +215,11 @@ function updateextras($id, $quantity, $packed, $item_location)
   $stmt->closeCursor();
 }
 
-function delete($id)
+function delete($id, $user_id)
 {
   $db = get_db();
 
-  $delete = 'DELETE FROM bugout_bag
+  $delete = 'DELETE FROM bugout_bag_$user_id
             WHERE bag_id = :id';
 
   $stmt = $db->prepare($delete);
@@ -230,11 +229,11 @@ function delete($id)
   $stmt->closeCursor();
 }
 
-function deleteextra($id)
+function deleteextra($id, $user_id)
 {
   $db = get_db();
 
-  $delete = 'DELETE FROM extras
+  $delete = 'DELETE FROM extras_$user_id
             WHERE extra_id = :id';
 
   $stmt = $db->prepare($delete);

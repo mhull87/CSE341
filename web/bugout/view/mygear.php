@@ -6,10 +6,9 @@ if (isset($message))
 {
   echo $message;
 }
-
-if (isset($_SESSION['username']))
+else if (isset($_SESSION['message']))
 {
-  print_r($_SESSION);
+  echo "<p class='message'>".$_SESSION['message']."</p>";
 }
 ?>
 

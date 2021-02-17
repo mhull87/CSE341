@@ -1,5 +1,7 @@
 <?php
 session_start();
+$user_id = $_SESSION['user_id'];
+
 //This is the bag controller
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/connections/dbconnect.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/model/bag-model.php';
@@ -17,8 +19,6 @@ switch ($action)
       break;
 
     case 'addtobag':
-      $user_id = $_SESSION['user_id'];
-
       $id = $_POST['id'];
       $name = $_POST['name'];
       $use = $_POST['use'];
@@ -67,59 +67,59 @@ switch ($action)
       break;
 
     case 'addtoextras':
-        $id = $_POST['id'];
-        $name = $_POST['name'];
-        $use = $_POST['use'];
-        $quantity = $_POST['quantity'];
-        $packed = $_POST['packed'];
-        $item_location = $_POST['item_location'];
+      $id = $_POST['id'];
+      $name = $_POST['name'];
+      $use = $_POST['use'];
+      $quantity = $_POST['quantity'];
+      $packed = $_POST['packed'];
+      $item_location = $_POST['item_location'];
 
-        $addtoextrasform =
-        "<form action='/bugout/bag/index.php' method='POST'>
+      $addtoextrasform =
+      "<form action='/bugout/bag/index.php' method='POST'>
 
-          <label for='item_name'>Item Name</label><br>
-          <input name='item_name' id='item_name' value='$name' type='text' readonly><br><br>
+        <label for='item_name'>Item Name</label><br>
+        <input name='item_name' id='item_name' value='$name' type='text' readonly><br><br>
 
-          <label for='quantity'>Quantity</label><br>
-          <input type='number' min='0' name='quantity' id='quantity' required><br><br>
+        <label for='quantity'>Quantity</label><br>
+        <input type='number' min='0' name='quantity' id='quantity' required><br><br>
 
-          <p>Is It Packed?</p>
+        <p>Is It Packed?</p>
 
-          <input type='radio' name='packed' id='packed' value='yes' checked>
-          <label for='packed'>Yes</label><br>
+        <input type='radio' name='packed' id='packed' value='yes' checked>
+        <label for='packed'>Yes</label><br>
 
-          <input type='radio' name='packed' id='need' value='no'>
-          <label for='need'>No</label><br><br>
+        <input type='radio' name='packed' id='need' value='no'>
+        <label for='need'>No</label><br><br>
 
-          <label for='item_location'>Location</label><br>
-          <input type='text' name='item_location' id='item_location' required><br><br>
+        <label for='item_location'>Location</label><br>
+        <input type='text' name='item_location' id='item_location' required><br><br>
 
-          <input type='hidden' name='id' value='$id'>
+        <input type='hidden' name='id' value='$id'>
 
-          <input type='hidden' name='use' value='$use'>
+        <input type='hidden' name='use' value='$use'>
 
-          <input type='submit' id='addtomyextrasbtn' value='Add To My Extras'>
+        <input type='submit' id='addtomyextrasbtn' value='Add To My Extras'>
 
-          <input type='hidden' name='action' value='addtoextras'>
+        <input type='hidden' name='action' value='addtoextras'>
 
-        </form>";
+      </form>";
 
-        if (empty($packed))
-        {
-          $message = "<p>Item name, quantity, packed value, and location are required.</p>";
-          include '../view/addtomyextras.php';
-          exit;
-        }
-        else
-        {
-          $addOutcome = addtoextras($id, $packed, $quantity, $item_location);
-          header('Location: /bugout/bag/index.php');
-        }
-        
-        break;
+      if (empty($packed))
+      {
+        $message = "<p>Item name, quantity, packed value, and location are required.</p>";
+        include '../view/addtomyextras.php';
+        exit;
+      }
+      else
+      {
+        $addOutcome = addtoextras($id, $packed, $quantity, $item_location, $user_id);
+        header('Location: /bugout/bag/index.php');
+      }
+      
+      break;
 
     case 'extrasneeded':
-      $items = extrasneeded();
+      $items = extrasneeded($user_id);
 
       $itemslist = '<ul>';
 
@@ -140,7 +140,7 @@ switch ($action)
       break;
 
     case 'extraspacked':
-      $items = extraspacked();
+      $items = extraspacked($user_id);
 
       $itemslist = '<ul>';
 
@@ -161,7 +161,7 @@ switch ($action)
       break;
 
     case 'bagneeded':
-      $items = bagneeded();
+      $items = bagneeded($user_id);
 
       $itemslist = '<ul>';
 
@@ -181,7 +181,7 @@ switch ($action)
       break;
     
     case 'bagpacked':
-      $items = bagpacked();
+      $items = bagpacked($user_id);
 
       $itemslist = '<ul>';
 
@@ -207,7 +207,7 @@ switch ($action)
       $packed = $_POST['packed'];
       $location = $_POST['location'];
 
-      editextras($id);
+      editextras($id, $user_id);
       $editextrasform =
       "<form action='/bugout/bag/index.php' method='POST'>
 
@@ -246,7 +246,7 @@ switch ($action)
       $quantity = $_POST['quantity'];
       $packed = $_POST['packed'];
 
-      edit($id);
+      edit($id, $user_id);
       $editbagform = 
       "<form action='/bugout/bag/index.php' method='POST'>
     
@@ -278,14 +278,16 @@ switch ($action)
 
     case 'deleteextra':
       $id = $_POST['id'];
-      deleteextra($id);
+
+      deleteextra($id, $user_id);
       header('Location: ../bag/index.php');
       exit;
       break;
     
     case 'delete':
       $id = $_POST['id'];
-      delete($id);
+
+      delete($id, $user_id);
       header('Location: ../bag/index.php');
       exit;
       break;
@@ -296,7 +298,7 @@ switch ($action)
       $location = $_POST['location'];
       $packed = $_POST['packed'];
 
-      updateextras($id, $quantity, $packed, $location);
+      updateextras($id, $quantity, $packed, $location, $user_id);
       header('Location: ../bag/index.php');
       exit;
       break;
@@ -306,16 +308,12 @@ switch ($action)
       $quantity = $_POST['quantity'];
       $packed = $_POST['packed'];
 
-      update($id, $quantity, $packed);
+      update($id, $quantity, $packed, $user_id);
       header('Location: ../bag/index.php');
       exit;
       break;
 
     default:
-      
-      $user_id = $_SESSION['user_id'];
-      print_r($_SESSION);   
-
       if (!isset($_SESSION['user_id']))
       {
         $_SESSION['message'] = 'Login to see your gear.';
