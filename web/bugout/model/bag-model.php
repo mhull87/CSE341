@@ -116,11 +116,11 @@ function mygearbag($user_id)
 {
   $db = get_db();
 
-  $bag = 'SELECT i.item_name, b.packed, b.quantity, i.item_use, b.bag_id
-          FROM bugout_bag b 
+  $bag = "SELECT i.item_name, b.packed, b.quantity, i.item_use, b.bag_id
+          FROM bugout_bag_$user_id b 
           WHERE user_id = :user_id
           JOIN items i ON b.item_id = i.item_id
-          ORDER BY b.bag_id';
+          ORDER BY b.bag_id";
 
   $stmtbag = $db->prepare($bag);
   $stmtbag->bindValue(':user_id', $user_id, PDO::PARAM_INT);
@@ -136,10 +136,10 @@ function mygearextras($user_id)
 {
   $db = get_db();
   
-  $extra = 'SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location, e.extra_id
-            FROM extras e JOIN items i ON e.item_id = i.item_id
+  $extra = "SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location, e.extra_id
+            FROM extras_$user_id e JOIN items i ON e.item_id = i.item_id
             WHERE user_id = :user_id
-            ORDER BY e.extra_id';
+            ORDER BY e.extra_id";
 
   $stmtextra = $db->prepare($extra);
   $stmtextra->bindValue(':user_id', $user_id, PDO::PARAM_STR);
