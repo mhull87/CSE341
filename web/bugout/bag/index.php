@@ -342,7 +342,7 @@ switch ($action)
 
       $bagitemslist .= '</ul>';
 
-      $itemsextra = mygearextras();
+      $itemsextra = mygearextras($user_id);
 
       $extraitemslist = '<ul>';
 

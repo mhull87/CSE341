@@ -132,15 +132,17 @@ function mygearbag($user_id)
   return $bagitems;
 }
 
-function mygearextras()
+function mygearextras($user_id)
 {
   $db = get_db();
   
   $extra = 'SELECT i.item_name, e.packed, e.quantity, i.item_use, e.item_location, e.extra_id
             FROM extras e JOIN items i ON e.item_id = i.item_id
+            WHERE user_id = :user_id
             ORDER BY e.extra_id';
 
   $stmtextra = $db->prepare($extra);
+  $stmtextra->bindValue(':user_id', $user_id, PDO::PARAM_STR);
   $stmtextra->execute();
 
   $itemsextra = $stmtextra->fetchAll(PDO::FETCH_ASSOC);
