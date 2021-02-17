@@ -70,7 +70,6 @@ switch ($action)
       break;
 
     case 'addtoextras':
-      $user_id = 
       $id = $_POST['id'];
       $name = $_POST['name'];
       $use = $_POST['use'];
