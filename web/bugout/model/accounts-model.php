@@ -46,7 +46,7 @@ function createusertables($user_id)
 {
   $db = get_db();
 
-  $query = "CREATE TABLE bugout_bag_$user_id (
+  $query = "CREATE TABLE bugout_bag_'$user_id' (
     bag_id SERIAL PRIMARY KEY,
     user_id INT NOT NULL REFERENCES bugoutuser (user_id),
     item_id INT NOT NULL REFERENCES items (item_id),
@@ -54,7 +54,7 @@ function createusertables($user_id)
     quantity INT NOT NULL
   );
   
-  CREATE TABLE extras_$user_id (
+  CREATE TABLE extras_'$user_id' (
     extra_id SERIAL PRIMARY KEY,
     user_id INT NOT NULL REFERENCES bugoutuser (user_id),
     packed VARCHAR(3) NOT NULL,
