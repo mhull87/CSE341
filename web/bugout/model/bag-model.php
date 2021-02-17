@@ -112,15 +112,18 @@ function bagpacked()
   return $items;
 }
 
-function mygearbag()
+function mygearbag($user_id)
 {
   $db = get_db();
 
   $bag = 'SELECT i.item_name, b.packed, b.quantity, i.item_use, b.bag_id
-          FROM bugout_bag b JOIN items i ON b.item_id = i.item_id
+          FROM bugout_bag b 
+          WHERE user_id = :user_id
+          JOIN items i ON b.item_id = i.item_id
           ORDER BY b.bag_id';
 
   $stmtbag = $db->prepare($bag);
+  $stmtbag->bindValue(':user_id', $user_id, PDO::PARAM_INT);
   $stmtbag->execute();
 
   $bagitems = $stmtbag->fetchAll(PDO::FETCH_ASSOC);

@@ -6,9 +6,9 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/model/accounts-model.php';
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == null)
-{
-  $action = filter_input(INPUT_GET, 'action');
-}
+  {
+    $action = filter_input(INPUT_GET, 'action');
+  }
 
 switch ($action)
 {
@@ -17,22 +17,25 @@ switch ($action)
     $useremail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL, FILTER_VALIDATE_EMAIL);
     $userpassword = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
     
-    $user = login($useremail);
+    function check($useremail, $userpassword)
+    {
+      $user = login($useremail);
 
-    $check = password_verify($userpassword, $user['userpassword']);
+      $check = password_verify($userpassword, $user['userpassword']);
 
-    if (!$check)
+      if (!$check)
       {
-        $message ='Invald email or password. Please try again.';
+        $_SESSION['message'] ='Invald email or password. Please try again.';
         include '../view/login.php';
         exit;
       } 
       else
       {
-        $_SESSION['useremail'] = $useremail;
+        $_SESSION['user_id'];
         header('Location: ../bag/index.php');
         die();
       }
+    }
 
     break;
 
@@ -45,11 +48,11 @@ switch ($action)
   
     //check for missing data
     if (empty($userfname) || empty($userlname) || empty($useremail) || empty($userpassword))
-    {
-      $message = "<p>*All fields are required*</p>";
-      include '../view/register.php';
-      exit;
-    }
+      {
+        $message = "<p>*All fields are required*</p>";
+        include '../view/register.php';
+        exit;
+      }
 
     //varify password
    // $passcheck = passcheck($userpassword);
@@ -58,18 +61,20 @@ switch ($action)
 //    {
       $outcome = register($userfname, $userlname, $useremail, $userpassword);
         if ($outcome === 1)
-        {
-          $message = "<h3>Thank you for registering $userfname. Please login to continue.</h3>";
-          include '../view/login.php';
-          exit;
-        }
+          {
+            $lastreg = getlastreg();
+            createusertables($lastreg['user_id']);
+            $message = "<h3>Thank you for registering $userfname. Please login to continue.</h3>";
+            include '../view/login.php';
+            exit;
+          }
         else
-        {
-          $_SESSION['message'] = "<h3>Sorry $userfname, the registration failed. Please try again.</h3>";
-          header('Location: ../view/register.php');
-          die();
-          exit;
-        }
+          {
+            $_SESSION['message'] = "<h3>Sorry $userfname, the registration failed. Please try again.</h3>";
+            header('Location: ../view/register.php');
+            die();
+            exit;
+          }
  //   }
 
     break;

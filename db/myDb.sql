@@ -54,7 +54,7 @@ CREATE TABLE bugoutuser (
 
 CREATE TABLE bugout_bag (
   bag_id SERIAL PRIMARY KEY,
-  -- user_id INT NOT NULL REFERENCES bugoutuser (user_id),
+  user_id INT NOT NULL REFERENCES bugoutuser (user_id),
   item_id INT NOT NULL REFERENCES items (item_id),
   packed VARCHAR(3) NOT NULL,
   quantity INT NOT NULL
@@ -62,7 +62,7 @@ CREATE TABLE bugout_bag (
 
 CREATE TABLE extras (
   extra_id SERIAL PRIMARY KEY,
-  -- user_id INT NOT NULL REFERENCES bugoutuser (user_id),
+  user_id INT NOT NULL REFERENCES bugoutuser (user_id),
   packed VARCHAR(3) NOT NULL,
   quantity INT NOT NULL,
   item_id INT NOT NULL REFERENCES items (item_id),
