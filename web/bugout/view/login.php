@@ -8,14 +8,13 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
 
   <?php
   if (isset($message))
-  {
-    echo $message;
-  }
-
-  if (isset($_SESSION['message']))
-  {
-    echo $_SESSION['message'];
-  }
+    {
+      echo $message;
+    }
+    else if (isset($_SESSION['message']))
+      {
+        echo "<b>$_SESSION[message]</b>";
+      }
   ?>
 
 
