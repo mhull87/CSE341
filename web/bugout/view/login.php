@@ -13,7 +13,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
     }
     else if (isset($_SESSION['message']))
       {
-        echo '<b>$_SESSION["message"]</b>';
+        echo '<b>$_SESSION[message]</b>';
       }
   ?>
 
