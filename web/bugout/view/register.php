@@ -12,7 +12,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
     echo $message;
   }
 
-  if (isset($_SESSION['username']))
+  if (isset($_SESSION['message']))
   {
     print_r($_SESSION);
   }
@@ -31,7 +31,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
     <label for="passconfirm">Confirm Password</label><br>
     <input type="password" name="passconfirm" id="passconfirm" required onkeyup="confirm()">
     <span id="check"></span><br><br>
-    <input type="submit" name="submit" value="Register" id="regbtn" onclick="check()">
+    <input type="submit" name="submit" value="Register" id="regbtn">
 
     <input type="hidden" name="action" value="register"><br><br>
     <a href="login.php" title="Go to login page">Already have an account?</a>
