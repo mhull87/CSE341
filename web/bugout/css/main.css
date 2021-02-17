@@ -40,3 +40,10 @@ p {
 .hidden {
   display: none;
 }
+
+.message {
+  font-size: 3rem;
+  color:darkolivegreen;
+  text-decoration: double;
+  text-align: center;
+}
