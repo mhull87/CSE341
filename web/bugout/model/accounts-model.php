@@ -54,7 +54,7 @@ function createusertables($user_id)
     quantity INT NOT NULL
   );
   
-  CREATE TABLE extras_'$user_id' (
+  CREATE TABLE extras_`".$user_id."` (
     extra_id SERIAL PRIMARY KEY,
     user_id INT NOT NULL REFERENCES bugoutuser (user_id),
     packed VARCHAR(3) NOT NULL,
