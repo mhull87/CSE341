@@ -30,7 +30,7 @@ switch ($action)
       else
       {
         $_SESSION['user_id'] = $user['user_id'];
-        $_SESSION['message'] = $user['user_id'];
+        unset($_SESSION['message']);
         header('Location: ../bag/index.php');
         die();
       }
