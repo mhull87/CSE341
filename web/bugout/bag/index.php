@@ -1,15 +1,17 @@
 <?php
 session_start();
 $user_id = $_SESSION['user_id'];
+unset($_SESSION['message']);
+
 
 //This is the bag controller
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/connections/dbconnect.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/model/bag-model.php';
 
-$action = filter_input(INPUT_POST, 'action');
+$action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 if ($action == null) 
   {
-    $action = filter_input(INPUT_GET, 'action');
+    $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
   }
 
 switch ($action)
@@ -22,9 +24,9 @@ switch ($action)
       $user_id = $_SESSION['user_id'];
 
       $id = $_POST['id'];
-      $name = $_POST['name'];
-      $use = $_POST['use'];
-      $quantity = $_POST['quantity'];
+      $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+      $use = filter_input(INPUT_POST, 'use', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+      $quantity = filter_input(INPUT_POST, 'quantity',  FILTER_SANITIZE_NUMBER_INT, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
       $packed = $_POST['packed'];
 
       $addtobagform = 
@@ -73,11 +75,11 @@ switch ($action)
       $user_id = $_SESSION['user_id'];
       
       $id = $_POST['id'];
-      $name = $_POST['name'];
-      $use = $_POST['use'];
-      $quantity = $_POST['quantity'];
+      $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+      $use = filter_input(INPUT_POST, 'use', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+      $quantity = filter_input(INPUT_POST, 'quantity',  FILTER_SANITIZE_NUMBER_INT, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
       $packed = $_POST['packed'];
-      $item_location = $_POST['item_location'];
+      $item_location = filter_input(INPUT_POST, 'item_location', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
       $addtoextrasform =
       "<form action='/bugout/bag/index.php' method='POST'>
@@ -208,9 +210,9 @@ switch ($action)
     case 'editextras':
       $id = $_POST['id'];
       $name = $_POST['name'];
-      $quantity = $_POST['quantity'];
+      $quantity = filter_input(INPUT_POST, 'quantity',  FILTER_SANITIZE_NUMBER_INT, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
       $packed = $_POST['packed'];
-      $location = $_POST['location'];
+      $location = filter_input(INPUT_POST, 'location', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
       editextras($id, $user_id);
       $editextrasform =
@@ -247,8 +249,8 @@ switch ($action)
     
     case 'edit':
       $id = $_POST['id'];
-      $name = $_POST['name'];
-      $quantity = $_POST['quantity'];
+      $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+      $quantity = filter_input(INPUT_POST, 'quantity',  FILTER_SANITIZE_NUMBER_INT, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
       $packed = $_POST['packed'];
 
       edit($id, $user_id);

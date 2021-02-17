@@ -1,21 +1,23 @@
 <?php
 //Accounts controller
 session_start();
+unset($_SESSION['message']);
+
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/connections/dbconnect.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/model/accounts-model.php';
 
-$action = filter_input(INPUT_POST, 'action');
+$action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 if ($action == null)
   {
-    $action = filter_input(INPUT_GET, 'action');
+    $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
   }
 
 switch ($action)
 {
   case 'login':
     //filter and store the data
-    $useremail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL, FILTER_VALIDATE_EMAIL);
-    $userpassword = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+    $useremail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL, FILTER_VALIDATE_EMAIL, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $userpassword = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     
       $user = login($useremail);
 
@@ -30,7 +32,6 @@ switch ($action)
       else
       {
         $_SESSION['user_id'] = $user['user_id'];
-        unset($_SESSION['message']);
         header('Location: ../bag/index.php');
         die();
       }
@@ -41,10 +42,10 @@ switch ($action)
 
   case 'register':
     //filter and store the data
-    $userfname = filter_input(INPUT_POST, 'userfname');
-    $userlname = filter_input(INPUT_POST, 'userlname');
-    $useremail = filter_input(INPUT_POST, 'useremail');
-    $userpassword = filter_input(INPUT_POST, 'userpassword');
+    $userfname = filter_input(INPUT_POST, 'userfname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $userlname = filter_input(INPUT_POST, 'userlname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $useremail = filter_input(INPUT_POST, 'useremail', FILTER_SANITIZE_EMAIL, FILTER_VALIDATE_EMAIL, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $userpassword = filter_input(INPUT_POST, 'userpassword', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
   
     //check for missing data
     if (empty($userfname) || empty($userlname) || empty($useremail) || empty($userpassword))
@@ -63,7 +64,6 @@ switch ($action)
         if ($outcome === 1)
           {
             $lastreg = getlastreg();
-            echo $lastreg['user_id'];
             createuserbag($lastreg['user_id']);
             createuserextras($lastreg['user_id']);
             $message = "<h3>Thank you for registering $userfname. Please login to continue.</h3>";
