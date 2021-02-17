@@ -30,11 +30,9 @@ switch ($action)
     else
     {
       $_SESSION['useremail'] = $useremail;
-      include '../view/mygear.php';
-      exit;
+      header('Location: ../view/mygear.php');
+      die();
     }
-
-    print_r($_SESSION);
 
     break;
 

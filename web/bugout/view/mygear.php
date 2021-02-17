@@ -1,9 +1,15 @@
 <?php
+session_start();
 include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
 
 if (isset($message))
 {
   echo $message;
+}
+
+if (isset($_SESSION['username']))
+{
+  print_r($_SESSION);
 }
 ?>
 

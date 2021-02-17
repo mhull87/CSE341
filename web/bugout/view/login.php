@@ -1,4 +1,5 @@
 <?php
+session_start();
 include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
 ?>
 
@@ -16,7 +17,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
     print_r($_SESSION);
   }
   ?>
-  ?>
+
 
   <form action="/bugout/accounts/index.php" method="POST">
     <label for="email">Email</label><br>
