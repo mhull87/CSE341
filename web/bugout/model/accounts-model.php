@@ -52,16 +52,9 @@ function createusertables($user_id)
     item_id INT NOT NULL REFERENCES items (item_id),
     packed VARCHAR(3) NOT NULL,
     quantity INT NOT NULL
-  );
+  )"
   
-  CREATE TABLE extras_`".$user_id."` (
-    extra_id SERIAL PRIMARY KEY,
-    user_id INT NOT NULL REFERENCES bugoutuser (user_id),
-    packed VARCHAR(3) NOT NULL,
-    quantity INT NOT NULL,
-    item_id INT NOT NULL REFERENCES items (item_id),
-    item_location VARCHAR(50) NOT NULL
-  )";
+;
 
 $stmt = $db->prepare($query);
 
