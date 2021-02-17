@@ -78,7 +78,7 @@ switch ($action)
             exit;
           }
  //   }
-
+    include '../view/register.php';
     break;
 
   default:
