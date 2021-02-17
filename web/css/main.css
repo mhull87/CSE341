@@ -110,3 +110,10 @@ p {
   transition: box-shadow .3s ease-in-out;
   margin: 1rem;
 }
+
+.message {
+  font-size: 3rem;
+  color:darkolivegreen;
+  text-decoration: double;
+  text-align: center;
+}
