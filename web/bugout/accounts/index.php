@@ -22,17 +22,17 @@ switch ($action)
     $check = password_verify($userpassword, $user['userpassword']);
 
     if (!$check)
-    {
-      $message ='Invald email or password. Please try again.';
-      include '../view/login.php';
-      exit;
-    } 
-    else
-    {
-      $_SESSION['useremail'] = $useremail;
-      header('Location: ../view/mygear.php');
-      die();
-    }
+      {
+        $message ='Invald email or password. Please try again.';
+        include '../view/login.php';
+        exit;
+      } 
+      else
+      {
+        $_SESSION['useremail'] = $useremail;
+        header('Location: ../bag/index.php');
+        die();
+      }
 
     break;
 
