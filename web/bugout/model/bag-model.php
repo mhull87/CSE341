@@ -26,8 +26,8 @@ function addtoextras($id, $packed, $quantity, $item_location, $user_id)
 {
   $db = get_db();
 
-  $query = "INSERT INTO extras_$user_id (item_id, packed, quantity, item_location)
-            VALUES (:id, :packed, :quantity, :item_location)";
+  $query = "INSERT INTO extras_$user_id (item_id, packed, quantity, item_location, user_id)
+            VALUES (:id, :packed, :quantity, :item_location, $user_id)";
 
   $stmt = $db->prepare($query);
 
@@ -153,8 +153,8 @@ function edit($id, $user_id)
 {
   $db = get_db();
 
-  $edit = 'SELECT FROM bugout_bag_$user_id
-          WHERE bag_id = :id';
+  $edit = "SELECT FROM bugout_bag_$user_id
+          WHERE bag_id = :id";
 
   $stmt = $db->prepare($edit);
 
@@ -167,8 +167,8 @@ function editextras($id, $user_id)
 {
   $db = get_db();
 
-  $edit = 'SELECT FROM extras_$user_id
-          WHERE extra_id = :id';
+  $edit = "SELECT FROM extras_$user_id
+          WHERE extra_id = :id";
 
   $stmt = $db->prepare($edit);
 
@@ -181,10 +181,10 @@ function update($id, $quantity, $packed, $user_id)
 {
   $db = get_db();
 
-  $update = 'UPDATE bugout_bag_$user_id
+  $update = "UPDATE bugout_bag_$user_id
             SET quantity = :quantity,
                 packed = :packed
-            WHERE bag_id = :id';
+            WHERE bag_id = :id";
 
   $stmt = $db->prepare($update);
 
@@ -199,11 +199,11 @@ function updateextras($id, $quantity, $packed, $item_location, $user_id)
 {
   $db = get_db();
 
-  $update = 'UPDATE extras_$user_id
+  $update = "UPDATE extras_$user_id
             SET quantity = :quantity,
             packed = :packed,
             item_location = :item_location
-            WHERE extra_id = :id';
+            WHERE extra_id = :id";
 
   $stmt = $db->prepare($update);
 
@@ -219,8 +219,8 @@ function delete($id, $user_id)
 {
   $db = get_db();
 
-  $delete = 'DELETE FROM bugout_bag_$user_id
-            WHERE bag_id = :id';
+  $delete = "DELETE FROM bugout_bag_$user_id
+            WHERE bag_id = :id";
 
   $stmt = $db->prepare($delete);
 
@@ -233,8 +233,8 @@ function deleteextra($id, $user_id)
 {
   $db = get_db();
 
-  $delete = 'DELETE FROM extras_$user_id
-            WHERE extra_id = :id';
+  $delete = "DELETE FROM extras_$user_id
+            WHERE extra_id = :id";
 
   $stmt = $db->prepare($delete);
 
