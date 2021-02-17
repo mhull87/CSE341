@@ -310,7 +310,8 @@ switch ($action)
       break;
 
     default:
-      $user_id = $_SESSION['user_id'];   
+      $user_id = $_SESSION['user_id'];
+      print_r($_SESSION);   
 
       $bagitems = mygearbag($user_id);
 
