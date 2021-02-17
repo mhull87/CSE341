@@ -52,7 +52,7 @@ CREATE TABLE bugoutuser (
   userpassword VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE bugout_bag (
+CREATE TABLE bugout_bag_$user_id (
   bag_id SERIAL PRIMARY KEY,
   user_id INT NOT NULL REFERENCES bugoutuser (user_id),
   item_id INT NOT NULL REFERENCES items (item_id),
@@ -60,13 +60,13 @@ CREATE TABLE bugout_bag (
   quantity INT NOT NULL
 );
 
-CREATE TABLE extras (
+CREATE TABLE extras_$user_id (
   extra_id SERIAL PRIMARY KEY,
   user_id INT NOT NULL REFERENCES bugoutuser (user_id),
   packed VARCHAR(3) NOT NULL,
   quantity INT NOT NULL,
   item_id INT NOT NULL REFERENCES items (item_id),
-  item_location VARCHAR(50) NOT NULL
+  item_location VARCHAR(255) NOT NULL
 );
 
 SELECT * FROM bugout_bag b JOIN items i ON b.item_id = i.item_id;

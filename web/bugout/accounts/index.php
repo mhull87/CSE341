@@ -63,7 +63,8 @@ switch ($action)
           {
             $lastreg = getlastreg();
             echo $lastreg['user_id'];
-            createusertables($lastreg['user_id']);
+            createuserbag($lastreg['user_id']);
+            createuserextras($lastreg['user_id']);
             $message = "<h3>Thank you for registering $userfname. Please login to continue.</h3>";
             include '../view/login.php';
             exit;
