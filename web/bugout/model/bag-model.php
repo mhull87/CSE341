@@ -1,12 +1,13 @@
 <?php
 //This is the bag model
 
-function addtobag($id, $packed, $quantity)
+function addtobag($id, $packed, $quantity, $user_id)
 {
   $db = get_db();
 
-  $query = "INSERT INTO bugout_bag (item_id, packed, quantity)
-            VALUES (:id, :packed, :quantity)";
+  $query = "INSERT INTO bugout_bag_$user_id (item_id, packed, quantity)
+            VALUES (:id, :packed, :quantity)
+            WHERE user_id = $user_id";
 
   $stmt = $db->prepare($query);
 

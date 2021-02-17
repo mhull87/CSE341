@@ -17,6 +17,8 @@ switch ($action)
       break;
 
     case 'addtobag':
+      $user_id = $_SESSION['user_id'];
+
       $id = $_POST['id'];
       $name = $_POST['name'];
       $use = $_POST['use'];
@@ -58,7 +60,7 @@ switch ($action)
       }
       else
       {
-        $addOutcome = addtobag($id, $packed, $quantity);
+        $addOutcome = addtobag($id, $packed, $quantity, $user_id);
         header('Location: /bugout/bag/index.php');
       }
 
@@ -313,6 +315,13 @@ switch ($action)
       
       $user_id = $_SESSION['user_id'];
       print_r($_SESSION);   
+
+      if (!isset($_SESSION['user_id']))
+      {
+        $_SESSION['message'] = 'Login to see your gear.';
+        include '../view/login.php';
+        exit;
+      }
 
       $bagitems = mygearbag($user_id);
 

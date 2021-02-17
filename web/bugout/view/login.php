@@ -15,7 +15,6 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
       {
         echo '<b>$_SESSION["message"]</b>';
       }
-      print_r($_SESSION);
   ?>
 
 
