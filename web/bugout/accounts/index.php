@@ -16,7 +16,7 @@ switch ($action)
 {
   case 'login':
     //filter and store the data
-    $useremail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL, FILTER_VALIDATE_EMAIL, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $useremail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL, FILTER_VALIDATE_EMAIL);
     $userpassword = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     
       $user = login($useremail);
@@ -44,7 +44,7 @@ switch ($action)
     //filter and store the data
     $userfname = filter_input(INPUT_POST, 'userfname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $userlname = filter_input(INPUT_POST, 'userlname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $useremail = filter_input(INPUT_POST, 'useremail', FILTER_SANITIZE_EMAIL, FILTER_VALIDATE_EMAIL, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $useremail = filter_input(INPUT_POST, 'useremail', FILTER_SANITIZE_EMAIL, FILTER_VALIDATE_EMAIL);
     $userpassword = filter_input(INPUT_POST, 'userpassword', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
   
     //check for missing data
