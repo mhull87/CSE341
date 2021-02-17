@@ -10,6 +10,12 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
   {
     echo $message;
   }
+
+  if (isset($_SESSION['username']))
+  {
+    print_r($_SESSION);
+  }
+  ?>
   ?>
 
   <form action="/bugout/accounts/index.php" method="POST">

@@ -45,7 +45,7 @@ function login($useremail)
 
     $stmt->execute();
 
-    $user = $stmt->rowCount();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     $stmt->closeCursor();
 

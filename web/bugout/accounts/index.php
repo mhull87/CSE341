@@ -14,8 +14,8 @@ switch ($action)
 {
   case 'login':
     //filter and store the data
-    $useremail = filter_input(INPUT_POST, 'email');
-    $userpassword = filter_input(INPUT_POST, 'password');
+    $useremail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL, FILTER_VALIDATE_EMAIL);
+    $userpassword = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
     
     $user = login($useremail);
 
@@ -24,15 +24,18 @@ switch ($action)
     if (!$check)
     {
       $message ='Invald email or password. Please try again.';
+      include '../view/login.php';
+      exit;
     } 
     else
     {
       $_SESSION['useremail'] = $useremail;
+      include '../view/mygear.php';
+      exit;
     }
 
     print_r($_SESSION);
 
-    include '../view/login.php';
     break;
 
   case 'register':
