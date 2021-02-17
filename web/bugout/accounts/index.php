@@ -17,8 +17,6 @@ switch ($action)
     $useremail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL, FILTER_VALIDATE_EMAIL);
     $userpassword = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
     
-    function check($useremail, $userpassword)
-    {
       $user = login($useremail);
 
       $check = password_verify($userpassword, $user['userpassword']);
@@ -35,7 +33,6 @@ switch ($action)
         header('Location: ../bag/index.php');
         die();
       }
-    }
 
     include '../view/login.php';
     exit;
