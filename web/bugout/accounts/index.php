@@ -27,10 +27,10 @@ switch ($action)
     } 
     else
     {
-          $_SESSION['useremail'] = $useremail;
-    print_r($_SESSION);
-
+      $_SESSION['useremail'] = $useremail;
     }
+
+    print_r($_SESSION);
 
     include '../view/login.php';
     break;
@@ -45,7 +45,7 @@ switch ($action)
     //check for missing data
     if (empty($userfname) || empty($userlname) || empty($useremail) || empty($userpassword))
     {
-      $message = "<p>*All fields are required*/p>";
+      $message = "<p>*All fields are required*</p>";
       include '../view/register.php';
       exit;
     }
@@ -64,7 +64,7 @@ switch ($action)
         }
         else
         {
-          $_SESSION['message'] = "<h3>Sorry $userfname, the registration failed. Please try again.</p>";
+          $_SESSION['message'] = "<h3>Sorry $userfname, the registration failed. Please try again.</h3>";
           header('Location: ../view/register.php');
           die();
           exit;
