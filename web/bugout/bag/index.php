@@ -64,11 +64,13 @@ switch ($action)
       {
         $addOutcome = addtobag($id, $packed, $quantity, $user_id);
         header('Location: /bugout/bag/index.php');
+        die();
       }
 
       break;
 
     case 'addtoextras':
+      $user_id = 
       $id = $_POST['id'];
       $name = $_POST['name'];
       $use = $_POST['use'];
