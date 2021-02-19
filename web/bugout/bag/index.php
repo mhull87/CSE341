@@ -1,6 +1,12 @@
 <?php
 session_start();
 $user_id = $_SESSION['user_id'];
+if (!isset($_SESSION['user_id']))
+{
+  $_SESSION['message'] = 'Login to see your gear.';
+  include '../view/login.php';
+  exit;
+}
 unset($_SESSION['message']);
 
 
@@ -321,12 +327,6 @@ switch ($action)
       break;
 
     default:
-      if (!isset($_SESSION['user_id']))
-      {
-        $_SESSION['message'] = 'Login to see your gear.';
-        include '../view/login.php';
-        exit;
-      }
 
       $bagitems = mygearbag($user_id);
 

@@ -1,6 +1,12 @@
 <?php
 //Accounts controller
 session_start();
+if (!isset($_SESSION['user_id']))
+{
+  $_SESSION['message'] = 'Login to see your gear.';
+  include '../view/login.php';
+  exit;
+}
 unset($_SESSION['message']);
 
 require_once $_SERVER['DOCUMENT_ROOT'].'/bugout/connections/dbconnect.php';
@@ -80,6 +86,9 @@ switch ($action)
  //   }
     include '../view/register.php';
     break;
+
+  case 'logout':
+    
 
   default:
     include '../index.php';
