@@ -23,7 +23,7 @@ switch ($action)
     case 'addtobag':
       if (!isset($_SESSION['user_id']))
         {
-          $_SESSION['message'] = 'Login add gear to your bugout bag.';
+          $_SESSION['message'] = 'Login to add gear to your bugout bag.';
           include '../view/login.php';
           exit;
         }
@@ -337,7 +337,7 @@ switch ($action)
     default:
       if (!isset($_SESSION['user_id']))
         {
-          $_SESSION['message'] = 'Login to see your gear and add items.';
+          $_SESSION['message'] = 'Login to see your gear.';
           include '../view/login.php';
           exit;
         }
