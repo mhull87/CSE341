@@ -42,7 +42,7 @@ switch ($action)
         <input name='item_name' id='item_name' value='$name' type='text' readonly><br><br>
     
         <label for='quantity'>Quantity</label><br>
-        <input type='number' min='0' name='quantity' id='quantity' required><br><br>
+        <input type='number' min='0' max='100000000' name='quantity' id='quantity' required><br><br>
     
         <p>Is It Packed?</p>
     
@@ -94,7 +94,7 @@ switch ($action)
         <input name='item_name' id='item_name' value='$name' type='text' readonly><br><br>
 
         <label for='quantity'>Quantity</label><br>
-        <input type='number' min='0' name='quantity' id='quantity' required><br><br>
+        <input type='number' min='0' max='100000000' name='quantity' id='quantity' required><br><br>
 
         <p>Is It Packed?</p>
 
@@ -105,7 +105,7 @@ switch ($action)
         <label for='need'>No</label><br><br>
 
         <label for='item_location'>Location</label><br>
-        <input type='text' name='item_location' id='item_location' required><br><br>
+        <input type='text' name='item_location' id='item_location' maxlength='255' required><br><br>
 
         <input type='hidden' name='id' value='$id'>
 
@@ -228,7 +228,7 @@ switch ($action)
         <input name='name' id='item_name' value='$name' type='text' readonly><br><br>
 
         <label for='quantity'>Quantity</label><br>
-        <input type='number' min='0' name='quantity' value='$quantity' id='quantity' required><br><br>
+        <input type='number' min='0' max='1000000000' name='quantity' value='$quantity' id='quantity' required><br><br>
 
         <p>Is It Packed?</p>
 
@@ -239,7 +239,7 @@ switch ($action)
         <label for='need'>No</label><br><br>
 
         <label for='item_location'>Location</label><br>
-        <input type='text' name='location' value='$location' id='item_location' required><br><br>
+        <input type='text' name='location' maxlength='255' value='$location' id='item_location' required><br><br>
 
         <input type='hidden' name='id' value='$id'>
 
@@ -267,7 +267,7 @@ switch ($action)
         <input name='name' id='item_name' value='$name' type='text' readonly><br><br>
     
         <label for='quantity'>Quantity</label><br>
-        <input type='number' min='0' name='quantity' value='$quantity' id='quantity' required><br><br>
+        <input type='number' min='0' max='1000000000' name='quantity' value='$quantity' id='quantity' required><br><br>
     
         <p>Is It Packed?</p>
     
