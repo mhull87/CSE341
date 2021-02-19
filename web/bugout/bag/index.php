@@ -337,7 +337,7 @@ switch ($action)
     default:
       if (!isset($_SESSION['user_id']))
         {
-          $_SESSION['message'] = 'Login to see your gear.';
+          $_SESSION['message'] = 'Login to see your gear and add items.';
           include '../view/login.php';
           exit;
         }
