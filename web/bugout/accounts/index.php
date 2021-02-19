@@ -83,7 +83,9 @@ switch ($action)
     break;
 
   case 'logout':
-    
+    unset($_SESSION['username']);
+    include '../../index.php';
+    break;
 
   default:
     include '../index.php';
