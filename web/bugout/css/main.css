@@ -118,17 +118,16 @@ p {
   background-color: darkolivegreen;
 }
 
-.btn a {
-  text-decoration: none;
-  color: #FFFFFF;
-}
-
 .btn:visited {
   color: #FFFFFF;
 }
 
 .sort .btn {
   background-color: orangered;
+}
+
+.sort .btn:hover {
+  background-color: darkred;
 }
 
 .bouncy {

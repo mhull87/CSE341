@@ -42,7 +42,16 @@ INSERT INTO items (item_name, item_use)
   VALUES ('Compass', 'Find your way.');
 
 INSERT INTO items (item_name, item_use)
-  VALUES ('Rope', 'For shelter building or many other uses.')
+  VALUES ('Rope', 'For shelter building or many other uses.');
+
+INSERT INTO items (item_name, item_use)
+  VALUES ('Tent', 'For shelter.');
+
+INSERT INTO items (item_name, item_use)
+  VALUES ('Axe', 'Chopping wood.');
+
+INSERT INTO items (item_name, item_use)
+  VALUES ('Extra Clothing', 'You may need clean and/or dry clothing.');
 
 CREATE TABLE bugoutuser (
   user_id SERIAL PRIMARY KEY,
