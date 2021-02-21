@@ -76,7 +76,7 @@ p {
   background-color: darkolivegreen;
 }
 
-a.btn {
+.btn a {
   text-decoration: none;
   color: #FFFFFF;
 }
@@ -87,6 +87,10 @@ a.btn {
 
 .sort {
   text-align: center;
+}
+
+.sort .btn {
+  background-color: orangered;
 }
 
 .bouncy {
