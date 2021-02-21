@@ -14,25 +14,25 @@
 <body>
   <header>
     <h1>Bug Out Survival</h1>
-    <button class="btn"><a class="login 
-    
+    <button class="btn 
+
     <?php if (isset($_SESSION['user_id']))
       {
         echo 'hidden';
       }
       ?>
-    
-    " id="login" href="/bugout/accounts/index.php?action=login" title="Go to the login page.">Login</a></button>
 
-    <button class="btn"><a class="logout
-    
+     login" id="login"><a href="/bugout/accounts/index.php?action=login" title="Go to the login page.">Login</a></button>
+
+    <button class="btn 
+
     <?php if (!isset($_SESSION['user_id']))
       {
         echo 'hidden';
       }
       ?>
 
-      " id="logout" href="/bugout/accounts/index.php?action=logout" title="Log out of Bugout Survival.">Logout</a></button>
+ logout" id="logout"><a href="/bugout/accounts/index.php?action=logout" title="Log out of Bugout Survival.">Logout</a></button>
   </header>
 
   <nav>
