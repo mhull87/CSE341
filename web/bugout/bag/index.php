@@ -356,7 +356,7 @@ switch ($action)
 
         $bagitemslist .= 
         "<div class='items'>
-          <li>
+          <li class='padding'>
             <ul>
               <li class='grid'>
                 <p><b>Item:</b></p>
@@ -408,7 +408,7 @@ switch ($action)
 
         $extraitemslist .= 
         "<div class='items'>
-          <li>
+          <li class='padding'>
             <ul>
               <li class='grid'>
                 <p><b>Item:</b></p>
