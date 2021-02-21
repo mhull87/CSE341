@@ -84,6 +84,8 @@ p {
 
 .inline {
   display: inline;
+  padding: 0;
+  margin: 0;
 }
 
 .btn {
