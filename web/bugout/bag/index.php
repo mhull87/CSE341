@@ -360,19 +360,19 @@ switch ($action)
             <ul>
               <li class='grid'>
                 <p><b>Item:</b></p>
-                <p class='inline'>$name</p>
+                <p>$name</p>
               </li>
               <li class='grid'>
                 <p><b>Packed:</b></p>
-                <p class='inline'>$packed</p>
+                <p>$packed</p>
               </li>
               <li class='grid'>
                 <p><b>Quantity:</b></p>
-                <p class='inline'>$quantity</p>
+                <p>$quantity</p>
               </li>
               <li class='grid'>
                 <p><b>Use:</b></p>
-                <p class='inline'>$use</p>
+                <p>$use</p>
               </li>
             </ul>
           </li><br><br>";
