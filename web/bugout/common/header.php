@@ -18,7 +18,7 @@
 
     <?php if (isset($_SESSION['user_id']))
       {
-        echo 'hidden';
+        echo ' hidden ';
       }
       ?>
 
@@ -28,7 +28,7 @@
 
     <?php if (!isset($_SESSION['user_id']))
       {
-        echo 'hidden';
+        echo ' hidden ';
       }
       ?>
 
