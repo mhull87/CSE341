@@ -43,7 +43,7 @@ switch ($action)
         <input name='item_name' id='item_name' value='$name' type='text' readonly><br><br>
     
         <label for='quantity'>Quantity</label><br>
-        <input type='number' min='0' max='100000000' name='quantity' id='quantity' required><br><br>
+        <input type='number' min='0' max='10000' name='quantity' id='quantity' required><br><br>
     
         <p>Is It Packed?</p>
     
@@ -57,7 +57,7 @@ switch ($action)
     
         <input type='hidden' name='use' value='$use'>
     
-        <input type='submit' id='addtobagbtn' value='Add To My Bug Out Bag'>
+        <input type='submit' id='addtobagbtn' value='Add To My Bug Out Bag' class='btn'>
     
         <input type='hidden' name='action' value='addtobag'>
     
@@ -102,7 +102,7 @@ switch ($action)
         <input name='item_name' id='item_name' value='$name' type='text' readonly><br><br>
 
         <label for='quantity'>Quantity</label><br>
-        <input type='number' min='0' max='100000000' name='quantity' id='quantity' required><br><br>
+        <input type='number' min='0' max='10000' name='quantity' id='quantity' required><br><br>
 
         <p>Is It Packed?</p>
 
@@ -119,7 +119,7 @@ switch ($action)
 
         <input type='hidden' name='use' value='$use'>
 
-        <input type='submit' id='addtomyextrasbtn' value='Add To My Extras'>
+        <input type='submit' id='addtomyextrasbtn' value='Add To My Extras' class'btn'>
 
         <input type='hidden' name='action' value='addtoextras'>
 
@@ -236,7 +236,7 @@ switch ($action)
         <input name='name' id='item_name' value='$name' type='text' readonly><br><br>
 
         <label for='quantity'>Quantity</label><br>
-        <input type='number' min='0' max='1000000000' name='quantity' value='$quantity' id='quantity' required><br><br>
+        <input type='number' min='0' max='10000' name='quantity' value='$quantity' id='quantity' required><br><br>
 
         <p>Is It Packed?</p>
 
@@ -251,7 +251,7 @@ switch ($action)
 
         <input type='hidden' name='id' value='$id'>
 
-        <input type='submit' id='addtomyextrasbtn' value='Add To My Extras'>
+        <input type='submit' id='addtomyextrasbtn' value='Add To My Extras' class='btn'>
 
         <input type='hidden' name='action' value='updateextras'>
 
@@ -287,7 +287,7 @@ switch ($action)
 
         <input type='hidden' name='id' value='$id'>
       
-        <input type='submit' id='updateitemgbtn' value='Update Item'>
+        <input type='submit' id='updateitemgbtn' value='Update Item' class='btn'>
     
         <input type='hidden' name='action' value='update'>
     
@@ -360,12 +360,12 @@ switch ($action)
                           <input type='hidden' name='name' value='$name'>
                           <input type='hidden' name='quantity' value='$quantity'>
                           <input type='hidden' name='packed' value='$packed'>
-                          <input type='submit' value='Edit Item'>
+                          <input type='submit' value='Edit Item' class='btn'>
                           <input type='hidden' name='action' value='edit'>
                           </form>";
         $bagitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
                           <input type='hidden' name='id' value='$id'>
-                          <input type='submit' value='Delete Item'>
+                          <input type='submit' value='Delete Item' class='btn'>
                           <input type='hidden' name='action' value='delete'>
                           </form>";
       }
@@ -391,13 +391,13 @@ switch ($action)
                           <input type='hidden' name='name' value='$name'>
                           <input type='hidden' name='quantity' value='$quantity'>
                           <input type='hidden' name='packed' value='$packed'>
-                          <input type='submit' value='Edit Item'>
+                          <input type='submit' value='Edit Item' class='btn'>
                           <input type='hidden' name='location' value='$location'>
                           <input type='hidden' name='action' value='editextras'>
                           </form>";
         $extraitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
                           <input type='hidden' name='id' value='$id'>
-                          <input type='submit' value='Delete Item'>
+                          <input type='submit' value='Delete Item' class='btn'>
                           <input type='hidden' name='action' value='deleteextra'>
                           </form>";
       }

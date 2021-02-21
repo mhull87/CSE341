@@ -29,7 +29,7 @@ switch ($action)
     <input type='hidden' name='id' value='$id'>
     <input type='hidden' name='name' value='$name'>
     <input type='hidden' name='use' value='$use'>
-    <input type='submit' value='Add To Bag'>
+    <input type='submit' value='Add To Bag' class='btn'>
 
     <input type='hidden' name='action' value='addtobag'>
 
@@ -39,7 +39,7 @@ switch ($action)
     <input type='hidden' name='id' value='$id'>
     <input type='hidden' name='name' value='$name'>
     <input type='hidden' name='use' value='$use'>
-    <input type='submit' value='Add To Extras'>
+    <input type='submit' value='Add To Extras' class='btn'>
 
     <input type='hidden' name='action' value='addtoextras'>
     </form>";
@@ -63,7 +63,7 @@ switch ($action)
       <input type='hidden' name='id' value='$id'>
       <input type='hidden' name='name' value='$name'>
       <input type='hidden' name='use' value='$use'>
-      <input type='submit' value='Details' name='details' class='detailsbtn bouncy'><br><br>
+      <input type='submit' value='Details' name='details' class='btn bouncy'><br><br>
 
       <input type='hidden' name='action' value='details'>
       </form>
