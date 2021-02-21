@@ -14,6 +14,7 @@
 <body>
   <header>
     <h1>Bug Out Survival</h1>
+    <div class="sort">
     <button class="btn 
 
     <?php if (isset($_SESSION['user_id']))
@@ -33,6 +34,7 @@
       ?>
 
  logout" id="logout"><a href="/bugout/accounts/index.php?action=logout" title="Log out of Bugout Survival.">Logout</a></button>
+</div>
   </header>
 
   <nav>

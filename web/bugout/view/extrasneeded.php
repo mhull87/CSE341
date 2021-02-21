@@ -20,8 +20,9 @@ else if (isset($_SESSION['message']))
     <?php 
     echo $itemslist;
     ?>
-
-  <button class="btn sort"><a href="../bag/index.php?action=extraspacked">Extras Packed</a></button><br><br>
+<div class='sort'>
+  <button class="btn"><a href="../bag/index.php?action=extraspacked">Extras Packed</a></button>
+</div><br><br>
 
 </main>
 

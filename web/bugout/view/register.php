@@ -34,8 +34,9 @@ else if (isset($_SESSION['message']))
     <input type="hidden" name="action" value="register"><br><br>
   </form>
 
+<div class="sort">
   <button class="btn"><a href="/bugout/accounts/index.php?action=login" title="Go to login page">Already have an account?</a></button>
-
+</div>
 </main>
 
 <?php

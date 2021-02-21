@@ -21,7 +21,9 @@ else if (isset($_SESSION['message']))
     echo $itemslist;
   ?>
 
-  <button class='btn sort'><a href="../bag/index.php?action=bagpacked">See All Packed</a></button><br><br>
+<div class="sort">
+  <button class='btn'><a href="../bag/index.php?action=bagpacked">See All Packed</a></button>
+</div><br><br>
 
 </main>
 
