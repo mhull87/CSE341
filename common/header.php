@@ -15,5 +15,5 @@
   </header>
 
   <nav>
-    <? include $_SERVER['DOCUMENT_ROOT'].'/common/home.php'; ?>
+    <? include $_SERVER['DOCUMENT_ROOT'].'/common/nav.php'; ?>
   </nav>
