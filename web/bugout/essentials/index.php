@@ -43,7 +43,7 @@ switch ($action)
         </ul>
       </li><br><br>
 
-    <form action='../bag/index.php' method='POST'>
+    <form class='center' action='../bag/index.php' method='POST'>
     <input type='hidden' name='id' value='$id'>
     <input type='hidden' name='name' value='$name'>
     <input type='hidden' name='use' value='$use'>
@@ -53,7 +53,7 @@ switch ($action)
 
     </form>
 
-    <form action='../bag/index.php' method='POST'>
+    <form class='center' action='../bag/index.php' method='POST'>
     <input type='hidden' name='id' value='$id'>
     <input type='hidden' name='name' value='$name'>
     <input type='hidden' name='use' value='$use'>
