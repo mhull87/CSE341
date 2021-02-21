@@ -51,7 +51,7 @@ switch ($action)
     //check for missing data
     if (empty($userfname) || empty($userlname) || empty($useremail) || empty($userpassword))
       {
-        $message = "<p>*All fields are required*</p>";
+        $message = "<p class='padding'>*All fields are required*</p>";
         include '../view/register.php';
         exit;
       }
