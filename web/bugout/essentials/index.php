@@ -24,7 +24,25 @@ switch ($action)
     $name = $_POST['name'];
     $use = $_POST['use'];
 
-    $details = "<p>Item #: $id<br>Name: $name<br>Use: $use</p>
+    $details = 
+      "<div class='items'>
+      <li class='padding'>
+        <ul>
+          <li class='grid'>
+            <p><b>Item #:</b></p>
+            <p>$id</p>
+          </li>
+          <li class='grid'>
+            <p><b>Name:</b></p>
+            <p>$name</p>
+          </li>
+          <li class='grid'>
+            <p><b>Use:</b></p>
+            <p>$use</p>
+          </li>
+        </ul>
+      </li><br><br>
+
     <form action='../bag/index.php' method='POST'>
     <input type='hidden' name='id' value='$id'>
     <input type='hidden' name='name' value='$name'>
@@ -42,7 +60,7 @@ switch ($action)
     <input type='submit' value='Add To Extras' class='btn bouncy delay'>
 
     <input type='hidden' name='action' value='addtoextras'>
-    </form>";
+    </form></div>";
 
     include '../view/details.php';
     break;
