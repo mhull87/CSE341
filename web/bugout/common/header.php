@@ -14,8 +14,8 @@
 <body>
   <header>
     <h1>Bug Out Survival</h1>
-    <a class="login" href="/bugout/accounts/index.php?action=login" title="Go to the login page.">Login</a>
-    <a class="logout hidden" href="/bugout/accounts/index.php?action=logout" title="Log out of Bugout Survival.">Logout</a>
+    <a class="login" id="login" href="/bugout/accounts/index.php?action=login" title="Go to the login page.">Login</a>
+    <a class="logout hidden" id="logout" href="/bugout/accounts/index.php?action=logout" title="Log out of Bugout Survival.">Logout</a>
   </header>
 
   <nav>
