@@ -354,7 +354,7 @@ switch ($action)
         $use = $bagitem['item_use'];
         $id = $bagitem['bag_id'];
 
-        $bagitemslist .= "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
+        $bagitemslist .= "<div class='items'><li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
         $bagitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
                           <input type='hidden' name='id' value='$id'>
                           <input type='hidden' name='name' value='$name'>
@@ -367,7 +367,7 @@ switch ($action)
                           <input type='hidden' name='id' value='$id'>
                           <input type='submit' value='Delete Item' class='btn'>
                           <input type='hidden' name='action' value='delete'>
-                          </form>";
+                          </form></div>";
       }
 
       $bagitemslist .= '</ul>';
@@ -385,7 +385,7 @@ switch ($action)
         $location = $itemextra['item_location'];
         $id = $itemextra['extra_id'];
 
-        $extraitemslist .= "<li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use<br>Location: $location</p></li>";
+        $extraitemslist .= "<div class='items'><li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use<br>Location: $location</p></li>";
         $extraitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
                           <input type='hidden' name='id' value='$id'>
                           <input type='hidden' name='name' value='$name'>
@@ -399,7 +399,7 @@ switch ($action)
                           <input type='hidden' name='id' value='$id'>
                           <input type='submit' value='Delete Item' class='btn'>
                           <input type='hidden' name='action' value='deleteextra'>
-                          </form>";
+                          </form></div>";
       }
 
       $extraitemslist .= '</ul>';
