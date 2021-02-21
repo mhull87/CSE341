@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   background-color: tan;
@@ -22,11 +27,6 @@ h3 {
 li {
   list-style: none;
   padding: 2%;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
 }
 
 header {
@@ -82,15 +82,10 @@ p {
   place-self: center;
 }
 
-.inline {
-  display: inline;
-  padding: 0;
-  margin: 0;
-}
-
 .grid {
   display: grid;
   grid-template-columns: 1fr 4fr;
+  line-height: ;
 }
 
 .btn {
