@@ -77,6 +77,10 @@ p {
   place-self: center;
 }
 
+.inline {
+  display: inline;
+}
+
 .btn {
   background-color: olive;
   padding: 0.8em 1.2em;
