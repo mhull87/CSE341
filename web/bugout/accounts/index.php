@@ -33,7 +33,7 @@ switch ($action)
       else
       {
         $_SESSION['user_id'] = $user['user_id'];
-        echo 'loginlogout()';
+        
         header('Location: ../bag/index.php');
         die();
       }
