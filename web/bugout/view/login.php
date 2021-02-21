@@ -29,7 +29,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
   </form><br>
 
 <div class="sort">
-  <button class="btn"><a href="/bugout/accounts/index.php?action=register" title="Register for a Bugout Survival account.">Not a member yet?</a></button>
+  <button class="btn" onclick="location.href='/bugout/accounts/index.php?action=register'" title="Register for a Bugout Survival account.">Not a member yet?</button>
 </div>
 
 </main>

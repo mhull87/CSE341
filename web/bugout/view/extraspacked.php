@@ -22,7 +22,7 @@ else if (isset($_SESSION['message']))
     ?>
 
 <div class="sort">
-  <button class="btn"><a href="../bag/index.php?action=extrasneeded">Extras Needed</a></button>
+  <button class="btn" onclick="location.href='../bag/index.php?action=extrasneeded'" title="See your needed extras.">Extras Needed</button>
 </div><br><br>
 
 </main>

@@ -21,7 +21,7 @@ else if (isset($_SESSION['message']))
     echo $itemslist;
     ?>
 <div class='sort'>
-  <button class="btn"><a href="../bag/index.php?action=extraspacked">Extras Packed</a></button>
+  <button class="btn" onclick="location.href='../bag/index.php?action=extraspacked'" title="See your packed extras.">Extras Packed</button>
 </div><br><br>
 
 </main>
