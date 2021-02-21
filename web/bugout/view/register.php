@@ -35,7 +35,7 @@ else if (isset($_SESSION['message']))
   </form>
 
 <div class="sort">
-  <button class="btn"><a href="/bugout/accounts/index.php?action=login" title="Go to login page">Already have an account?</a></button>
+  <button class="btn" onclick="location.href='/bugout/accounts/index.php?action=login'" title="Go to login page">Already have an account?</button>
 </div>
 </main>
 
