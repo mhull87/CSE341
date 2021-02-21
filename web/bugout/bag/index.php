@@ -431,7 +431,7 @@ switch ($action)
                 <p>$location</p>
               </li>
             </ul>
-          </li>";
+          </li><br><br>";
         $extraitemslist .= "<form class='center' action='/bugout/bag/index.php' method='POST'>
                           <input type='hidden' name='id' value='$id'>
                           <input type='hidden' name='name' value='$name'>

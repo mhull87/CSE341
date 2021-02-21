@@ -1,8 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   background-color: tan;
@@ -54,6 +49,7 @@ nav ul li:hover {
 
 p {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
 }
 
 .hidden {
@@ -74,7 +70,7 @@ p {
 
 .items {
   display: grid;
-  grid-template-columns: 4fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .center {
