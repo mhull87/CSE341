@@ -82,6 +82,11 @@ p {
   position: relative;
 }
 
+.delay {
+animation-delay: 0.07s;
+
+}
+
 @keyframes bouncy {
   0% {
     top: 0em
