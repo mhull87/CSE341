@@ -3,6 +3,7 @@ body {
   background-color: tan;
   padding: 2%;
   max-width: 900px;
+  margin: auto;
 }
 
 header {
