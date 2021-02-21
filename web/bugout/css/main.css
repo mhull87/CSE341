@@ -81,6 +81,10 @@ a.btn {
   color: #FFFFFF;
 }
 
+.btn:visited {
+  color: #FFFFFF;
+}
+
 .sort {
   text-align: center;
 }
