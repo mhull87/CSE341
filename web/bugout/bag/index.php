@@ -355,7 +355,7 @@ switch ($action)
         $id = $bagitem['bag_id'];
 
         $bagitemslist .= "<div class='items'><li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use</p></li>";
-        $bagitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
+        $bagitemslist .= "<form class='center' action='/bugout/bag/index.php' method='POST'>
                           <input type='hidden' name='id' value='$id'>
                           <input type='hidden' name='name' value='$name'>
                           <input type='hidden' name='quantity' value='$quantity'>
@@ -363,7 +363,7 @@ switch ($action)
                           <input type='submit' value='Edit Item' class='btn'>
                           <input type='hidden' name='action' value='edit'>
                           </form>";
-        $bagitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
+        $bagitemslist .= "<form class='center' action='/bugout/bag/index.php' method='POST'>
                           <input type='hidden' name='id' value='$id'>
                           <input type='submit' value='Delete Item' class='btn'>
                           <input type='hidden' name='action' value='delete'>
@@ -386,7 +386,7 @@ switch ($action)
         $id = $itemextra['extra_id'];
 
         $extraitemslist .= "<div class='items'><li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use<br>Location: $location</p></li>";
-        $extraitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
+        $extraitemslist .= "<form class='center' action='/bugout/bag/index.php' method='POST'>
                           <input type='hidden' name='id' value='$id'>
                           <input type='hidden' name='name' value='$name'>
                           <input type='hidden' name='quantity' value='$quantity'>
@@ -395,7 +395,7 @@ switch ($action)
                           <input type='hidden' name='location' value='$location'>
                           <input type='hidden' name='action' value='editextras'>
                           </form>";
-        $extraitemslist .= "<form action='/bugout/bag/index.php' method='POST'>
+        $extraitemslist .= "<form class='center' action='/bugout/bag/index.php' method='POST'>
                           <input type='hidden' name='id' value='$id'>
                           <input type='submit' value='Delete Item' class='btn'>
                           <input type='hidden' name='action' value='deleteextra'>
