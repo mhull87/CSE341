@@ -63,7 +63,7 @@ switch ($action)
       <input type='hidden' name='id' value='$id'>
       <input type='hidden' name='name' value='$name'>
       <input type='hidden' name='use' value='$use'>
-      <input type='submit' value='Details' name='details' id='details'><br><br>
+      <input type='submit' value='Details' name='details' class='detailsbtn'><br><br>
 
       <input type='hidden' name='action' value='details'>
       </form>
