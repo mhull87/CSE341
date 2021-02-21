@@ -62,7 +62,7 @@ p {
 .btn {
   background-color: olive;
   padding: 0.35em 1.2em;
-  margin: .6rem 0.3em 0.3em 0;
+  margin: 0 0.3em 0.3em 0;
   border-radius: 0.12em;
   box-sizing: border-box;
   box-shadow: inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
@@ -77,6 +77,7 @@ p {
 }
 
 .bouncy {
+  margin-top: .6rem;
   animation: bouncy 5s infinite linear;
   position: relative;
 }

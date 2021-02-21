@@ -31,10 +31,11 @@ else if (isset($_SESSION['message']))
     <input type="password" name="passconfirm" id="passconfirm" required onkeyup="confirm()">
     <span id="check"></span><br><br>
     <input type="submit" name="submit" value="Register" id="regbtn" class="btn">
-
     <input type="hidden" name="action" value="register"><br><br>
-    <a href="login.php" title="Go to login page">Already have an account?</a>
   </form>
+
+  <a href="/bugout/accounts/index.php?action=login" title="Go to login page">Already have an account?</a>
+
 </main>
 
 <?php
