@@ -76,6 +76,11 @@ p {
   background-color: darkolivegreen;
 }
 
+a.btn {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
 .bouncy {
   margin-top: .6rem;
   animation: bouncy 5s infinite linear;
