@@ -33,7 +33,7 @@
       }
       ?>
 
- logout" id="logout"><a href="/bugout/accounts/index.php?action=logout" title="Log out of Bugout Survival.">Logout</a></button>
+ logout" id="logout" onclick="location.href='/bugout/accounts/index.php?action=logout'" title="Log out of Bugout Survival.">Logout</button>
 </div>
   </header>
 
