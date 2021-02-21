@@ -17,7 +17,7 @@ else if (isset($_SESSION['message']))
   <h3>My Bug Out Bag</h3>
 
 <div class="sort">
-  <p>Sort By</p>
+  <p class="padding">Sort By</p>
   <button class="btn"><a href="../bag/index.php?action=bagpacked">Bag Packed</a></button>
   <button class="btn"><a href="../bag/index.php?action=bagneeded">Bag Needed</a></button>
 </div>
@@ -30,7 +30,7 @@ else if (isset($_SESSION['message']))
   <h3>My Extras</h3>
 
 <div class="sort">
-  <p>Sort by</p>
+  <p class="padding">Sort by</p>
   <button class="btn"><a href="../bag/index.php?action=extraspacked">Extras Packed</a></button>
   <button class="btn"><a href="../bag/index.php?action=extrasneeded">Extras Needed</a></button>
 </div>

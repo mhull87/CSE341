@@ -26,7 +26,6 @@ h3 {
 
 li {
   list-style: none;
-  padding: 2%;
 }
 
 header {
@@ -85,7 +84,10 @@ p {
 .grid {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  line-height: ;
+}
+
+.padding {
+  padding: 2% 0;
 }
 
 .btn {

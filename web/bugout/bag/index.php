@@ -359,23 +359,23 @@ switch ($action)
           <li>
             <ul>
               <li class='grid'>
-                <p>Item:</p>
+                <p><b>Item:</b></p>
                 <p class='inline'>$name</p>
               </li>
               <li class='grid'>
-                <p>Packed:</p>
+                <p><b>Packed:</b></p>
                 <p class='inline'>$packed</p>
               </li>
               <li class='grid'>
-                <p>Quantity: </p>
+                <p><b>Quantity:</b></p>
                 <p class='inline'>$quantity</p>
               </li>
               <li class='grid'>
-                <p>Use: </p>
+                <p><b>Use:</b></p>
                 <p class='inline'>$use</p>
               </li>
             </ul>
-          </li>";
+          </li><br><br>";
         $bagitemslist .= "<form class='center' action='/bugout/bag/index.php' method='POST'>
                           <input type='hidden' name='id' value='$id'>
                           <input type='hidden' name='name' value='$name'>
