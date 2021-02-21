@@ -33,8 +33,8 @@ switch ($action)
       else
       {
         $_SESSION['user_id'] = $user['user_id'];
-        header('Location: ../bag/index.php');
-        die();
+        include '../view/mygear.php';
+        exit();
       }
 
     include '../view/login.php';
