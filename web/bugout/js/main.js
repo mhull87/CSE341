@@ -12,9 +12,3 @@ function confirm()
           document.getElementById('check').innerHTML = '&#10060';
         }
   }
-
-function loginlogout()
-  {
-    document.getElementById('login').classList.toggle('hidden');
-    document.getElementById('logout').classList.toggle('hidden');
-  }

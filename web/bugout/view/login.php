@@ -18,7 +18,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
   ?>
 
 
-  <form action="/bugout/accounts/index.php" method="POST" onsubmit="loginlogout()">
+  <form action="/bugout/accounts/index.php" method="POST">
     <label for="email">Email</label><br>
     <input name="email" id="email" type="email" required><br><br>
     <label for="password">Password</label><br>

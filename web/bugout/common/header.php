@@ -14,8 +14,24 @@
 <body>
   <header>
     <h1>Bug Out Survival</h1>
-    <a class="login" id="login" href="/bugout/accounts/index.php?action=login" title="Go to the login page.">Login</a>
-    <a class="logout hidden" id="logout" href="/bugout/accounts/index.php?action=logout" title="Log out of Bugout Survival." onclick="loginlogout()">Logout</a>
+    <a class="login 
+    
+    <?php if (isset($_SESSION['user_id']))
+      {
+        echo 'hidden';
+      }
+      ?>
+    
+    " id="login" href="/bugout/accounts/index.php?action=login" title="Go to the login page.">Login</a>
+    <a class="logout
+    
+    <?php if (!isset($_SESSION['user_id']))
+      {
+        echo 'hidden';
+      }
+      ?>
+
+      " id="logout" href="/bugout/accounts/index.php?action=logout" title="Log out of Bugout Survival.">Logout</a>
   </header>
 
   <nav>
