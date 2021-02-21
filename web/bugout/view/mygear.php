@@ -21,8 +21,10 @@ else if (isset($_SESSION['message']))
       echo $bagitemslist;
     ?>
 
-  <a href="../bag/index.php?action=bagpacked">Bag Packed</a><br><br>
-  <a href="../bag/index.php?action=bagneeded">Bag Needed</a>
+<div class="sort">
+  <button class="btn"><a href="../bag/index.php?action=bagpacked">Bag Packed</a></button><br><br>
+  <button class="btn"><a href="../bag/index.php?action=bagneeded">Bag Needed</a></button>
+</div>
 
   <h3>My Extras</h3>
 
@@ -30,9 +32,11 @@ else if (isset($_SESSION['message']))
     <?php 
       echo $extraitemslist;
     ?>
-  
-  <a href="../bag/index.php?action=extraspacked">Extras Packed</a><br><br>
-  <a href="../bag/index.php?action=extrasneeded">Extras Needed</a>
+
+<div class="sort">
+  <button class="btn"><a href="../bag/index.php?action=extraspacked">Extras Packed</a></button><br><br>
+  <button class="btn"><a href="../bag/index.php?action=extrasneeded">Extras Needed</a></button>
+</div>
 
 </main>
 
