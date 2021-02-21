@@ -71,6 +71,7 @@ p {
 .items {
   display: grid;
   grid-template-columns: 70%, 30%, 30%;
+  place-items: center;
 }
 
 .btn {
