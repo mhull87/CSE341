@@ -18,12 +18,12 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
   ?>
 
 
-  <form action="/bugout/accounts/index.php" method="POST">
+  <form action="/bugout/accounts/index.php" method="POST" onsubmit="loginlogout()">
     <label for="email">Email</label><br>
     <input name="email" id="email" type="email" required><br><br>
     <label for="password">Password</label><br>
     <input type="password" name="password" id="password" required><br><br>
-    <input type="submit" value="Login" onsubmit="loginlogout()">
+    <input type="submit" value="Login"">
 
     <input type="hidden" name="action" value="login">
   </form><br>

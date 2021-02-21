@@ -33,7 +33,6 @@ switch ($action)
       else
       {
         $_SESSION['user_id'] = $user['user_id'];
-        
         header('Location: ../bag/index.php');
         die();
       }
