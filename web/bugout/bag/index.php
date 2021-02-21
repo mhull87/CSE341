@@ -344,7 +344,7 @@ switch ($action)
 
       $bagitems = mygearbag($user_id);
 
-      $bagitemslist = '<ul>';
+      $bagitemslist = '<ul class="nopadding">';
 
       foreach ($bagitems as $bagitem)
       {
@@ -395,7 +395,7 @@ switch ($action)
 
       $itemsextra = mygearextras($user_id);
 
-      $extraitemslist = '<ul>';
+      $extraitemslist = '<ul class="nopadding">';
 
       foreach ($itemsextra as $itemextra)
       {
