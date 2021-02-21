@@ -354,7 +354,7 @@ switch ($action)
         $use = $bagitem['item_use'];
         $id = $bagitem['bag_id'];
 
-        $bagitemslist .= "<div class='items'><li><p><ul><li>Item: $name</li><li>Packed: $packed</li><li>Quantity: $quantity</li><li>Use: $use</li></ul></p></li>";
+        $bagitemslist .= "<div class='items'><li><ul><li>Item: <p>$name</p></li><li>Packed: $packed</li><li>Quantity: $quantity</li><li>Use: $use</li></ul></li>";
         $bagitemslist .= "<form class='center' action='/bugout/bag/index.php' method='POST'>
                           <input type='hidden' name='id' value='$id'>
                           <input type='hidden' name='name' value='$name'>
