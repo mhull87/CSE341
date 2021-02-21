@@ -81,6 +81,10 @@ a.btn {
   color: #FFFFFF;
 }
 
+.sort {
+  text-align: center;
+}
+
 .bouncy {
   margin-top: .6rem;
   animation: bouncy 5s infinite linear;
