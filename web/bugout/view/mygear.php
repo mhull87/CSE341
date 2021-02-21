@@ -36,11 +36,9 @@ else if (isset($_SESSION['message']))
 </div>
 
   <!-- list out the extras they have -->
-  <div class="items">
     <?php 
       echo $extraitemslist;
     ?>
-  </div>
 </main>
 
 <?php
