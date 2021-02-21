@@ -406,7 +406,32 @@ switch ($action)
         $location = $itemextra['item_location'];
         $id = $itemextra['extra_id'];
 
-        $extraitemslist .= "<div class='items'><li><p>Item: $name<br>Packed: $packed<br>Quantity: $quantity<br>Use: $use<br>Location: $location</p></li>";
+        $extraitemslist .= 
+        "<div class='items'>
+          <li>
+            <ul>
+              <li class='grid'>
+                <p><b>Item:</b></p>
+                <p>$name</p>
+              </li>
+              <li class='grid'>
+                <p><b>Packed:</b></p>
+                <p>$packed</p>
+              </li>
+              <li class='grid'>
+                <p><b>Quantity:</b></p>
+                <p>$quantity</p>
+              </li>
+              <li class='grid'>
+                <p><b>Use:</b></p>
+                <p>$use</p>
+              </li>
+              <li class='grid'>
+                <p><b>Location:</b></p>
+                <p>$location</p>
+              </li>
+            </ul>
+          </li>";
         $extraitemslist .= "<form class='center' action='/bugout/bag/index.php' method='POST'>
                           <input type='hidden' name='id' value='$id'>
                           <input type='hidden' name='name' value='$name'>
