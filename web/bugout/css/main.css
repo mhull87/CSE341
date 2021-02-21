@@ -84,7 +84,7 @@ p {
 
 .delay {
 animation-delay: 0.07s;
-
+display: inline;
 }
 
 @keyframes bouncy {
