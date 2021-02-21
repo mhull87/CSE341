@@ -50,7 +50,7 @@ switch ($action)
   default:
     $items = getEssentails();
 
-    $itemslist = '<ul>';
+    $itemslist = '<ul class="essentials">';
     
     foreach ($items as $item)
     {

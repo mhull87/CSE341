@@ -6,6 +6,15 @@ body {
   margin: auto;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
+li {
+  list-style: none;
+  padding: 2%;
+}
+
 header {
   display: flex;
   justify-content: space-around;
@@ -18,11 +27,6 @@ nav ul {
   flex-wrap: wrap;
   justify-content:space-around;
   background-color: olive;
-}
-
-nav li {
-  list-style: none;
-  padding: 2%;
 }
 
 nav li a {
@@ -48,4 +52,9 @@ p {
   color:darkolivegreen;
   text-decoration: double;
   text-align: center;
+}
+
+.essentials {
+  display: flex;
+  
 }

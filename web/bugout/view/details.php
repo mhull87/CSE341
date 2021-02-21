@@ -18,6 +18,7 @@ else if (isset($_SESSION['message']))
   <?php
   echo $details;
   ?>
+  
 </main>
 
 <?php
