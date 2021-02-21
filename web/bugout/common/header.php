@@ -23,7 +23,7 @@
       }
       ?>
 
-     login" id="login"><a href="/bugout/accounts/index.php?action=login" title="Go to the login page.">Login</a></button>
+     login" id="login" onclick="location.href='/bugout/accounts/index.php?action=login'" title="Go to the login page.">Login</button>
 
     <button class="btn 
 
