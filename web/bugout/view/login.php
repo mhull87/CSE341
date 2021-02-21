@@ -28,7 +28,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/bugout/common/header.php';
     <input type="hidden" name="action" value="login">
   </form><br>
 
-  <a href="/bugout/accounts/index.php?action=register" title="Register for a Bugout Survival account.">Not a member yet?</a>
+  <button class="btn"><a href="/bugout/accounts/index.php?action=register" title="Register for a Bugout Survival account.">Not a member yet?</a></button>
 
 </main>
 

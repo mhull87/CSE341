@@ -96,6 +96,10 @@ p {
   padding: 2% 0;
 }
 
+.margin {
+  margin: 2% 0;
+}
+
 .btn {
   background-color: olive;
   padding: 0.8em 1.2em;

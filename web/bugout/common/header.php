@@ -14,7 +14,7 @@
 <body>
   <header>
     <h1>Bug Out Survival</h1>
-    <a class="login 
+    <button class="btn"><a class="login 
     
     <?php if (isset($_SESSION['user_id']))
       {
@@ -22,8 +22,9 @@
       }
       ?>
     
-    " id="login" href="/bugout/accounts/index.php?action=login" title="Go to the login page.">Login</a>
-    <a class="logout
+    " id="login" href="/bugout/accounts/index.php?action=login" title="Go to the login page.">Login</a></button>
+
+    <button class="btn"><a class="logout
     
     <?php if (!isset($_SESSION['user_id']))
       {
@@ -31,7 +32,7 @@
       }
       ?>
 
-      " id="logout" href="/bugout/accounts/index.php?action=logout" title="Log out of Bugout Survival.">Logout</a>
+      " id="logout" href="/bugout/accounts/index.php?action=logout" title="Log out of Bugout Survival.">Logout</a></button>
   </header>
 
   <nav>
