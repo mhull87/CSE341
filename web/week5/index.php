@@ -47,6 +47,7 @@ catch (PDOException $ex)
   <form method='post' action=" <?php htmlspecialchars($_SERVER["PHP_SELF"]) ?> ">
     <label for="text">Search: </label>
     <input type="text" id="text" name="text">
+    <input type="submit" value="search">
   </form>
 
 
