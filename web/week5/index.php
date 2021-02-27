@@ -30,16 +30,12 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
+
+include '../common/header.php';
+
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scripture Resources</title>
-</head>
 
 <body>
   <h1>Scripture Resources</h1>
