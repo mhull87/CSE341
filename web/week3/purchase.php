@@ -28,6 +28,4 @@ echo  '<hr><p>'
 ?>
 
 </main>
-</body>
-
-</html>
+<?php include '../common/footer.php'; ?>
