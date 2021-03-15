@@ -1,6 +1,6 @@
 <?php session_start();
 
-include '../common/header.php';
+include $_SERVER['DOCUMENT_ROOT']."/cse341/web/common/header.php";
 ?>
 
 <main>
